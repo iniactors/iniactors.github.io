@@ -16,14 +16,16 @@ Github DesktopやCLIで[クローン](https://docs.github.com/ja/github/creating
     npm install
     ```
 
-## 開発方法について
-以下のコマンドを実行すると開発用サーバーが起動します。  
-```shell
-npm run dev
-```
-`.vue`や`.js`、`.scss`ファイルを編集すると自動的に反映されます。（ホットリローディング）  
-使用するNode.jsのバージョンはその時点でのLTSバージョンを基本とします。
-  
+## 開発について
+- 以下のコマンドを実行すると開発用サーバーが起動します。  
+    ```shell
+    npm run dev
+    ```
+- Vue 3を用います。
+- 使用するNode.jsのバージョンはその時点でのLTSバージョンを基本とします。
 
 ## 公開（デプロイ）について
-mainブランチにプッシュするとGitHub Actionsという仕組みを使って自動的にビルドとgh-pagesブランチへのプッシュが行われ、GitHub Pagesで公開されます。
+`main`ブランチにプッシュするとGitHub Actionsという仕組みを使って自動的にビルドと`gh-pages`ブランチへのプッシュが行われ、GitHub Pagesで公開されます。
+
+## ライセンスについて
+Apache License 2.0（画像・動画を除く）

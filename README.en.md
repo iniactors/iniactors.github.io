@@ -22,7 +22,11 @@ Run below command in this directory.
     ```shell
     npm run dev
     ```
+- This website uses Vue 3
 - Basically, this website should use LTS version of Node.js.
 
 ## Deployment
 When you push to the `main` branch, GitHub Actions will automatically build the files and push them to `gh-pages` branch. Then, they’ll be deployed with GitHub Pages.
+
+## License
+Apache License 2.0（except for images and videos）
