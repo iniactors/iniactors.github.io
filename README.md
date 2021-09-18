@@ -12,7 +12,7 @@ Github DesktopやCLIで[クローン](https://docs.github.com/ja/github/creating
     ```
 
 ## 公開（デプロイ）について
-`main`ブランチにプッシュするとGitHub Actionsという仕組みを使って自動的にビルドと`gh-pages`ブランチへのプッシュが行われ、GitHub Pagesで公開されます。
+`main`ブランチにプッシュするとGitHub Actionsという仕組みを使って自動的にファイル圧縮と`gh-pages`ブランチへのプッシュが行われ、GitHub Pagesで公開されます。
 
 ## ライセンスについて
 Apache License 2.0（画像・動画を除く）
