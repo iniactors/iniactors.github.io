@@ -1,8 +1,9 @@
 body{
   background-color: #212121;
-  font-family: 'Kiwi Maru', serif;
+  font-family: 'Kiwi Maru','Helvetica Neue', Arial, 'Noto Sans JP','Noto Sans CJK JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'BIZ UDPGothic', 'Meiryo', sans-serif;
   color: #ffffff;
   margin: 0;
+  font-weight: 300;
 }
 
 header{
@@ -22,11 +23,23 @@ header{
   color: #ffffff;
 }
 
-h1{
+h1, h2, h3{
   font-weight: 500;
+}
+
+p{
+  line-height: 1.75rem;
 }
 
 .sub-text{
   font-size: calc(0.75rem + 0.25vw);
   font-weight: 300;
+}
+
+.info dt{
+  text-decoration: underline;
+}
+
+.msg-copy{
+  font-size: 1.15rem;
 }
