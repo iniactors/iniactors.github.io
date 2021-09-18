@@ -1,0 +1,41 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      SITE_URL: https://iniactors.github.io
+
+    steps:
+      - name: Checking for .DS_Store files 👮
+        uses: Maxelweb/ds-store-patrol@v1
+
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      - name: Install dependencies 👨🏻‍💻
+        run: yarn install
+
+      - name: Run linter 👀
+        run: yarn lint
+
+      - name: Auto Minify 📦
+        uses: nizarmah/auto-minify@v2
+
+      - name: Deploy 🚛
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          exclude_assets: '.github,.vscode,.htmlhintrc,**.py,**.md'
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+
