@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: auto!important;
+}
+
 body{
   background-color: #212121;
   font-family: 'Kiwi Maru','Helvetica Neue', Arial, 'Noto Sans JP','Noto Sans CJK JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'BIZ UDPGothic', 'Meiryo', sans-serif;
@@ -57,6 +61,7 @@ p{
 
 .header-content .nav a.link-iniad svg{
   margin-left: 0.25rem;
+  width: 0.8rem;
 }
 
 .icon-sns:first-child{

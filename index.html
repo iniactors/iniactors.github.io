@@ -139,9 +139,9 @@
         </div>
         <div class="col-md-3 text-center text-md-start">
           <nav class="nav flex-column">
-            <a href="#">概要</a>
-            <a href="#">上演作品</a>
-            <a href="#">入会フォーム</a>
+            <a class="scroll" href="#about">概要</a>
+            <a class="scroll" href="#works">上演作品</a>
+            <a class="scroll" href="#form">入会フォーム</a>
             <a
               class="
                 link-iniad
@@ -162,7 +162,6 @@
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
-                width="0.8rem"
               >
                 <path
                   fill="currentColor"
@@ -176,7 +175,7 @@
     </header>
     <main>
       <section class="mb-5">
-        <h2>概要</h2>
+        <h2 id="about">概要</h2>
         <p class="mb-3">
           INIActorsはINIAD（東洋大学情報連携学部）唯一の公認演劇サークルです。年に一回、INIADの大学祭であるINIAD-FES
           (11月頃) にて公演を行っています。<br />
@@ -189,7 +188,7 @@
         </p>
       </section>
       <section class="mb-5">
-        <h2>上演作品</h2>
+        <h2 id="works">上演作品</h2>
         <div class="row">
           <div class="col-md-6">
             <p>作品ページはINIAD学内限定公開となります。</p>
@@ -225,7 +224,7 @@
         </dl>
       </section>
       <section class="mb-5">
-        <h2>入会フォーム</h2>
+        <h2 id="form">入会フォーム</h2>
         <div class="row">
           <div class="col-md-6">
             <p class="msg-copy">
@@ -237,5 +236,10 @@
         </div>
       </section>
     </main>
+    <script
+      type="module"
+      src="https://polyfill.io/v3/polyfill.min.js?features=scrollIntoView"
+    ></script>
+    <script type="module" src="src/main.js"></script>
   </body>
 </html>
