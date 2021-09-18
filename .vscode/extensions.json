@@ -3,6 +3,7 @@
     "formulahendry.auto-close-tag",
     "formulahendry.auto-rename-tag",
     "saikou9901.evilinspector",
-    "mkaufman.htmlhint"
+    "mkaufman.htmlhint",
+    "ritwickdey.liveserver"
   ]
 }

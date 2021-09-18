@@ -9,7 +9,8 @@
 To launch dev server, run below command.  
     ```shell
     python3 serve.py
-    ```
+    ```  
+    Or use [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) (Recommend)
 
 ## Deployment
 When you push to the `main` branch, GitHub Actions will automatically minify the files and push them to `gh-pages` branch. Then, they’ll be deployed with GitHub Pages.

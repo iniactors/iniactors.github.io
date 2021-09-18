@@ -9,7 +9,8 @@ Github DesktopやCLIで[クローン](https://docs.github.com/ja/github/creating
 以下のコマンドを実行すると開発用サーバーが起動し、`http://localhost:8000`にアクセスするとページを見ることができます。  
     ```shell
     python3 serve.py
-    ```
+    ```  
+    もしくは、 [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)を用いてください。（推奨）
 
 ## 公開（デプロイ）について
 `main`ブランチにプッシュするとGitHub Actionsという仕組みを使って自動的にファイル圧縮と`gh-pages`ブランチへのプッシュが行われ、GitHub Pagesで公開されます。
