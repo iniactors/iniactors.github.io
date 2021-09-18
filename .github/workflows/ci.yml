@@ -20,12 +20,6 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@v2
 
-      - name: Install dependencies 👨🏻‍💻
-        run: yarn install
-
-      - name: Run linter 👀
-        run: yarn lint
-
       - name: Auto Minify 📦
         uses: nizarmah/auto-minify@v2.1
 
