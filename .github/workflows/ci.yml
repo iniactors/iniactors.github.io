@@ -22,12 +22,15 @@ jobs:
 
       - name: Auto Minify 📦
         uses: nizarmah/auto-minify@v2.1
+        with:
+          overwrite: true
 
       - name: Deploy 🚛
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
+          publish_dir: .
           exclude_assets: '.github,.vscode,.htmlhintrc,**.py,**.md'
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
