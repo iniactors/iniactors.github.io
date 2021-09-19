@@ -1,0 +1,1 @@
+const items=document.querySelectorAll(".scroll");items.forEach(a=>{const b=a.getAttribute("href"),c=document.querySelector(b);a.addEventListener("click",a=>{a.preventDefault(),c.scrollIntoView({behavior:"smooth"})})});
