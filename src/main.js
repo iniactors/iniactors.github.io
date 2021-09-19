@@ -7,3 +7,8 @@ items.forEach((item) => {
     target.scrollIntoView({ behavior: "smooth" })
   })
 })
+
+const yearElem = document.querySelector("#year")
+const now = new Date()
+const year = now.getFullYear()
+yearElem.textContent = year
