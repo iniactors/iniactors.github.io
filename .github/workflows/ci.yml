@@ -10,9 +10,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    env:
-      SITE_URL: https://iniactors.github.io
-
     steps:
       - name: Checking for .DS_Store files 👮
         uses: Maxelweb/ds-store-patrol@v1
@@ -25,14 +22,7 @@ jobs:
         with:
           overwrite: true
 
-      - uses: chrnorm/deployment-action@releases/v1
-        name: Create GitHub deployment 🚛
-        id: deployment
-        with:
-          token: "${{ github.token }}"
-          environment: Production
-
-      - name: Deploy 🌏
+      - name: Deploy 🚛
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -43,19 +33,3 @@ jobs:
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: ${{ github.event.head_commit.message }}
 
-      - name: Update deployment status (success) 😆
-        if: success()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          environment_url: ${{ env.SITE_URL }}
-          state: "success"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-
-      - name: Update deployment status (failure) 😣
-        if: failure()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          state: "failure"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
