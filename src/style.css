@@ -79,6 +79,36 @@ p{
   font-weight: 300;
 }
 
+summary:focus{
+  outline: none;
+}
+
+.works{
+  border: #ffffff solid 2px;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.works-description{
+  padding-bottom: 0.25rem;
+  border-bottom: #ffffff 0.25px solid;
+  margin-bottom: 2rem;
+}
+
+.works-row{
+  text-align: center;
+}
+
+.works-row img{
+  max-height: 30rem;
+}
+
+.works-content-description{
+  font-size: calc(0.65rem + 0.5vw);
+  line-height: 1.35rem;
+  margin-bottom: 1.5rem;
+}
+
 .info dt{
   text-decoration: underline;
 }
@@ -123,6 +153,12 @@ footer{
   margin-top: 5rem;
   margin-bottom: env(safe-area-inset-bottom);
   font-size: 0.75rem;
+}
+
+@media (max-width: 992px) {
+  .works-row img{
+    max-height: 20rem;
+  }
 }
 
 @media (max-width: 768px) {
