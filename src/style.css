@@ -79,7 +79,7 @@ p{
   font-weight: 300;
 }
 
-summary:focus{
+summary{
   outline: none;
 }
 
