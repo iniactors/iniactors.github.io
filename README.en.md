@@ -17,6 +17,7 @@ When you push to the `main` branch, GitHub Actions will automatically minify the
 
 ## Development Memo
 - Use basic web technology learned in INIAD classes.
+- This site uses [Bootstrap](https://getbootstrap.com) via CDN.
 - Create a webp version of the image using [this site](https://lab.syncer.jp/Tool/Webp-Converter/) and reduce the size.
 
 ## License
