@@ -15,5 +15,9 @@ To launch dev server, run below command.
 ## Deployment
 When you push to the `main` branch, GitHub Actions will automatically minify the files and push them to `gh-pages` branch. Then, they’ll be deployed with GitHub Pages.
 
+## Development Memo
+- Use basic web technology learned in INIAD classes.
+- Create a webp version of the image using [this site](https://lab.syncer.jp/Tool/Webp-Converter/) and reduce the size.
+
 ## License
 Apache License 2.0（except for images and videos）
