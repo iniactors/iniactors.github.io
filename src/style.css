@@ -95,6 +95,11 @@ summary{
   margin-bottom: 2rem;
 }
 
+.works-description-no-border{
+  border: none;
+  margin-bottom: 0;
+}
+
 .works-row{
   text-align: center;
 }
