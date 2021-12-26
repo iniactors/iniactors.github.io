@@ -155,9 +155,13 @@ summary{
 }
 
 footer{
-  margin-top: 5rem;
+  margin-top: 8rem;
   margin-bottom: env(safe-area-inset-bottom);
   font-size: 0.75rem;
+}
+
+footer a, footer a:visited{
+  color: #ffffff;
 }
 
 @media (max-width: 992px) {
