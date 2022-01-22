@@ -130,3 +130,4 @@ temp/
 # macOS
 .DS_Store
 .node-version
+.vscode/settings.json

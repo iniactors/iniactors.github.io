@@ -15,5 +15,10 @@ Github DesktopやCLIで[クローン](https://docs.github.com/ja/github/creating
 ## 公開（デプロイ）について
 `main`ブランチにプッシュするとGitHub Actionsという仕組みを使って自動的にファイル圧縮と`gh-pages`ブランチへのプッシュが行われ、GitHub Pagesで公開されます。
 
+## 開発メモ
+- サイト作成に使用する技術に関しては、INIADの授業内で触れるような基本的なWeb技術を用いる。
+- このサイトは[Bootstrap](https://getbootstrap.jp)をCDN経由で使用しています。
+- 画像はwebp版を[このサイト](https://lab.syncer.jp/Tool/Webp-Converter/)などで作成して、サイズを減らすようにする。
+
 ## ライセンスについて
 Apache License 2.0（画像・動画を除く）
