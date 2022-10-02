@@ -11,24 +11,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checking for .DS_Store files 👮
-        uses: Maxelweb/ds-store-patrol@v1
-
       - name: Checkout 🛎
-        uses: actions/checkout@v2
-
-      - name: Auto Minify 📦
-        uses: nizarmah/auto-minify@v2.1
+        uses: actions/checkout@v3
+      
+      - name: Setup node env 🏗
+        uses: actions/setup-node@v3
         with:
-          overwrite: true
+          node-version: 16
+          cache: yarn
+
+      - name: Install dependencies 📦
+        run: yarn install --frozen-lockfile
+
+      - name: Build static site 🏭
+        run: yarn build
 
       - name: Deploy 🚛
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: .
-          exclude_assets: '.github,.vscode,.gitignore,.htmlhintrc,**.py,**.md'
+          publish_dir: src/dist
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: ${{ github.event.head_commit.message }}
