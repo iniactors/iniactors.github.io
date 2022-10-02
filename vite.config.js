@@ -12,7 +12,7 @@ export default defineConfig({
       input: {
         main: resolve(root, 'index.html'),
         notFound: resolve(root, '404.html'),
-        // btz2022:  resolve(root, 'btz-2022/index.html'),
+        btz2022:  resolve(root, 'btz-2022/index.html'),
       },
     },
   },
