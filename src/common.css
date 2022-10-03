@@ -1,0 +1,40 @@
+/*
+  全ページで共通化するCSS
+*/
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+html {
+  scroll-behavior: auto !important;
+}
+
+body {
+  margin: 0;
+}
+
+.sns-area {
+  display: flex;
+  gap: 2rem;
+}
+
+.sns-area svg {
+  height: 2.25rem;
+}
+
+.sns-area a,
+.sns-area a:visited {
+  color: #ffffff;
+}
+
+footer {
+  margin-top: 8rem;
+  margin-bottom: env(safe-area-inset-bottom);
+  font-size: 0.75rem;
+}
