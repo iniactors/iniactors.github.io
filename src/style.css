@@ -1,50 +1,54 @@
-html{
-  scroll-behavior: auto!important;
+html {
+  scroll-behavior: auto !important;
 }
 
-body{
+body {
   background-color: #212121;
-  font-family: 'Kiwi Maru','Helvetica Neue', Arial, 'Noto Sans JP','Noto Sans CJK JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'BIZ UDPGothic', 'Meiryo', sans-serif;
+  font-family: 'Kiwi Maru', 'Helvetica Neue', Arial, 'Noto Sans JP',
+    'Noto Sans CJK JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans',
+    'BIZ UDPGothic', 'Meiryo', sans-serif;
   color: #ffffff;
   margin: 0;
   font-weight: 300;
 }
 
-header{
+header {
   margin-top: 1rem;
- 
 }
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
   font-weight: 500;
 }
 
-h2, h3{
-  color: #e79f3c
+h2,
+h3 {
+  color: #e79f3c;
 }
 
-p{
+p {
   line-height: 1.75rem;
 }
 
-.color-iniad{
-  color: #51abdf
+.color-iniad {
+  color: #51abdf;
 }
 
-.header-content{
+.header-content {
   margin: 8rem 0;
 }
 
-.header-content svg{
+.header-content svg {
   max-height: 22rem;
 }
 
-.header-content .nav{
+.header-content .nav {
   list-style: none;
   color: #ffffff;
 }
 
-.header-content .nav a{
+.header-content .nav a {
   margin-top: 1.75rem;
   font-size: 1.5rem;
   font-weight: 500;
@@ -52,77 +56,108 @@ p{
   color: #ffffff;
 }
 
-.header-content .nav a:hover{
+.header-content .nav a:hover {
   text-decoration: underline;
 }
 
-.header-content .nav a.link-iniad{
+.sns-area {
+  display: flex;
+  gap: 2rem;
+}
+
+.sns-area svg {
+  height: 2.25rem;
+}
+
+.sns-area a,
+.sns-area a:visited {
+  color: #ffffff;
+}
+
+.header-content .nav a.link-iniad {
   font-size: 0.8rem;
   font-weight: 300;
 }
 
-.header-content .nav a.link-iniad svg{
+.header-content .nav a.link-iniad svg {
   margin-left: 0.25rem;
   width: 0.8rem;
 }
 
-.icon-sns:first-child{
-  margin-right: 1rem;
+.btz-link-area {
+  padding-top: 4rem;
+  display: flex;
+  justify-content: center;
 }
 
-.icon-sns a, .icon-sns a:visited{
-  color: #ffffff;
+.btz-link {
+  color: #fff;
+  background: linear-gradient(25deg, #003b57, #4eb9b7);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  padding: 0.75rem 5rem;
+  transition: 0.5s;
 }
 
-.sub-text{
+.btz-link-bottom {
+  font-size: 1rem;
+}
+
+.btz-link:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.sub-text {
   font-size: calc(0.75rem + 0.25vw);
   font-weight: 300;
 }
 
-summary{
+summary {
   outline: none;
 }
 
-.work{
+.work {
   border: #ffffff solid 2px;
   border-radius: 1rem;
   padding: 1rem;
 }
 
-.work-description{
+.work-description {
   padding-bottom: 0.25rem;
   border-bottom: #ffffff 0.25px solid;
   margin-bottom: 2rem;
 }
 
-.work-description-no-border{
+.work-description-no-border {
   border: none;
   margin-bottom: 0;
 }
 
-.work-row{
+.work-row {
   text-align: center;
 }
 
-.work-row img{
+.work-row img {
   max-height: 30rem;
 }
 
-.work-content-description{
+.work-content-description {
   font-size: calc(0.65rem + 0.5vw);
   line-height: 1.35rem;
   margin-bottom: 1.5rem;
 }
 
-.info dt{
+.info dt {
   text-decoration: underline;
 }
 
-.msg-copy{
+.msg-copy {
   font-size: 1.15rem;
 }
 
-.btn-form{
+.btn-form {
   color: #000000;
   background-color: #ffffff;
   border: solid 5px #ea3323;
@@ -131,51 +166,61 @@ summary{
   width: 100%;
 }
 
-.btn-form:hover{
+.btn-form:hover {
   color: #000000;
   border: solid 5px #f3584a;
 }
 
-.btn-form .sub-btn-text{
+.btn-form .sub-btn-text {
   font-size: 0.75rem;
 }
 
-.btn-work{
+.btn-work {
   color: #000000;
   background-color: #ffffff;
-  border: solid 5px #2396EA;
+  border: solid 5px #2396ea;
   font-size: 1.25rem;
   line-height: 3rem;
   width: 100%;
 }
 
-.btn-work:hover{
+.btn-work:hover {
   color: #000000;
   border: solid 5px #4ea9eb;
 }
 
-footer{
+footer {
   margin-top: 8rem;
   margin-bottom: env(safe-area-inset-bottom);
   font-size: 0.75rem;
 }
 
-footer a, footer a:visited, footer a:hover{
+footer a,
+footer a:visited,
+footer a:hover {
   color: #ffffff;
 }
 
 @media (max-width: 992px) {
-  .work-row img{
+  .work-row img {
     max-height: 20rem;
   }
 }
 
 @media (max-width: 768px) {
-  .header-content{
+  .header-content {
     margin: 3rem 0;
   }
-  
-  .header-content .nav a{
+
+  .header-content .nav a {
     margin-top: 0.5rem;
+  }
+
+  .btz-link-area {
+    padding: 2rem;
+  }
+
+  .btz-link {
+    padding: 0.75rem 1.5rem;
   }
 }
