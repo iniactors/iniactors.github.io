@@ -12,9 +12,3 @@ items.forEach((item) => {
 // 最新の作品を表示する（最初の作品のdetailをopenに設定する）
 const worksElem = document.querySelector('.works')
 worksElem.firstElementChild.setAttribute('open', true)
-
-// 著作権表示の年を設定する
-const yearElem = document.querySelector('#year')
-const now = new Date()
-const year = now.getFullYear()
-yearElem.textContent = year
