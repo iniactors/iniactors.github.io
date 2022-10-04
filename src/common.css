@@ -34,7 +34,6 @@ body {
 }
 
 footer {
-  margin-top: 8rem;
   margin-bottom: env(safe-area-inset-bottom);
   font-size: 0.75rem;
 }

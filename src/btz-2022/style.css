@@ -18,8 +18,21 @@ body {
   flex-direction: column;
 }
 
+header {
+  z-index: 999;
+}
+
 main {
   flex: 1;
+}
+
+model-viewer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
 }
 
 .sns-area {
@@ -42,6 +55,7 @@ main {
 
 footer {
   padding: 0.5rem 0;
+  z-index: 999;
 }
 
 footer nav {
