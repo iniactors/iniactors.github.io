@@ -1,0 +1,63 @@
+/*
+  アニメーションエリアのCSS設定
+*/
+
+@import url('./animation-common.css');
+@import url('./animation-moving.css');
+
+#animation-wrapper {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+#animation-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  gap: 0.2rem;
+}
+
+#n001-001 {
+  font-size: 10rem;
+  animation: opacity0-1 0.0001s linear 0.4s 1 normal both;
+}
+
+#n001-002 {
+  animation: opacity0-1 0.0001s linear 0.75s 1 normal both;
+}
+
+#n002 {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border: #bc002d 10px solid;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: n002-001 0.8s cubic-bezier(0.83, 0, 0.17, 1) 1.4s 1 normal both;
+  z-index: -99999;
+}
+
+#n003 {
+  scale: 1 0.8;
+  margin-top: 1rem;
+}
+
+#n003-001 {
+  font-style: italic;
+  animation: opacity0-1 0.3s linear 2s 1 normal both;
+}
+
+#n003-002 {
+  animation: opacity0-1 0.0001s linear 2.4s 1 normal both;
+}

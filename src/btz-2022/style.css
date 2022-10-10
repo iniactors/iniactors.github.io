@@ -2,6 +2,8 @@
   Back to Zero 特設サイトのCSS
 */
 
+@import url('./animation.css');
+
 /* 共通するスタイル */
 @font-face {
   font-family: 'Makinas4Flat';

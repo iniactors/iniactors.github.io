@@ -1,0 +1,17 @@
+/*
+  アニメーションの具体的な動きのCSS設定
+*/
+
+@keyframes n002-001 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    width: 15px;
+    height: 15px;
+    transform: scale(50);
+    background-color: #bc002d;
+    border: #fff 10px solid;
+  }
+}
