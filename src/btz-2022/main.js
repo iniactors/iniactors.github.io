@@ -1,8 +1,13 @@
 import '@google/model-viewer'
+import Cookies from 'js-cookie'
 
 window.onload = () => {
   // 実行したい処理を書く
-  setTimeout(fadeOutAnimation, 16000)
+  if (Cookies.get('visited') === 'yes') {
+    destroyAnimation()
+  } else {
+    setTimeout(fadeOutAnimation, 16000)
+  }
 }
 
 const fadeOutAnimation = () => {
@@ -16,4 +21,5 @@ const destroyAnimation = () => {
   // アニメーションエリアを非表示にする
   const animationElem = document.querySelector('#animation-wrapper')
   animationElem.style.display = 'none'
+  Cookies.set('visited', 'yes', { expires: 7, sameSite: 'strict' })
 }
