@@ -93,7 +93,7 @@
   transform: scaleY(1.35);
   letter-spacing: -0.05rem;
   animation: opacity0-1 0.5s linear 4.25s 1 normal both,
-    n004-001 0.95s 4.65s infinite alternate;
+    n004-001 0.8s 4.65s infinite alternate;
 }
 
 /* 男 */
@@ -115,7 +115,7 @@
   transform: scaleY(1.35);
   letter-spacing: -0.05rem;
   animation: n005 0.5s cubic-bezier(0.83, 0, 0.17, 1) 7.8s 1 normal both,
-    n005-flash 0.7s linear 8.5s 1 normal both;
+    n005-flash 0.7s linear 8s 1 normal both;
 }
 
 /* VS */

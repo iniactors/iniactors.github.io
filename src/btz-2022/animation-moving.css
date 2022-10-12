@@ -53,19 +53,19 @@
 
 @keyframes n005 {
   0% {
+    opacity: 0;
     transform: scale(300);
     background-color: transparent;
   }
   100% {
+    opacity: 1;
     transform: scale(1);
     background-color: #fff;
   }
 }
 
 @keyframes n005-flash {
-  0% {
-    opacity: 0;
-  }
+  0%,
   25%,
   50%,
   80% {
