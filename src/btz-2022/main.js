@@ -23,3 +23,13 @@ const destroyAnimation = () => {
   animationElem.style.display = 'none'
   Cookies.set('visited', 'yes', { expires: 7, sameSite: 'strict' })
 }
+
+const replayAnimation = () => {
+  // リロードしてアニメーションをリプレイする
+  Cookies.remove('visited')
+  location.reload()
+}
+
+// リプレイボタンのイベントハンドリング
+const replayBtnElem = document.querySelector('#btn-replay')
+replayBtnElem.addEventListener('click', replayAnimation)

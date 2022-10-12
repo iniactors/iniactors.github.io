@@ -101,8 +101,31 @@ footer .nav-link:hover::after {
   transform: scale(1, 1); /* 下線を伸ばす */
 }
 
+footer .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer #btn-replay {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  border: none;
+  background: transparent;
+  color: #bbbbbb;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+footer #btn-replay svg {
+  height: 0.75rem;
+}
+
+footer #btn-replay:hover {
+  color: #fff;
+}
+
 footer .copyright {
-  text-align: right;
   color: #9a9a9a;
 }
 
