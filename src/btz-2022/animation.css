@@ -27,13 +27,13 @@
   gap: 0.2rem;
 }
 
-/* 近未来 */
+/* 「近未来」 */
 #n001-001 {
   font-size: 10rem;
   animation: opacity0-1 0.0001s linear 0.4s 1 normal both;
 }
 
-/* の */
+/* 「の」 */
 #n001-002 {
   animation: opacity0-1 0.0001s linear 0.75s 1 normal both;
 }
@@ -88,7 +88,7 @@
   animation: n004 0.8s cubic-bezier(0.83, 0, 0.17, 1) 3.5s 1 normal both;
 }
 
-/* 急速な技術発展に異を唱える、一人の男が立ち上がる */
+/* 「急速な技術発展に異を唱える、一人の男が立ち上がる」 */
 #n004-001 {
   transform: scaleY(1.35);
   letter-spacing: -0.05rem;
@@ -96,12 +96,12 @@
     n004-001 0.8s 4.65s infinite alternate;
 }
 
-/* 男 */
+/* 「男」 */
 #n004-002 {
   color: #e3974a;
 }
 
-/* 平成 */
+/* 「平成」 */
 #n005 {
   position: absolute;
   width: 100%;
@@ -118,7 +118,7 @@
     n005-flash 0.7s linear 8s 1 normal both;
 }
 
-/* VS */
+/* 「VS」 */
 #n006 {
   position: absolute;
   color: #000;
@@ -126,7 +126,7 @@
   animation: n006 2s cubic-bezier(0.83, 0, 0.17, 1) 9s 1 normal both;
 }
 
-/* 令和の背景 */
+/* 「令和」の背景 */
 #n007 {
   position: absolute;
   width: 100%;
@@ -139,7 +139,7 @@
   animation: n007 0.3s cubic-bezier(0.83, 0, 0.17, 1) 11s 1 normal both;
 }
 
-/* 令和 */
+/* 「令和」 */
 #n007-001 {
   writing-mode: vertical-rl;
   font-size: 40vmin;
@@ -152,7 +152,7 @@
   );
 }
 
-/* 開幕!の背景 */
+/* 「開幕!」の背景 */
 #n008 {
   position: absolute;
   width: 100%;
@@ -165,7 +165,7 @@
   animation: opacity0-1 0.5s linear 13.6s 1 normal both;
 }
 
-/* 開幕! */
+/* 「開幕!」 */
 #n008-001 {
   animation: opacity0-1 0.2s linear 14s 1 normal both;
 }
