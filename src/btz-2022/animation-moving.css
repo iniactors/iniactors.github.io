@@ -4,16 +4,21 @@
 
 @keyframes n002 {
   0% {
-    transform: scale(0);
+    width: 0px;
+    height: 0px;
+    background-color: #bc002d;
+    border: #fff 0px solid;
+  }
+  15% {
+    border: #fff 30px solid;
   }
   100% {
-    width: 15px;
-    height: 15px;
-    filter: blur(0);
-    -webkit-filter: blur(0);
-    transform: scale(50);
+    width: 50vmin;
+    min-width: 40rem;
+    height: 50vmin;
+    min-height: 40rem;
     background-color: #bc002d;
-    border: #fff 10px solid;
+    border: #fff 100vmax solid;
   }
 }
 

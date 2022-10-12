@@ -47,12 +47,9 @@
 /* 赤丸 */
 #n002 {
   position: absolute;
-  width: 10px;
-  height: 10px;
   background: transparent;
   border: #bc002d 10px solid;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
   animation: n002 0.8s cubic-bezier(0.83, 0, 0.17, 1) 1.4s 1 normal both;
   z-index: -99999;
 }
@@ -122,7 +119,7 @@
   transform: scaleY(1.35);
   letter-spacing: -0.05rem;
   animation: n005 0.5s cubic-bezier(0.83, 0, 0.17, 1) 7.8s 1 normal both,
-    n005-flash 0.7s linear 8s 1 normal both;
+    n005-flash 0.7s linear 8.2s 1 normal both;
 }
 
 /* 「VS」 */
@@ -130,7 +127,7 @@
   position: absolute;
   color: #000;
   font-size: 90vmax;
-  animation: n006 2s cubic-bezier(0.83, 0, 0.17, 1) 9s 1 normal both;
+  animation: n006 2s cubic-bezier(0.83, 0, 0.17, 1) 9.1s 1 normal both;
 }
 
 /* 「令和」の背景 */
@@ -169,12 +166,12 @@
   align-items: center;
   background-color: #000;
   font-size: 18vmin;
-  animation: opacity0-1 0.5s linear 13.6s 1 normal both;
+  animation: opacity0-1 0.5s linear 13s 1 normal both;
 }
 
 /* 「開幕!」 */
 #n008-001 {
-  animation: opacity0-1 0.2s linear 14s 1 normal both;
+  animation: opacity0-1 0.2s linear 13.5s 1 normal both;
 }
 
 /* アニメーション終了時のフェードアウト */
