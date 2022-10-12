@@ -5,6 +5,12 @@
 @import url('./animation-common.css');
 @import url('./animation-moving.css');
 
+@media (prefers-reduced-motion) {
+  #animation-wrapper {
+    display: none;
+  }
+}
+
 #animation-wrapper {
   position: absolute;
   height: 100vh;
