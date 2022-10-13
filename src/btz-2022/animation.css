@@ -47,7 +47,7 @@
 
 /* 「の」 */
 #n001-002 {
-  animation: opacity0-1 0.0001s linear 0.75s 1 normal both;
+  animation: opacity0-1 0.0001s linear 0.8s 1 normal both;
 }
 
 /* 赤丸 */
@@ -56,7 +56,7 @@
   background: transparent;
   border: #bc002d 10px solid;
   border-radius: 50%;
-  animation: n002 0.8s cubic-bezier(0.83, 0, 0.17, 1) 1.4s 1 normal both;
+  animation: n002 0.8s cubic-bezier(0.83, 0, 0.17, 1) 1.6s 1 normal both;
   z-index: -99999;
 }
 
