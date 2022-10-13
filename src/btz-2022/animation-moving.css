@@ -1,0 +1,104 @@
+/*
+  アニメーションの具体的な動きのCSS設定
+*/
+
+@keyframes n002 {
+  0% {
+    width: 0px;
+    height: 0px;
+    background-color: #bc002d;
+    border: #fff 0px solid;
+  }
+  15% {
+    border: #fff 30px solid;
+  }
+  100% {
+    width: 77vmin;
+    height: 77vmin;
+    background-color: #bc002d;
+    border: #fff 100vmax solid;
+  }
+}
+
+@keyframes n004 {
+  0% {
+    transform: translate(0, 100%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes n004-001 {
+  0% {
+    transform: translate(0, 0) scaleY(1.35);
+  }
+  5% {
+    transform: translate(-5px, -0) scaleY(1.35);
+  }
+  10% {
+    transform: translate(5px, 0) scaleY(1.35);
+  }
+  15% {
+    transform: translate(-5px, -0) scaleY(1.35);
+  }
+  20% {
+    transform: translate(5px, 0) scaleY(1.35);
+  }
+  25% {
+    transform: translate(-5px, -0) scaleY(1.35);
+  }
+  30% {
+    transform: translate(0, 0) scaleY(1.35);
+  }
+  100% {
+    transform: translate(0, 0) scaleY(1.35);
+  }
+}
+
+@keyframes n005 {
+  0% {
+    opacity: 0;
+    transform: scale(300);
+    background-color: transparent;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    background-color: #fff;
+  }
+}
+
+@keyframes n005-flash {
+  0%,
+  25%,
+  50%,
+  80% {
+    background-color: #000;
+    color: #fff;
+  }
+  35%,
+  65%,
+  100% {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+@keyframes n006 {
+  0% {
+    transform: translate(100%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes n007 {
+  0% {
+    transform: translate(0, -100%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

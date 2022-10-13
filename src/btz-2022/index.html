@@ -7,6 +7,7 @@
     <title>Back to Zero - INIActors 2022年学祭公演</title>
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#000" />
     <!--
     <meta
       name="description"
@@ -31,6 +32,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../common.css" />
@@ -87,11 +92,11 @@
     <main>
       <model-viewer
         camera-controls
+        loading="lazy"
         interaction-prompt="none"
-        camera-orbit="0deg 90deg 105%"
         camera-target="auto auto auto"
         alt="Back to Zeroのロゴの3Dモデル"
-        src="./back_to_zero_3d.glb"
+        src="./back_to_zero.glb"
       >
       </model-viewer>
     </main>
@@ -103,10 +108,45 @@
           <li><a class="nav-link" href="#">クレジット</a></li>
         </ul>
       </nav>
-      <p class="copyright">
-        &copy; 2019-<span id="year"></span> INIActors All Rights Reserved.
-      </p>
+      <div class="footer-bottom">
+        <button id="btn-replay" title="アニメーションをリプレイする">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+              fill="currentColor"
+              d="M48.5 224H40c-13.3 0-24-10.7-24-24V72c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2L98.6 96.6c87.6-86.5 228.7-86.2 315.8 1c87.5 87.5 87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3c-62.2-62.2-162.7-62.5-225.3-1L185 183c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8H48.5z"
+            />
+          </svg>
+          REPLAY
+        </button>
+        <p class="copyright">
+          &copy; 2019-<span id="year"></span> INIActors All Rights Reserved.
+        </p>
+      </div>
     </footer>
+    <div id="animation-wrapper">
+      <div id="animation-content">
+        <div id="n001">
+          <span id="n001-001">近未来</span>
+          <span id="n001-002">の</span>
+        </div>
+        <div id="n002"></div>
+        <div id="n003">
+          <span id="n003-001">日本</span>
+          <span id="n003-002">を舞台に</span>
+        </div>
+        <div id="n004">
+          <span id="n004-001"
+            >急速な技術発展に異を唱える、<br />一人の<span id="n004-002"
+              >男</span
+            >が立ち上がる…</span
+          >
+        </div>
+        <div id="n005">平成</div>
+        <div id="n006">VS</div>
+        <div id="n007"><span id="n007-001">令和</span></div>
+        <div id="n008"><span id="n008-001">開幕!</span></div>
+      </div>
+    </div>
     <script type="module" src="./main.js"></script>
     <script type="module" src="../year.js"></script>
   </body>
