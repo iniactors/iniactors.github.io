@@ -20,7 +20,7 @@ body {
   flex-direction: column;
 }
 
-@supports (min-height: 100svh) {
+@supports (min-height: 100dvh) {
   body {
     height: calc(100dvh - 2rem);
   }
