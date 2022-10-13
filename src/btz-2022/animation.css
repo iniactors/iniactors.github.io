@@ -22,6 +22,12 @@
   overflow: hidden;
 }
 
+@supports (min-height: 100dvh) {
+  #animation-wrapper {
+    height: 100dvh;
+  }
+}
+
 #animation-content {
   height: 100%;
   width: 100%;
@@ -29,13 +35,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
+  font-size: 8vmin;
   gap: 0.2rem;
 }
 
 /* 「近未来」 */
 #n001-001 {
-  font-size: 10rem;
+  font-size: 20vmin;
   animation: opacity0-1 0.0001s linear 0.4s 1 normal both;
 }
 
@@ -145,10 +151,11 @@
 
 /* 「令和」 */
 #n007-001 {
-  writing-mode: vertical-rl;
-  font-size: 40vmin;
-  padding: 8vmin 10px;
   margin: 0 0.5vmax 0 0;
+  padding: 8vmin 10px;
+  font-size: 40vmin;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
   background: linear-gradient(
     transparent 10%,
     #ffdd00c5 10% 90%,

@@ -8,6 +8,7 @@ window.onload = () => {
   } else {
     setTimeout(fadeOutAnimation, 16000)
   }
+  set3DCameraOrbit()
 }
 
 const fadeOutAnimation = () => {
@@ -30,6 +31,16 @@ const replayAnimation = () => {
   location.reload()
 }
 
+const set3DCameraOrbit = () => {
+  // 3Dモデルのカメラ位置をセットする
+  const modelViewerElem = document.querySelector('model-viewer')
+  const zVal = document.body.clientWidth > 1180 ? 75 : 100
+  modelViewerElem.setAttribute('camera-orbit', `-17deg 82deg ${zVal}%`)
+}
+
 // リプレイボタンのイベントハンドリング
 const replayBtnElem = document.querySelector('#btn-replay')
 replayBtnElem.addEventListener('click', replayAnimation)
+
+// リサイズ時のイベントハンドリング
+window.addEventListener('resize', set3DCameraOrbit)

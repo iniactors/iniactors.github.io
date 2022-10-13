@@ -13,10 +13,8 @@
     border: #fff 30px solid;
   }
   100% {
-    width: 50vmin;
-    min-width: 40rem;
-    height: 50vmin;
-    min-height: 40rem;
+    width: 77vmin;
+    height: 77vmin;
     background-color: #bc002d;
     border: #fff 100vmax solid;
   }
