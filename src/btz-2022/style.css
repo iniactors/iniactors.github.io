@@ -121,12 +121,13 @@ footer .copyright {
 /* 公演情報のスタイル */
 
 .about {
-  background-color: rgb(0, 255, 238, 0.5);
-  background: radial-gradient(rgb(0, 255, 238, 0.5),rgb(0, 255, 238, 0.3));
+  background-color: rgba(30, 255, 191, 0.45);
+  box-shadow:0 0 100px rgba(30, 255, 191, 0.6), 
+  10px 10px 0 rgba(30, 255, 191, 0.1),
+  -10px -10px 0 rgba(30, 255, 191, 0.1);
   padding: 10px 10px 10px 10px;
-  /*text-shadow: 0 0 3px #fff, 0 0  1px #fff;*/
-  animation: flashtext 3s infinite, flashback 3s infinite;
-
+  text-shadow: 0 0 3px #fff, 0 0  1px #fff;
+  animation: flashtext 3s infinite;
 }
 
 @keyframes flashtext {
@@ -137,18 +138,3 @@ footer .copyright {
   50%{
     text-shadow: 0 0 1px #fff, 0 0 3px #fcfcfc}
 }
-
-@keyframes flashback {
-  0%, 100% {
-    /* 背景が淡く光るよう影を重ねる */
-    box-shadow: 0 0 10px rgb(0, 255, 238, 0.5), 0 0 15px rgb(0, 255, 238, 0.5);
-  }
-  50%{
-    box-shadow: 0 0 15px rgb(0, 255, 238, 0.5), 0 0 20px rgb(0, 255, 238, 0.5)}
-}
-
-.test{
-  font-family: ;
-}
-
-
