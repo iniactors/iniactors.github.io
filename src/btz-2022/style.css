@@ -121,6 +121,8 @@ footer .copyright {
 /* 公演情報のスタイル */
 
 .about {
+  text-align: center;
+  font-size:30px ;
   background-color: rgba(30, 255, 191, 0.45);
   box-shadow:0 0 100px rgba(30, 255, 191, 0.6), 
   10px 10px 0 rgba(30, 255, 191, 0.1),
@@ -137,4 +139,13 @@ footer .copyright {
   }
   50%{
     text-shadow: 0 0 1px #fff, 0 0 3px #fcfcfc}
+}
+
+.date{
+  display: flex;
+  justify-content: center;
+}
+
+.title{
+  font-style: italic;
 }
