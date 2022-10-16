@@ -70,8 +70,29 @@ footer {
   z-index: 999;
 }
 
-footer nav {
+footer .footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1.1rem;
+}
+
+footer .btn-form {
+  padding: 0.75rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff3562;
+  color: #fff;
+  font-size: 1.25rem;
+  font-family: 'Kiwi Maru', sans-serif;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+footer .btn-form:hover {
+  transform: scale(1.08);
 }
 
 footer nav ul {
@@ -160,6 +181,26 @@ footer .copyright {
 
   footer {
     padding: 0;
+  }
+
+  footer .footer-top {
+    display: block;
+  }
+
+  footer .footer-top-right-corner {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer .btn-form {
+    width: 62%;
+    max-width: 15rem;
+    padding: 0.6rem 0.25rem;
+    margin: 1rem 1.5rem;
+  }
+
+  footer .btn-form:hover {
+    transform: scale(1.04);
   }
 
   footer nav {
