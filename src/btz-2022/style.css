@@ -2,6 +2,8 @@
   Back to Zero 特設サイトのCSS
 */
 
+@import url('./animation.css');
+
 /* 共通するスタイル */
 @font-face {
   font-family: 'Makinas4Flat';
@@ -16,6 +18,16 @@ body {
   height: calc(100vh - 2rem);
   display: flex;
   flex-direction: column;
+}
+
+@supports (min-height: 100dvh) {
+  body {
+    height: calc(100dvh - 2rem);
+  }
+
+  model-viewer {
+    height: 100dvh;
+  }
 }
 
 header {
@@ -54,15 +66,16 @@ model-viewer {
 }
 
 footer {
-  padding: 0.5rem 0;
+  padding: 0.75rem 0 0.5rem 0;
   z-index: 999;
 }
 
 footer nav {
-  margin-bottom: 2rem;
+  margin-bottom: 1.1rem;
 }
 
 footer nav ul {
+  margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
@@ -99,22 +112,76 @@ footer .nav-link:hover::after {
   transform: scale(1, 1); /* 下線を伸ばす */
 }
 
+footer .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+
+footer #btn-replay {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin: 0;
+  padding: 0 0.25rem;
+  border: none;
+  background: transparent;
+  color: #b0b0b0;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+footer #btn-replay svg {
+  height: 0.75rem;
+}
+
+footer #btn-replay:hover {
+  color: #fff;
+}
+
 footer .copyright {
-  text-align: right;
   color: #9a9a9a;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
   body {
-    height: calc(100vh - 1rem);
-    padding: 1rem;
+    height: calc(100vh - 4vmin);
+    padding: 2vmin;
     padding-bottom: 0rem;
   }
 
-  nav ul {
+  model-viewer {
+    position: static;
+    height: 100%;
+    width: 100%;
+  }
+
+  footer {
+    padding: 0;
+  }
+
+  footer nav {
+    margin-bottom: 0.75rem;
+  }
+
+  footer nav ul {
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.3rem;
+  }
+
+  footer .nav-link {
+    font-size: 1.5rem;
+  }
+
+  @supports (min-height: 100dvh) {
+    body {
+      height: calc(100dvh - 1rem);
+    }
   }
 }
 
