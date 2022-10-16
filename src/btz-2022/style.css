@@ -10,6 +10,15 @@
   src: url('/fonts/makinas4-subset.woff2') format('woff2');
 }
 
+/*
+* Source Code Pro licensed under the SIL Open Font License
+* https://fonts.google.com/specimen/Source+Code+Pro
+*/
+@font-face {
+  font-family: 'SourceCodePro';
+  src: url('/fonts/sourcecode-pro-subset.woff2') format('woff2');
+}
+
 body {
   font-family: 'Makinas4Flat', sans-serif;
   background-color: #000;
