@@ -34,7 +34,13 @@ const replayAnimation = () => {
 const set3DCameraOrbit = () => {
   // 3Dモデルのカメラ位置をセットする
   const modelViewerElem = document.querySelector('model-viewer')
-  const zVal = document.body.clientWidth > 1180 ? 75 : 100
+  const bodyWidth = document.body.clientWidth
+  if (bodyWidth <= 768) {
+    modelViewerElem.setAttribute('disable-zoom', true)
+  } else {
+    modelViewerElem.removeAttribute('disable-zoom')
+  }
+  const zVal = bodyWidth > 1180 ? 75 : 100
   modelViewerElem.setAttribute('camera-orbit', `-17deg 82deg ${zVal}%`)
 }
 
