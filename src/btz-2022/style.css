@@ -86,7 +86,19 @@ footer .footer-top {
   margin-bottom: 1.1rem;
 }
 
-footer .btn-form {
+footer .footer-top-right-corner #countdown {
+  display: none; /*  */
+  margin: 1rem 0 0 0;
+  font-size: calc(0.9rem + 0.1vmax);
+  color: #d6fbff;
+}
+
+footer .footer-top-right-corner #countdown .num {
+  font-family: 'SourceCodePro', monospace;
+  font-size: calc(1.2rem + 1vmax);
+}
+
+footer #btn-form {
   padding: 0.75rem 0.5rem;
   display: flex;
   justify-content: center;
@@ -100,7 +112,7 @@ footer .btn-form {
   transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-footer .btn-form:hover {
+footer #btn-form:hover {
   transform: scale(1.08);
 }
 
@@ -109,7 +121,7 @@ footer nav ul {
   padding: 0;
   list-style: none;
   display: flex;
-  gap: 2.1rem;
+  gap: 1.8rem;
 }
 
 footer .nav-link {
@@ -193,7 +205,9 @@ footer .copyright {
   }
 
   footer .footer-top {
-    display: block;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1.5rem;
   }
 
   footer .footer-top-right-corner {
@@ -201,19 +215,20 @@ footer .copyright {
     justify-content: center;
   }
 
-  footer .btn-form {
-    width: 62%;
-    max-width: 15rem;
-    padding: 0.6rem 0.25rem;
-    margin: 1rem 1.5rem;
+  footer .footer-top-right-corner #countdown {
+    font-size: 0.8rem;
   }
 
-  footer .btn-form:hover {
+  footer .footer-top-right-corner #countdown .num {
+    font-size: 1.5rem;
+  }
+
+  footer #btn-form {
+    padding: 0.6rem 0.5rem;
+  }
+
+  footer #btn-form:hover {
     transform: scale(1.04);
-  }
-
-  footer nav {
-    margin-bottom: 0.75rem;
   }
 
   footer nav ul {
