@@ -145,53 +145,14 @@ footer .copyright {
   margin: 0;
 }
 
-@media (max-width: 768px) {
-  body {
-    height: calc(100vh - 4vmin);
-    padding: 2vmin;
-    padding-bottom: 0rem;
-  }
-
-  model-viewer {
-    position: static;
-    height: 100%;
-    width: 100%;
-  }
-
-  footer {
-    padding: 0;
-  }
-
-  footer nav {
-    margin-bottom: 0.75rem;
-  }
-
-  footer nav ul {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.3rem;
-  }
-
-  footer .nav-link {
-    font-size: 1.5rem;
-  }
-
-  @supports (min-height: 100dvh) {
-    body {
-      height: calc(100dvh - 1rem);
-    }
-  }
-}
 
 /* 公演情報のスタイル */
-
-.about {
+#about {
   text-align: center;
   font-size:30px ;
   background-color: rgba(30, 255, 191, 0.45);
-  padding: 10px 10px 10px 10px;
+  margin: 0 1rem;
+  padding: 2rem 8rem;
   animation: flashtext 3s infinite, flashback 1s infinite;
 }
 
@@ -200,10 +161,10 @@ footer .copyright {
 @keyframes flashtext {
   0%, 100% {
     /* 文字が淡く光るよう影を重ねる */
-    text-shadow: 0 0 3px #fff, 0 0 4px #fff, 2px 2px 2px rgba(255, 255, 255, 0.7);
+    text-shadow: 0 0 2px #fff, 0 0 2px #fff, 2px 2px 2px rgba(255, 255, 255, 0.7);
   }
   50%{
-    text-shadow: 0 0 1px #fff, 0 0 3px #fcfcfc, 2px 2px 2px rgba(255, 255, 255, 0.7);}
+    text-shadow: 0 0 1px #fff, 0 0 1px #fcfcfc, 2px 2px 2px rgba(255, 255, 255, 0.7);}
 }
 
 @keyframes flashback{
@@ -242,4 +203,61 @@ footer .copyright {
 
 .title{
   font-style: italic;
+}
+
+.soon{
+  text-align: center;
+  padding: 60px;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  /* モバイル画面幅の表示CSS */
+  body {
+    height: calc(100vh - 4vmin);
+    padding: 2vmin;
+    padding-bottom: 0rem;
+  }
+
+  model-viewer {
+    position: static;
+    height: 100%;
+    width: 100%;
+  }
+
+  footer {
+    padding: 0;
+  }
+
+  footer nav {
+    margin-bottom: 0.75rem;
+  }
+
+  footer nav ul {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3rem;
+  }
+
+  footer .nav-link {
+    font-size: 1.5rem;
+  }
+
+  @supports (min-height: 100dvh) {
+    body {
+      height: calc(100dvh - 1rem);
+    }
+  }
+
+  /* 公演情報のスタイル */
+  #about {
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+  }
 }
