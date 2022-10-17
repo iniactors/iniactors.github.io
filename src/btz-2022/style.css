@@ -151,7 +151,7 @@ footer .copyright {
   text-align: center;
   font-size:30px ;
   background-color: rgba(30, 255, 191, 0.45);
-  margin: 0 1rem;
+  margin: 2rem 1rem;
   padding: 2rem 8rem;
   animation: flashtext 3s infinite, flashback 1s infinite;
 }
