@@ -187,7 +187,86 @@ footer .copyright {
   margin: 0;
 }
 
+
+/* 公演情報のスタイル */
+#about {
+  text-align: center;
+  font-size:30px ;
+  background-color: rgba(30, 255, 191, 0.45);
+  margin: 2rem 1rem;
+  padding: 2rem 8rem;
+  animation: flashtext 3s infinite, flashback 1s infinite;
+}
+
+
+
+@keyframes flashtext {
+  0%, 100% {
+    /* 文字が淡く光るよう影を重ねる */
+    text-shadow: 0 0 2px #fff, 0 0 2px #fff, 2px 2px 2px rgba(255, 255, 255, 0.7);
+  }
+  50%{
+    text-shadow: 0 0 1px #fff, 0 0 1px #fcfcfc, 2px 2px 2px rgba(255, 255, 255, 0.7);}
+}
+
+@keyframes flashback{
+  0%{
+    box-shadow:0 0 100px rgba(30, 255, 191, 0.6), 
+  10px 10px 0 rgba(30, 255, 191, 0.1),
+  -10px -10px 0 rgba(30, 255, 191, 0.1);
+  }
+  25%{
+    box-shadow:0 0 100px rgba(30, 255, 191, 0.6), 
+  12px 10px 0 rgba(30, 255, 191, 0.1),
+  -10px -12px 0 rgba(30, 255, 191, 0.1);
+  }
+  50%{
+    box-shadow:0 0 100px rgba(30, 255, 191, 0.6), 
+  12px 8px 0 rgba(30, 255, 191, 0.1),
+  -8px -12px 0 rgba(30, 255, 191, 0.1);
+  }
+  75%{
+    box-shadow:0 0 100px rgba(30, 255, 191, 0.6), 
+  10px 8px 0 rgba(30, 255, 191, 0.1),
+  -8px -10px 0 rgba(30, 255, 191, 0.1);
+  }
+  100%{
+    box-shadow:0 0 100px rgba(30, 255, 191, 0.6), 
+  10px 10px 0 rgba(30, 255, 191, 0.1),
+  -10px -10px 0 rgba(30, 255, 191, 0.1);
+  }
+}
+
+
+.date{
+  display: flex;
+  justify-content: center;
+}
+
+.title{
+  font-style: italic;
+}
+
+.soon{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.soon p{
+  font-size: 1.2rem;
+}
+
+
+
+
+
+
 @media (max-width: 768px) {
+  /* モバイル画面幅の表示CSS */
+  
   body {
     height: calc(100vh - 4vmin);
     padding: 2vmin;
@@ -247,5 +326,11 @@ footer .copyright {
     body {
       height: calc(100dvh - 1rem);
     }
+  }
+
+  /* 公演情報のスタイル */
+  #about {
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
   }
 }
