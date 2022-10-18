@@ -122,7 +122,7 @@ footer .footer-top-right-corner #countdown .num {
 
 footer #btn-form {
   padding: 0.75rem 0.5rem;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   background-color: #ff3562;
