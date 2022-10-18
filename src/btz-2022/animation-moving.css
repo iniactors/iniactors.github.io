@@ -4,6 +4,19 @@
 
 @keyframes n002 {
   0% {
+    transform: scale(0);
+  }
+  100% {
+    width: 15px;
+    height: 15px;
+    transform: scale(50);
+    background-color: #bc002d;
+    border: #fff 10px solid;
+  }
+}
+
+@keyframes n002-safari {
+  0% {
     width: 0px;
     height: 0px;
     background-color: #bc002d;

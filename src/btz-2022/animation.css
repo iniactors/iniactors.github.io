@@ -60,6 +60,13 @@
   z-index: -99999;
 }
 
+/* Safariの赤丸アニメーション（CSSハック） */
+_::-webkit-full-page-media,
+_:future,
+:root #n002 {
+  animation: n002-safari 0.8s cubic-bezier(0.83, 0, 0.17, 1) 1.6s 1 normal both;
+}
+
 /* 「日本を舞台に」の背景 */
 #n003 {
   scale: 1 0.8;
