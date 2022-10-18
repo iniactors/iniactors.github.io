@@ -2,10 +2,13 @@ import '@google/model-viewer'
 import Cookies from 'js-cookie'
 
 window.onload = () => {
-  // 実行したい処理を書く
-  if (Cookies.get('visited') === 'yes') {
+  const isVisited = Cookies.get('visited') // 前に訪問したことがあるか
+  document.body.style.visibility = 'visible' // indexページのbody要素を表示する
+  if (isVisited === 'yes') {
+    // 2回目以降の訪問時
     destroyAnimation()
   } else {
+    // 初回訪問時にアニメーションを再生する
     document.querySelector('#animation-wrapper').style.display = 'block' // アニメーションの再生を開始
     setTimeout(fadeOutAnimation, 16000)
   }

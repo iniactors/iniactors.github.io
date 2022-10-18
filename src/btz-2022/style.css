@@ -38,6 +38,10 @@ body {
   flex-direction: column;
 }
 
+body.index {
+  visibility: hidden; /*アニメーション表示前に要素を隠す */
+}
+
 @supports (min-height: 100dvh) {
   body {
     height: calc(100dvh - 2rem);
