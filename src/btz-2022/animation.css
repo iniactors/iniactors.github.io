@@ -12,6 +12,7 @@
 }
 
 #animation-wrapper {
+  display: none; /* cookieによって表示を切り替える */
   position: absolute;
   height: 100vh;
   width: 100vw;

@@ -6,6 +6,7 @@ window.onload = () => {
   if (Cookies.get('visited') === 'yes') {
     destroyAnimation()
   } else {
+    document.querySelector('#animation-wrapper').style.display = 'block' // アニメーションの再生を開始
     setTimeout(fadeOutAnimation, 16000)
   }
   set3DCameraOrbit()
@@ -13,22 +14,21 @@ window.onload = () => {
   if (0 <= countdownDelta) {
     // 初回公演日時より前の場合の処理
     document.querySelector('#countdown').style.display = 'block'
-    document.querySelector('#btn-form').style.display = 'none'
     setInterval(updateCountdown, 1000)
+  } else {
+    document.querySelector('#btn-form').style.display = 'flex'
   }
 }
 
 const fadeOutAnimation = () => {
   // アニメーションをフェードアウトさせる
-  const animationElem = document.querySelector('#animation-wrapper')
-  animationElem.classList.add('end-animation')
+  document.querySelector('#animation-wrapper').classList.add('end-animation')
   setTimeout(destroyAnimation, 510)
 }
 
 const destroyAnimation = () => {
   // アニメーションエリアを非表示にする
-  const animationElem = document.querySelector('#animation-wrapper')
-  animationElem.style.display = 'none'
+  document.querySelector('#animation-wrapper').style.display = 'none'
   Cookies.set('visited', 'yes', { expires: 7, sameSite: 'strict' })
 }
 
@@ -69,8 +69,7 @@ const updateCountdown = () => {
 }
 
 // リプレイボタンのイベントハンドリング
-const replayBtnElem = document.querySelector('#btn-replay')
-replayBtnElem.addEventListener('click', replayAnimation)
+document.querySelector('#btn-replay').addEventListener('click', replayAnimation)
 
 // リサイズ時のイベントハンドリング
 window.addEventListener('resize', set3DCameraOrbit)
