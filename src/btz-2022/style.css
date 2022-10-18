@@ -87,7 +87,7 @@ footer .footer-top {
 }
 
 footer .footer-top-right-corner #countdown {
-  display: none; /*  */
+  display: none; /* 初回公演日時以前の場合の非表示 */
   margin: 1rem 0 0 0;
   font-size: calc(0.9rem + 0.1vmax);
   color: #d6fbff;
@@ -146,11 +146,13 @@ footer .nav-link::after {
   transition: transform 0.3s ease-out;
 }
 
-footer .nav-link:hover {
+footer .nav-link:hover,
+footer .nav-link.active {
   color: #24d5e7;
 }
 
-footer .nav-link:hover::after {
+footer .nav-link:hover::after,
+.nav-link.active::after {
   transform: scale(1, 1); /* 下線を伸ばす */
 }
 
@@ -159,6 +161,10 @@ footer .footer-bottom {
   justify-content: space-between;
   align-items: center;
   padding: 0.25rem 0;
+}
+
+footer .footer-bottom.footer-bottom-simple {
+  justify-content: flex-end;
 }
 
 footer #btn-replay {
@@ -187,67 +193,60 @@ footer .copyright {
   margin: 0;
 }
 
-
 /* 公演情報のスタイル */
 #about {
   text-align: center;
-  font-size:30px ;
+  font-size: 1.4rem;
   background-color: rgba(30, 255, 191, 0.45);
-  margin: 2rem 1rem;
-  padding: 2rem 8rem;
+  margin: 3rem 1rem 4rem 1rem;
+  padding: 2rem 6rem;
+  line-height: 2.5rem;
   animation: flashtext 3s infinite, flashback 1s infinite;
 }
 
-
-
-@keyframes flashtext {
-  0%, 100% {
-    /* 文字が淡く光るよう影を重ねる */
-    text-shadow: 0 0 2px #fff, 0 0 2px #fff, 2px 2px 2px rgba(255, 255, 255, 0.7);
-  }
-  50%{
-    text-shadow: 0 0 1px #fff, 0 0 1px #fcfcfc, 2px 2px 2px rgba(255, 255, 255, 0.7);}
+#about section {
+  margin-bottom: 3rem;
 }
 
-@keyframes flashback{
-  0%{
-    box-shadow:0 0 100px rgba(30, 255, 191, 0.6), 
-  10px 10px 0 rgba(30, 255, 191, 0.1),
-  -10px -10px 0 rgba(30, 255, 191, 0.1);
-  }
-  25%{
-    box-shadow:0 0 100px rgba(30, 255, 191, 0.6), 
-  12px 10px 0 rgba(30, 255, 191, 0.1),
-  -10px -12px 0 rgba(30, 255, 191, 0.1);
-  }
-  50%{
-    box-shadow:0 0 100px rgba(30, 255, 191, 0.6), 
-  12px 8px 0 rgba(30, 255, 191, 0.1),
-  -8px -12px 0 rgba(30, 255, 191, 0.1);
-  }
-  75%{
-    box-shadow:0 0 100px rgba(30, 255, 191, 0.6), 
-  10px 8px 0 rgba(30, 255, 191, 0.1),
-  -8px -10px 0 rgba(30, 255, 191, 0.1);
-  }
-  100%{
-    box-shadow:0 0 100px rgba(30, 255, 191, 0.6), 
-  10px 10px 0 rgba(30, 255, 191, 0.1),
-  -10px -10px 0 rgba(30, 255, 191, 0.1);
-  }
+#about h1.title {
+  font-size: 3rem;
+  font-style: italic;
+  margin: 2rem 0 1.75rem 0;
+  white-space: nowrap;
 }
 
+#about section > h2 {
+  margin: 0 0 0.3rem 0;
+}
 
-.date{
+#about p,
+#about dl {
+  margin: 0;
+}
+
+#about dd {
+  margin: 0;
+}
+
+#about dl.date {
   display: flex;
   justify-content: center;
+  gap: 3rem;
+  margin: 0 0 0.75rem 0;
+  line-height: 2rem;
 }
 
-.title{
-  font-style: italic;
+#about dl.place {
+  line-height: 2rem;
 }
 
-.soon{
+#about dl.place dd {
+  font-size: 1.1rem;
+  margin: 0.25rem 0 0.8rem 0;
+  line-height: 1.3rem;
+}
+
+.soon {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -255,18 +254,14 @@ footer .copyright {
   align-items: center;
 }
 
-.soon p{
+.soon p {
   font-size: 1.2rem;
 }
 
-
-
-
-
-
+/* 
+  モバイル画面幅の表示CSS 
+*/
 @media (max-width: 768px) {
-  /* モバイル画面幅の表示CSS */
-  
   body {
     height: calc(100vh - 4vmin);
     padding: 2vmin;
@@ -328,9 +323,62 @@ footer .copyright {
     }
   }
 
-  /* 公演情報のスタイル */
+  /* 公演情報のスタイル（モバイル） */
   #about {
     font-size: 1.1rem;
     padding: 1rem 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0;
+  }
+
+  #about h1.title {
+    font-size: 2.3rem;
+  }
+
+  #about dl.date {
+    gap: 0.5rem;
+  }
+
+  #about dl.place dd {
+    font-size: 0.8rem;
+  }
+}
+
+/*
+  モニター風アニメーション
+*/
+@keyframes flashtext {
+  0%,
+  100% {
+    /* 文字が淡く光るよう影を重ねる */
+    text-shadow: 0 0 2px #fff, 0 0 2px #fff,
+      2px 2px 2px rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    text-shadow: 0 0 1px #fff, 0 0 1px #fcfcfc,
+      2px 2px 2px rgba(255, 255, 255, 0.7);
+  }
+}
+
+@keyframes flashback {
+  0% {
+    box-shadow: 0 0 100px rgba(30, 255, 191, 0.6),
+      10px 10px 0 rgba(30, 255, 191, 0.1), -10px -10px 0 rgba(30, 255, 191, 0.1);
+  }
+  25% {
+    box-shadow: 0 0 100px rgba(30, 255, 191, 0.6),
+      12px 10px 0 rgba(30, 255, 191, 0.1), -10px -12px 0 rgba(30, 255, 191, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 100px rgba(30, 255, 191, 0.6),
+      12px 8px 0 rgba(30, 255, 191, 0.1), -8px -12px 0 rgba(30, 255, 191, 0.1);
+  }
+  75% {
+    box-shadow: 0 0 100px rgba(30, 255, 191, 0.6),
+      10px 8px 0 rgba(30, 255, 191, 0.1), -8px -10px 0 rgba(30, 255, 191, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 100px rgba(30, 255, 191, 0.6),
+      10px 10px 0 rgba(30, 255, 191, 0.1), -10px -10px 0 rgba(30, 255, 191, 0.1);
   }
 }
