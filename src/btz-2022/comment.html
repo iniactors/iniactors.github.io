@@ -91,16 +91,29 @@
       </div>
     </main>
     <footer>
-      <nav>
-        <ul>
-          <li><a class="nav-link" href="about.html">公演情報</a></li>
-          <li><a class="nav-link" href="comment.html">コメント</a></li>
-          <li><a class="nav-link" href="credit.html">クレジット</a></li>
-        </ul>
-      </nav>
-      <p class="copyright">
-        &copy; 2019-<span id="year"></span> INIActors All Rights Reserved.
-      </p>
+      <div class="footer-top">
+        <nav>
+          <ul>
+            <li>
+              <a class="nav-link" href="./about.html">公演情報</a>
+            </li>
+            <li>
+              <a
+                class="nav-link active"
+                href="./comment.html"
+                aria-current="page"
+                >コメント</a
+              >
+            </li>
+            <li><a class="nav-link" href="./credit.html">クレジット</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom footer-bottom-simple">
+        <p class="copyright">
+          &copy; 2019-<span id="year"></span> INIActors All Rights Reserved.
+        </p>
+      </div>
     </footer>
     <script type="module" src="./comment.js"></script>
     <script type="module" src="../year.js"></script>

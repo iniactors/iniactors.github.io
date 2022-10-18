@@ -20,15 +20,6 @@
   }
 }
 
-@keyframes display-block {
-  from {
-    display: none;
-  }
-  to {
-    display: block;
-  }
-}
-
 @keyframes display-none {
   from {
     display: block;
