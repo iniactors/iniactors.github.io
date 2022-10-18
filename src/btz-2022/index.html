@@ -101,13 +101,31 @@
       </model-viewer>
     </main>
     <footer>
-      <nav>
-        <ul>
-          <li><a class="nav-link" href="about.html">公演情報</a></li>
-          <li><a class="nav-link" href="comment.html">コメント</a></li>
-          <li><a class="nav-link" href="credit.html">クレジット</a></li>
-        </ul>
-      </nav>
+      <div class="footer-top">
+        <nav>
+          <ul>
+            <li><a class="nav-link" href="./about.html">公演情報</a></li>
+            <li><a class="nav-link" href="./comment.html">コメント</a></li>
+            <li><a class="nav-link" href="./credit.html">クレジット</a></li>
+          </ul>
+        </nav>
+        <div class="footer-top-right-corner">
+          <div id="countdown">
+            開幕まで
+            <div>
+              <span class="num"></span>日 <span class="num"></span>時間
+              <span class="num"></span>分 <span class="num"></span>秒
+            </div>
+          </div>
+          <a
+            id="btn-form"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScaFwQygoXGqBTdMZi_JcLtUWOzXGZ5jelnvf-N2FkpyjsATQ/viewform?usp=sf_link"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            >公演アンケート実施中</a
+          >
+        </div>
+      </div>
       <div class="footer-bottom">
         <button id="btn-replay" title="アニメーションをリプレイする">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -147,7 +165,7 @@
         <div id="n008"><span id="n008-001">開幕!</span></div>
       </div>
     </div>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./index.js"></script>
     <script type="module" src="../year.js"></script>
   </body>
 </html>

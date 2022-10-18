@@ -166,7 +166,7 @@ summary {
   font-size: 1.15rem;
 }
 
-.btn-form {
+#btn-form {
   color: #000000;
   background-color: #ffffff;
   border: solid 5px #ea3323;
@@ -175,12 +175,12 @@ summary {
   width: 100%;
 }
 
-.btn-form:hover {
+#btn-form:hover {
   color: #000000;
   border: solid 5px #f3584a;
 }
 
-.btn-form .sub-btn-text {
+#btn-form .sub-btn-text {
   font-size: 0.75rem;
 }
 
