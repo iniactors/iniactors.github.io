@@ -97,12 +97,11 @@ footer .footer-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 
 footer .footer-top-right-corner #countdown {
   display: none; /* 初回公演日時以前の場合の非表示 */
-  margin: 1rem 0 0 0;
   font-size: calc(0.9rem + 0.1vmax);
   color: #d6fbff;
 }
