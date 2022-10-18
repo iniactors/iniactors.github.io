@@ -122,6 +122,7 @@
   color: #000;
   font-family: 'Noto Serif JP', serif;
   font-size: 10vmin;
+  font-weight: 900;
   transform: scaleY(1.35);
   letter-spacing: -0.05rem;
   animation: n005 0.5s cubic-bezier(0.83, 0, 0.17, 1) 7.8s 1 normal both,
