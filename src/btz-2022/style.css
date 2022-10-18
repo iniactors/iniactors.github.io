@@ -43,6 +43,20 @@ header {
   z-index: 999;
 }
 
+header.header-with-logo {
+  display: flex;
+  align-items: center;
+}
+
+header.header-with-logo a.index-link {
+  margin-right: auto;
+  padding: 2px 0;
+}
+
+header.header-with-logo img {
+  height: 4.5rem;
+}
+
 main {
   flex: 1;
 }
@@ -264,7 +278,7 @@ footer .copyright {
 @media (max-width: 768px) {
   body {
     height: calc(100vh - 4vmin);
-    padding: 2vmin;
+    padding: 1rem 3vmin 0 3vmin;
     padding-bottom: 0rem;
   }
 

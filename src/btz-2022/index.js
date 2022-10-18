@@ -14,7 +14,6 @@ window.onload = () => {
     // 初回公演日時より前の場合の処理
     document.querySelector('#countdown').style.display = 'block'
     document.querySelector('#btn-form').style.display = 'none'
-    console.log('HEY')
     setInterval(updateCountdown, 1000)
   }
 }
