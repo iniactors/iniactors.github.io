@@ -1,0 +1,1 @@
+import"./year.d05e41b6.js";/* empty css              */const c=document.querySelectorAll(".scroll");c.forEach(t=>{const e=t.getAttribute("href"),r=document.querySelector(e);t.addEventListener("click",o=>{o.preventDefault(),r.scrollIntoView({behavior:"smooth"})})});const l=document.querySelector(".works");l.firstElementChild.setAttribute("open",!0);
