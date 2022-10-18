@@ -42,4 +42,4 @@ INIAD 公認演劇サークル「INIActors」の公式サイトです。
 
 ## ライセンスについて
 
-Apache License 2.0（画像・動画を除く）
+Apache License 2.0（画像・動画・3Dモデルなどを除く）
