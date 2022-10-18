@@ -19,6 +19,15 @@
   src: url('/fonts/sourcecode-pro-subset.woff2') format('woff2');
 }
 
+/*
+* Noto Serif Japanese licensed under the SIL Open Font License
+* https://fonts.google.com/noto/specimen/Noto+Serif+JP
+*/
+@font-face {
+  font-family: 'Noto Serif JP';
+  src: url('/fonts/SourceHanSerif-Heavy-subset.woff2') format('woff2');
+}
+
 body {
   font-family: 'Makinas4Flat', sans-serif;
   background-color: #000;
