@@ -20,15 +20,6 @@
   }
 }
 
-@keyframes display-none {
-  from {
-    display: block;
-  }
-  to {
-    display: none;
-  }
-}
-
 @keyframes flash {
   0%,
   25%,

@@ -42,12 +42,13 @@
 
 /* 「近未来」 */
 #n001-001 {
-  font-size: 20vmin;
+  font-size: min(10rem, 20vmin);
   animation: opacity0-1 0.0001s linear 0.4s 1 normal both;
 }
 
 /* 「の」 */
 #n001-002 {
+  font-size: min(3rem, 8vmin);
   animation: opacity0-1 0.0001s linear 0.8s 1 normal both;
 }
 
