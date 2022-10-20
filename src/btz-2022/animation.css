@@ -18,7 +18,7 @@
   width: 100vw;
   top: 0;
   left: 0;
-  background-color: #000;
+  background-color: #0d0d0d;
   z-index: 9999;
   overflow: hidden;
 }
@@ -181,7 +181,7 @@ _:future,
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000;
+  background-color: #0d0d0d;
   font-size: 18vmin;
   animation: opacity0-1 0.5s linear 13s 1 normal both;
 }
