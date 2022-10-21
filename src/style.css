@@ -119,7 +119,7 @@ p {
 }
 
 .sub-text {
-  font-size: calc(0.75rem + 0.25vw);
+  font-size: min(calc(0.75rem + 0.25vw), 5rem);
   font-weight: 300;
 }
 
@@ -153,9 +153,16 @@ summary {
 }
 
 .work-content-description {
-  font-size: calc(0.65rem + 0.5vw);
+  font-size: min(calc(0.65rem + 0.5vw), 1.2rem);
   line-height: 1.35rem;
   margin-bottom: 1.5rem;
+}
+
+.work-content-description-single {
+  font-size: min(calc(0.65rem + 0.5vw), 1.25rem);
+  line-height: 1.7rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .info dt {
@@ -166,7 +173,7 @@ summary {
   font-size: 1.15rem;
 }
 
-#btn-form {
+.btn-join {
   color: #000000;
   background-color: #ffffff;
   border: solid 5px #ea3323;
@@ -175,12 +182,12 @@ summary {
   width: 100%;
 }
 
-#btn-form:hover {
+.btn-join:hover {
   color: #000000;
   border: solid 5px #f3584a;
 }
 
-#btn-form .sub-btn-text {
+.btn-join .sub-btn-text {
   font-size: 0.75rem;
 }
 
@@ -231,5 +238,10 @@ footer a:hover {
 
   .btz-link {
     padding: 0.75rem 1.5rem;
+  }
+
+  .work-content-description-single {
+    padding: 0 1.1rem;
+    line-height: 1.5rem;
   }
 }
