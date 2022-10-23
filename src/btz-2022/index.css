@@ -1,0 +1,32 @@
+/*
+  Back to Zero トップページのCSS
+*/
+
+@import url('./animation.css');
+
+body {
+  visibility: hidden; /*アニメーション表示前に要素を隠す */
+}
+
+@supports (min-height: 100dvh) {
+  model-viewer {
+    height: 100dvh;
+  }
+}
+
+model-viewer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  model-viewer {
+    position: static;
+    height: 100%;
+    width: 100%;
+  }
+}

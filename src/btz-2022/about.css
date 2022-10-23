@@ -1,0 +1,79 @@
+/*
+  Back to Zero 公演情報ページのCSS
+*/
+
+#about {
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: rgba(30, 255, 191, 0.45);
+  margin: 3rem 1rem 4rem 1rem;
+  padding: 2rem 6rem;
+  line-height: 2.5rem;
+  animation: flashback 1s infinite;
+}
+
+#about section {
+  margin-bottom: 3rem;
+}
+
+#about h1.title {
+  font-size: 3rem;
+  font-style: italic;
+  margin: 2rem 0 1.75rem 0;
+  white-space: nowrap;
+}
+
+#about section > h2 {
+  margin: 0 0 0.3rem 0;
+}
+
+#about p,
+#about dl {
+  margin: 0;
+}
+
+#about dd {
+  margin: 0;
+}
+
+#about dl.date {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 0 0 0.75rem 0;
+  line-height: 2rem;
+}
+
+#about dl.place {
+  line-height: 2rem;
+}
+
+#about dl.place dd {
+  font-size: 1.1rem;
+  margin: 0.25rem 0 0.8rem 0;
+  line-height: 1.3rem;
+}
+
+/* 
+  モバイル画面幅の表示CSS 
+*/
+@media (max-width: 768px) {
+  #about {
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0;
+  }
+
+  #about h1.title {
+    font-size: 2.3rem;
+  }
+
+  #about dl.date {
+    gap: 0.5rem;
+  }
+
+  #about dl.place dd {
+    font-size: 0.8rem;
+  }
+}
