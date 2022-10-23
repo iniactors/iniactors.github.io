@@ -1,3 +1,4 @@
+# mainブランチにpushすると、自動的にビルドを実行し、GitHub Pagesに公開してくれるCI/CD
 name: CI/CD
 
 on:

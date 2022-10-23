@@ -1,3 +1,4 @@
+# Pull Requestを提出すると、その作成者にPRを自動アサインするCI
 name: Pull Request Assigner
 
 on:
