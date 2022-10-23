@@ -1,6 +1,7 @@
 # INIActors 公式サイト
 
-INIAD 公認演劇サークル「INIActors」の公式サイトです。
+INIAD 公認演劇サークル「INIActors」の公式サイトです。  
+https://iniactors.github.io
 
 ## 環境構築について
 
@@ -42,4 +43,4 @@ INIAD 公認演劇サークル「INIActors」の公式サイトです。
 
 ## ライセンスについて
 
-Apache License 2.0（画像・動画・3Dモデルなどを除く）
+Apache License 2.0（画像・動画・3D モデルなどを除く）
