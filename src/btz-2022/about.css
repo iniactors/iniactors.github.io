@@ -54,6 +54,23 @@
   line-height: 1.3rem;
 }
 
+#about section.chara{
+
+  text-align: left;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+#about img{
+  width: 90%;
+  height: 90%;
+}
+
+#about span.name{
+  font-size: 2rem;
+}
+
 /* 
   モバイル画面幅の表示CSS 
 */
