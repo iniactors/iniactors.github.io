@@ -62,11 +62,12 @@ function scroll3(entries) {
     threshold:0.3
     }
     
-    var elements2 = document.querySelector(".com2");
-    var elements3 = document.querySelector(".com3");
-    
-    var observer2 = new IntersectionObserver(scroll2,options);
-    var observer3 = new IntersectionObserver(scroll3,options);
+    const elements2 = document.querySelector('.com2')
+    const elements3 = document.querySelector('.com3')
+
+    const observer2 = new IntersectionObserver(scroll2, options)
+    const observer3 = new IntersectionObserver(scroll3, options)
+
     
     observer2.observe(elements2);
     observer3.observe(elements3);
