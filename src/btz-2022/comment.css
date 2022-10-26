@@ -1,3 +1,33 @@
 /*
   Back to Zero コメントページのCSS
 */
+
+.com1 {
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: rgba(30, 255, 191, 0.45);
+  margin: 3rem 1rem 4rem 1rem;
+  padding: 2rem 6rem;
+  line-height: 2.5rem;
+  animation: flashback 1s infinite;
+}
+
+.com2 {
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: rgba(30, 255, 191, 0.45);
+  margin: 3rem 1rem 4rem 1rem;
+  padding: 2rem 6rem;
+  line-height: 2.5rem;
+  animation: flashback 1s infinite;
+}
+
+.com3 {
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: rgba(30, 255, 191, 0.45);
+  margin: 3rem 1rem 4rem 1rem;
+  padding: 2rem 6rem;
+  line-height: 2.5rem;
+  animation: flashback 1s infinite;
+}
