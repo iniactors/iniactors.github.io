@@ -20,6 +20,8 @@
   padding: 2rem 3rem;
   line-height: 2.5rem;
   animation: flashback 1s infinite;
+  opacity: 0;
+  
 }
 
 .com3 {
@@ -30,7 +32,29 @@
   padding: 2rem 6rem;
   line-height: 2.5rem;
   animation: flashback 1s infinite;
+  opacity: 0;
 }
+
+.fadein {
+  animation: fadein 1s, flashback 1s infinite;
+  animation-fill-mode:forwards;
+}
+
+@keyframes fadein {
+
+  from {
+  
+  opacity:0;
+  }
+  
+  
+  to {
+  
+  opacity:1;
+  }
+  
+  }
+
 
 /* 
   モバイル画面幅の表示CSS 
@@ -52,6 +76,8 @@
     padding: 1rem 1.5rem;
     line-height: 2rem;
     letter-spacing: 0;
+    opacity: 0;
+    
   }
 
   .com3{
@@ -61,7 +87,5 @@
     padding: 1rem 1.5rem;
     line-height: 2rem;
     letter-spacing: 0;
-  }
-
-  
-}
+    opacity: 0;
+  }}
