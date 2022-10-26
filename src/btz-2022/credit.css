@@ -7,11 +7,14 @@ h1{
 }
 
 .cre {
-  text-align: center;
   font-size: 1.4rem;
   background-color: rgba(30, 255, 191, 0.45);
   margin: 3rem 1rem 4rem 1rem;
   padding: 0 0 2rem 0;
-  line-height: 2.5rem;
   animation: flashback 1s infinite;
+}
+
+ .pic{
+    display: block;
+    margin: auto;
   }
