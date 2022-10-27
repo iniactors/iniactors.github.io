@@ -1,4 +1,4 @@
-import"./year.d05e41b6.js";/* empty css              *//**
+import"./year.d05e41b6.js";/* empty css                   *//**
  * @license
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
