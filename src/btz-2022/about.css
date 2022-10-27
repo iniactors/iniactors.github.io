@@ -54,29 +54,6 @@
   line-height: 1.3rem;
 }
 
-#about section.chara {
-  margin: 4rem 0 0 0;
-  text-align: left;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr;
-  gap: 5px;
-  justify-items: center;
-}
-
-#about img {
-  aspect-ratio: 1 / 1;
-  width: 90%;
-  max-width: 20rem;
-  text-align: center;
-}
-
-#about ruby.name,
-#about span.name {
-  font-size: 2rem;
-  border-bottom: solid;
-}
-
 /* 
   モバイル画面幅の表示CSS 
 */
@@ -98,14 +75,5 @@
 
   #about dl.place dd {
     font-size: 0.8rem;
-  }
-
-  #about ruby.name,
-  #about span.name {
-    font-size: 1.7rem;
-  }
-
-  #about section.chara{
-    line-height: 1.5rem;
   }
 }
