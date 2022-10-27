@@ -40,10 +40,6 @@ body {
   body {
     height: calc(100dvh - 2rem);
   }
-
-  model-viewer {
-    height: 100dvh;
-  }
 }
 
 header {
