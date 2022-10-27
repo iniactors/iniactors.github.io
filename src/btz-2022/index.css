@@ -8,12 +8,6 @@ body {
   visibility: hidden; /*アニメーション表示前に要素を隠す */
 }
 
-@supports (min-height: 100dvh) {
-  model-viewer {
-    height: 100dvh;
-  }
-}
-
 model-viewer {
   position: absolute;
   top: 0;
