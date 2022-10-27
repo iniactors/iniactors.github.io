@@ -1,3 +1,91 @@
 /*
   Back to Zero コメントページのCSS
 */
+
+.com1 {
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: rgba(30, 255, 191, 0.45);
+  margin: 3rem 5rem 4rem 5rem;
+  padding: 2rem 6rem;
+  line-height: 2.5rem;
+  animation: flashback 1s infinite;
+}
+
+.com2 {
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: rgba(30, 255, 191, 0.45);
+  margin: -5rem 15rem 4rem 1rem;
+  padding: 2rem 3rem;
+  line-height: 2.5rem;
+  animation: flashback 1s infinite;
+  opacity: 0;
+  
+}
+
+.com3 {
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: rgba(30, 255, 191, 0.45);
+  margin: -5rem 1rem 4rem 15rem;
+  padding: 2rem 6rem;
+  line-height: 2.5rem;
+  animation: flashback 1s infinite;
+  opacity: 0;
+}
+
+.fadein {
+  animation: fadein 1s, flashback 1s infinite;
+  animation-fill-mode:forwards;
+}
+
+@keyframes fadein {
+
+  from {
+  
+  opacity:0;
+  }
+  
+  
+  to {
+  
+  opacity:1;
+  }
+  
+  }
+
+
+/* 
+  モバイル画面幅の表示CSS 
+*/
+@media (max-width: 768px) {
+  .com1 {
+    text-align: center;
+    font-size: 1rem;
+    margin: 1rem 1.5rem;
+    padding: 1rem 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0;
+  }
+
+  .com2{
+    text-align: center;
+    font-size: 1rem;
+    margin: -1.5rem 4rem 0 0.3rem;
+    padding: 1rem 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0;
+    opacity: 0;
+    
+  }
+
+  .com3{
+    text-align: center;
+    font-size: 1rem;
+    margin: -1rem 1rem 3rem 4rem;
+    padding: 1rem 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0;
+    opacity: 0;
+  }}
