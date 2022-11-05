@@ -3,6 +3,8 @@ const submitToTwitter = () => {
   if (text.length !== 0) {
     const tweetUrl = `https://twitter.com/intent/tweet?text=${text}\n&hashtags=平成回帰軍,iniactors`
     window.open(encodeURI(tweetUrl))
+  } else {
+    alert('あれれ？\n何も書き込んでいないようだよ！')
   }
 }
 
