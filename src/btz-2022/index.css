@@ -17,10 +17,147 @@ model-viewer {
   z-index: 1;
 }
 
+#ztb-dialog {
+  font-family: 'PixelMPlus12', sans-serif;
+  background: transparent;
+  border: none;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 99999;
+}
+
+#ztb-dialog::backdrop {
+  background: transparent;
+}
+
+#ztb-dialog button {
+  font-family: 'PixelMPlus12', sans-serif;
+  cursor: pointer;
+}
+
+#ztb-dialog.is-animation {
+  animation: scaleUpDialog 0.5s cubic-bezier(0.5, 1, 0.75, 1) 1 forwards;
+}
+
+#ztb-dialog.is-close-animation {
+  animation: fadeOut 0.25s cubic-bezier(0.5, 1, 0.75, 1) 1 forwards;
+}
+
+@keyframes scaleUpDialog {
+  0%,
+  15%,
+  50% {
+    opacity: 0;
+  }
+  5%,
+  20%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.ztb-dialog-wrapper {
+  background: #ece9d9;
+  border: none;
+  border-radius: 1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 450px;
+}
+
+.ztb-dialog-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1d56db;
+  color: #fff;
+  font-weight: 900;
+  font-size: 0.8rem;
+  padding: 5px;
+  text-shadow: 1px 2px 1px #000;
+}
+
+.ztb-dialog-title #btn-ztb-dialog-close {
+  color: #fff;
+  background-color: #e66a48;
+  border: 1px outset #fff;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 /1;
+}
+
+.ztb-dialog-title #btn-ztb-dialog-close svg {
+  height: 15px;
+  fill: currentColor;
+}
+
+.ztb-dialog-content {
+  border: 2px solid #1d56db;
+  border-top: none;
+  padding: 2rem 1.5rem 1rem 1.5rem;
+}
+
+.ztb-dialog-content .ztb-dialog-text-sub {
+  font-size: 0.75rem;
+  color: #7b7b7b;
+}
+
+.ztb-dialog-content menu {
+  margin: 1.5rem 0 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.ztb-dialog-content menu > button {
+  background-color: #f3f3ef;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid #000;
+  padding: 4px 2px;
+  border-radius: 1px;
+  min-width: 70px;
+  color: #000;
+}
+
+.ztb-dialog-content menu > button:focus-visible {
+  outline: 2px solid #5d8dffb8;
+}
+
+.ztb-dialog-content menu > button > span {
+  padding: 1px 11px;
+}
+
+.ztb-dialog-content menu > button#btn-ztb-dialog-confirm > span {
+  border: 1px dotted #000;
+}
+
 @media (max-width: 768px) {
   model-viewer {
     position: static;
     height: 100%;
     width: 100%;
+  }
+
+  .ztb-dialog-wrapper {
+    width: 80%;
+    max-width: 450px;
   }
 }

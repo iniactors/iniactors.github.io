@@ -8,6 +8,12 @@ body {
   font-family: sans-serif;
 }
 
+@supports (height: 100dvh) {
+  body {
+    height: 100dvh;
+  }
+}
+
 main {
   display: flex;
   flex-direction: column;

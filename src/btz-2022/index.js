@@ -33,11 +33,16 @@ const destroyAnimation = () => {
   // アニメーションエリアを非表示にする
   document.querySelector('#animation-wrapper').style.display = 'none'
   Cookies.set('visited', 'yes', { expires: 7, sameSite: 'strict' })
+  const isZtb = Cookies.get('isZtb')
+  if (isZtb !== 'yes') {
+    setTimeout(openZtbDialog, 2500)
+  }
 }
 
 const replayAnimation = () => {
   // リロードしてアニメーションをリプレイする
   Cookies.remove('visited')
+  Cookies.remove('isZtb')
   location.reload()
 }
 
@@ -71,8 +76,37 @@ const updateCountdown = () => {
   return diff
 }
 
+const ztbDialog = document.querySelector('#ztb-dialog')
+
+const openZtbDialog = () => {
+  ztbDialog.classList.add('is-animation')
+  ztbDialog.showModal()
+}
+
+const gotoZtb = () => {
+  document.body.classList.add('fade-out-body') // ダイアログ以外をフェードアウト
+  Cookies.set('isZtb', 'yes', { expires: 2, sameSite: 'strict' }) // 回帰済みかどうかのフラグcookie
+  document.body.onanimationend = () => {
+    setTimeout(() => (location.href = '../2202-ztb/'), 1500) // フェードアウトの1.5秒後に遷移
+  }
+}
+
 // リプレイボタンのイベントハンドリング
 document.querySelector('#btn-replay').addEventListener('click', replayAnimation)
 
 // リサイズ時のイベントハンドリング
 window.addEventListener('resize', set3DCameraOrbit)
+
+//
+document
+  .querySelector('#btn-ztb-dialog-confirm')
+  .addEventListener('click', gotoZtb)
+
+document.querySelectorAll('.btn-ztb-dialog-close').forEach((elem) => {
+  elem.addEventListener('click', () => {
+    ztbDialog.classList.add('is-close-animation')
+    ztbDialog.onanimationend = () => {
+      ztbDialog.close() // フェードアウト後にダイアログを非表示に
+    }
+  })
+})
