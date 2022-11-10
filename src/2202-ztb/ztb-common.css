@@ -122,8 +122,19 @@ section.link-content {
   font-weight: 500;
 }
 
-.link-content p {
-  margin: 0 0 1rem 0;
+.link-content > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0 0 0.9rem 0;
+}
+.link-content div a {
+  width: fit-content;
+  margin: auto;
+}
+
+.link-content div a > img {
+  height: 60px;
 }
 
 section.comment {
