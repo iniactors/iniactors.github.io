@@ -195,3 +195,7 @@ _:future,
 .end-animation {
   animation: opacity1-0 0.5s linear 1 normal both;
 }
+
+.fade-out-body{
+  animation: opacity1-0 1s linear 1 normal both;
+}
