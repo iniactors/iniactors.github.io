@@ -11,6 +11,22 @@ const submitToTwitter = () => {
   }
 }
 
+const jumpToSpecial = () => {
+  // スペシャルページへの遷移
+  clickCount += 1
+  ottoseiElem.style.maxWidth = `${10 + (clickCount + 1) ** 2}rem`
+  if (clickCount === 1) {
+    setTimeout(() => {
+      if (clickCount >= 3) {
+        location.href = './special.html'
+      } else {
+        clickCount = 0
+        ottoseiElem.style.maxWidth = '10rem'
+      }
+    }, 1500)
+  }
+}
+
 const quoteData = [
   {
     text: '999回失敗しても、1回うまくいけばいい。それが発明家なんだ。失敗は、うまくいくための練習だと考えているんだ。',
@@ -37,6 +53,10 @@ const randomQuote = () => {
 window.onload = () => {
   randomQuote()
 }
+
+let clickCount = 0
+const ottoseiElem = document.querySelector('#ottosei')
+ottoseiElem.addEventListener('click', jumpToSpecial)
 
 document
   .querySelector('#comment-button-submit')
