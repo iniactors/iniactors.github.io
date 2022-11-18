@@ -39,7 +39,7 @@ model-viewer {
 }
 
 #ztb-dialog.is-animation {
-  animation: scaleUpDialog 0.5s cubic-bezier(0.5, 1, 0.75, 1) 1 forwards;
+  animation: scaleUpDialog 0.6s cubic-bezier(0.5, 1, 0.75, 1) 1 forwards;
 }
 
 #ztb-dialog.is-close-animation {
@@ -49,11 +49,13 @@ model-viewer {
 @keyframes scaleUpDialog {
   0%,
   15%,
-  50% {
+  50%,
+  80% {
     opacity: 0;
   }
   5%,
   20%,
+  75%,
   100% {
     opacity: 1;
   }
@@ -109,6 +111,7 @@ model-viewer {
 }
 
 .ztb-dialog-content {
+  background-clip: padding-box;
   border: 2px solid #1d56db;
   border-top: none;
   padding: 2rem 1.5rem 1rem 1.5rem;
