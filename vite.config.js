@@ -18,6 +18,7 @@ export default defineConfig({
         btz2022Credit: resolve(root, 'btz-2022/credit.html'),
         ztb2202: resolve(root, '2202-ztb/index.html'),
         ztb2202Links: resolve(root, '2202-ztb/links.html'),
+        ztb2202Special: resolve(root, '2202-ztb/special.html'),
       },
     },
   },
