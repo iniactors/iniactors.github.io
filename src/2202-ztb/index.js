@@ -16,12 +16,16 @@ const jumpToSpecial = () => {
   clickCount += 1
   ottoseiElem.style.maxWidth = `${10 + (clickCount + 1) ** 2}rem`
   if (clickCount === 1) {
+    const yukkuri = document.getElementById("welcome-msg");
+    yukkuri.textContent = "お～っとっと膃肭臍";
     setTimeout(() => {
       if (clickCount >= 3) {
         location.href = './special.html'
       } else {
+        // 通常サイズに戻る処理
         clickCount = 0
         ottoseiElem.style.maxWidth = '10rem'
+        yukkuri.textContent = "ゆっくりしてってね！";
       }
     }, 1500)
   }
