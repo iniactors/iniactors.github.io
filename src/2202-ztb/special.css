@@ -25,6 +25,8 @@ span.bef {
 
 #t > .story-section {
   margin: 2rem 1rem;
+  line-height: 1.8rem;
+  font-family: serif;
 }
 
 @media (max-width: 576px) {

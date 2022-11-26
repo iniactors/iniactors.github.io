@@ -6,6 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
+  touch-action: manipulation;
 }
 
 @supports (height: 100dvh) {
@@ -100,6 +101,7 @@ section.description .access-counter img {
 section.description .ottosei {
   margin: 1.5rem 0 0 0;
   width: 100%;
+  cursor: pointer;
 }
 
 section.description .img-ottosei {
