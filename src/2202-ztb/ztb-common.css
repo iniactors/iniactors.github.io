@@ -108,7 +108,7 @@ section.description .img-ottosei {
   animation: 1s yurayura ease-in-out infinite alternate;
 }
 
-section.description .welcome-msg {
+section.description #welcome-msg {
   margin: 1rem 0 2rem 0;
   font-size: 2rem;
   font-weight: 700;
