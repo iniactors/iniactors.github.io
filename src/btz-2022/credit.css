@@ -25,17 +25,6 @@ h1 {
   height: 100%;
 }
 
-/* キャスト紹介セクション */
-.pic-1 {
-  margin: auto auto 1rem auto;
-}
-
-/* エンディング素材提供セクション */
-.pic-4 {
-  margin: auto auto -0.5rem auto;
-  max-width: 450px;
-}
-
 .title {
   display: block;
   margin: auto;
@@ -53,11 +42,5 @@ h1 {
     display: block;
     margin: 0 0 -0.5rem 0;
     max-width: none;
-  }
-
-  /* エンディング素材提供セクション */
-  .pic-4 {
-    margin: auto auto -0.5rem auto;
-    width: 70%;
   }
 }
