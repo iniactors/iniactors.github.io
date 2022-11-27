@@ -19,6 +19,7 @@ body {
   color: #ffffff;
   margin: 0;
   font-weight: 300;
+  touch-action: manipulation
 }
 
 header {

@@ -40,8 +40,14 @@
   display: flex;
   justify-content: center;
   gap: 3rem;
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 1.25rem 0;
   line-height: 2rem;
+}
+
+#about dl.date div.date-cast {
+  font-size: 1rem;
+  line-height: 1rem;
+  margin-bottom: 10px;
 }
 
 #about dl.place {
@@ -54,20 +60,30 @@
   line-height: 1.3rem;
 }
 
-#about section.chara{
+#about dl.place dd a,
+#about dl.place dd a:visited {
+  color: #fff;
+}
+
+#about section.chara {
   margin: 4rem 0 0 0;
   text-align: left;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  justify-items: center;
 }
 
-#about img{
+#about img {
+  aspect-ratio: 1 / 1;
   width: 90%;
-  height: 90%;
+  max-width: 20rem;
+  text-align: center;
 }
 
-#about span.name{
+#about ruby.name,
+#about span.name {
   font-size: 2rem;
   border-bottom: solid;
 }
@@ -91,7 +107,22 @@
     gap: 0.5rem;
   }
 
+  #about dl.date div.date-cast {
+    font-size: 0.75rem;
+    line-height: 0.1rem;
+    margin-bottom: 10px;
+  }
+
   #about dl.place dd {
     font-size: 0.8rem;
+  }
+
+  #about ruby.name,
+  #about span.name {
+    font-size: 1.7rem;
+  }
+
+  #about section.chara {
+    line-height: 1.5rem;
   }
 }
