@@ -141,6 +141,22 @@ section.link-content {
   height: 60px;
 }
 
+section.video > h3.video-title {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+section.video > .video-item {
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin-bottom: 1.5rem;
+}
+
+section.video > .video-item > iframe {
+  width: 100%;
+  height: 100%;
+}
+
 section.comment {
   width: 100%;
   display: flex;
