@@ -25,7 +25,7 @@ const jumpToSpecial = () => {
         // 通常サイズに戻る処理
         clickCount = 0
         ottoseiElem.style.maxWidth = '10rem'
-        yukkuri.textContent = "ゆっくりしてってね！";
+        yukkuri.textContent = "ゆっくりしていってね！";
       }
     }, 1500)
   }
