@@ -35,10 +35,11 @@
     
     
     
-    <script type="module" crossorigin src="/assets/btz2022.190d6496.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/year.d05e41b6.js">
-    <link rel="stylesheet" href="/assets/index.419cdcc5.css">
-    <link rel="stylesheet" href="/assets/btz-common.d5887ef2.css">
+    <script type="module" crossorigin src="/assets/btz2022.e4e12a41.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill.c7c6310f.js">
+    <link rel="modulepreload" crossorigin href="/assets/year.f5d62913.js">
+    <link rel="stylesheet" href="/assets/index.ecbef6bb.css">
+    <link rel="stylesheet" href="/assets/btz-common.248a39b8.css">
   </head>
   <body class="index">
     <header>
@@ -165,9 +166,39 @@
         <div id="n008"><span id="n008-001">開幕!</span></div>
       </div>
     </div>
+    <dialog id="ztb-dialog">
+      <div class="ztb-dialog-wrapper">
+        <div class="ztb-dialog-title">
+          メッセージ
+          <button
+            id="btn-ztb-dialog-close"
+            class="btn-ztb-dialog-close"
+            aria-label="閉じる"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path
+                d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="ztb-dialog-content">
+          <div class="ztb-dialog-text">平成に回帰しますか…？</div>
+          <div class="ztb-dialog-text-sub">裏ホームページにアクセスします</div>
+          <menu>
+            <button id="btn-ztb-dialog-confirm" autofocus>
+              <span>はい</span>
+            </button>
+            <button id="btn-ztb-dialog-cancel" class="btn-ztb-dialog-close">
+              <span>いいえ</span>
+            </button>
+          </menu>
+        </div>
+      </div>
+    </dialog>
     
     
-
     <script
       defer
       src="https://static.cloudflareinsights.com/beacon.min.js"
