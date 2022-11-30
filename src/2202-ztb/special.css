@@ -16,11 +16,15 @@ span.bef {
 
 #t {
   white-space: pre-wrap;
-  text-align: center;
+  text-align: left;
   margin: auto;
   width: 85%;
   max-width: 50rem;
   background-color: rgba(255, 255, 255, 0.6);
+}
+
+#t > .story-section:first-of-type {
+  text-align: center;
 }
 
 #t > .story-section {
