@@ -37,7 +37,7 @@ span.bef {
 @media (max-width: 576px) {
   h1.title {
     letter-spacing: 0.5rem;
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
   span.bef {
     font-size: 1.5rem;
