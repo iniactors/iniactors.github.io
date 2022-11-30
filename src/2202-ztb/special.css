@@ -1,10 +1,11 @@
 main {
-  width: 100%;
+  width: 100% !important;
 }
 
 h1.title {
   letter-spacing: 1rem;
   margin: 0;
+  padding: 0 0.5rem;
   text-align: center;
   font-size: 3rem;
   white-space: nowrap;

@@ -134,6 +134,7 @@ section.link-content {
 }
 .link-content div a {
   width: fit-content;
+  width: -moz-fit-content;
   margin: auto;
 }
 
