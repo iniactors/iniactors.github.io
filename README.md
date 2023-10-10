@@ -33,13 +33,37 @@ https://iniactors.github.io
 
 ## 公開（デプロイ）について
 
-`main`ブランチにプッシュすると GitHub Actions という仕組みを使って自動的にファイル圧縮（ `yarn build` の実行）と`gh-pages`ブランチへのプッシュが行われ、GitHub Pages で公開されます。
+`main` ブランチにプッシュすると GitHub Actions という仕組みを使って自動的にファイル圧縮（ `yarn build` の実行）と `gh-pages` ブランチへのプッシュが行われ、GitHub Pages で公開されます。
 
 ## 開発メモ
 
 - サイト作成に使用する技術に関しては、引き継ぎやすいように INIAD の授業内で触れるような基本的な Web 技術を用いています。
 - このサイトは [Vite](https://ja.vitejs.dev) を使用しています。Vite は開発時のローカルサーバーやデプロイ時のビルドに使われます。
+- 画像やフォントなどの静的アセットは `public` フォルダ以下に格納してください。
+- CSSやJavaScript、HTMLなどのコードは `src` フォルダ以下に格納してください。
 - 画像は WebP 版を[このサイト](https://lab.syncer.jp/Tool/Webp-Converter/)などで作成して、サイズを減らすようにしてください。
+
+### 新規ページの追加について
+
+前述の通り、このサイトは Vite を使用しています。ページを追加する際は以下の手順を踏んでください。
+
+1. `src` フォルダ以下にページのファイルを追加する。（ネストしても構いません）
+
+2. `vite.config.js` の `rollupOptions` 内の `input` に、追加したいページ（HTML ファイル）へのパスを以下のコード例のように設定する。
+
+   ```js
+   rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        nested: resolve(__dirname, 'nested/index.html'),
+      },
+    },
+   ```
+
+   以上のコード例で用いられている `main` などの名前（オブジェクトのプロパティ名）は任意の値に変更してください。尚、この値は重複しないようにしてください。  
+   参考：[Vite のドキュメント](https://ja.vitejs.dev/guide/build.html#%E3%83%9E%E3%83%AB%E3%83%81%E3%83%98%E3%82%9A%E3%83%BC%E3%82%B7%E3%82%99%E3%82%A2%E3%83%95%E3%82%9A%E3%83%AA)
+
+3. 開発用サーバーを起動し、ページが表示されることを確認する。
 
 ## ライセンスについて
 
