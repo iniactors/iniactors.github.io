@@ -2,8 +2,15 @@
 ほしをさがして 特設サイト内で共通化するCSS
 */
 
+/* フォントの読み込み*/
+
+@font-face {
+  font-family: 'Chalk-S-JP';
+  src: url('../../public/fonts/Chalk-S-JP.otf') format("opentype");
+}
+
   body {
-    font-family: sans-serif;
+    font-family: 'Chalk-S-JP';
     background-color: #0d0d0d;
     color: #fff;
     height: calc(100vh - 2rem);
