@@ -1,0 +1,45 @@
+/*
+ほしをさがして 特設サイト内で共通化するCSS
+*/
+
+  body {
+    font-family: sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+    height: calc(100vh - 2rem);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  @supports (min-height: 100dvh) {
+    body {
+      height: calc(100dvh - 2rem);
+    }
+  }
+  
+  header.header-with-logo {
+    align-items: center;
+    background-color:rgba(50, 50, 100, 10);
+    padding: 1rem 1rem;
+  }
+  
+  header.header-with-logo img {
+    height: 10vw;
+  }
+
+  header p{
+    padding: 0.5rem;
+    font-size: 2.5vw;
+  }
+
+  .topPage{
+    background-image: url("../img/star-2023/classroom.jpeg");
+    background-size: 100% auto; /* 画像を要素に合わせて表示 */
+    background-attachment: fixed; /* 背景画像を固定 */
+    background-position: top; /* 画像を上端に配置 */
+    z-index: 1; /* 他の要素よりも手前に表示 */
+    text-align: center;
+    height:300px;
+    background-repeat: no-repeat;
+  }
