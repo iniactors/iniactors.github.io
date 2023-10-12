@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    scroll-behavior: smooth;
   }
   
   @supports (min-height: 100dvh) {
@@ -24,26 +25,31 @@
       height: calc(100dvh - 2rem);
     }
   }
-  
-  header.header-with-logo {
-    align-items: center;
-    background-color:rgba(50, 50, 100, 10);
-    padding: 1rem 1rem;
+
+  header {
+    box-sizing: border-box;
+    width: 100%;
+    position: fixed;
+    padding: 1rem;
+    background-color: rgba(50, 50, 100, 10);
   }
   
-  header.header-with-logo img {
-    height: 10vw;
+  
+  
+  header img {
+    width:15vw;
   }
 
-  header p{
-    padding: 0.5rem;
-    font-size: 2.5vw;
+  header a{
+    font-size: 3vw;
+    color: #fff;
+    text-decoration: none;
   }
 
-  .topPage{
+  #top-section{
     background-image: url("../img/star-2023/classroom.jpeg");
     background-size: 100% auto; /* 画像を要素に合わせて表示 */
-    background-attachment: fixed; /* 背景画像を固定 */
+    background-attachment: scroll;
     background-position: top; /* 画像を上端に配置 */
     z-index: 1; /* 他の要素よりも手前に表示 */
     text-align: center;
