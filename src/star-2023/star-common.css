@@ -34,8 +34,6 @@
     background-color: rgba(50, 50, 100, 10);
   }
   
-  
-  
   header img {
     width:15vw;
   }
@@ -52,7 +50,11 @@
     background-attachment: scroll;
     background-position: top; /* 画像を上端に配置 */
     z-index: 1; /* 他の要素よりも手前に表示 */
-    text-align: center;
-    height:300px;
     background-repeat: no-repeat;
+  }
+
+  #top-section img{
+    width:50%;
+    padding:6.5rem;
+    margin-top: auto;
   }
