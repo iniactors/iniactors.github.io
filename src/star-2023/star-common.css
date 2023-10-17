@@ -44,17 +44,17 @@
     text-decoration: none;
   }
 
-  #top-section{
+  #top-section {
+    height: 100vh;
     background-image: url("../img/star-2023/classroom.jpeg");
-    background-size: 100% auto; /* 画像を要素に合わせて表示 */
+    background-size: 100% auto; /* 画像を横幅100%に合わせ、高さを自動調整 */
     background-attachment: scroll;
-    background-position: top; /* 画像を上端に配置 */
-    z-index: 1; /* 他の要素よりも手前に表示 */
+    background-position: top;
+    z-index: 1;
     background-repeat: no-repeat;
   }
-
+  
   #top-section img{
     width:50%;
     padding:6.5rem;
-    margin-top: auto;
   }

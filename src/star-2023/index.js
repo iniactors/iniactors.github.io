@@ -8,3 +8,17 @@ $(function(){
     return false;
     });
     });
+
+// ウィンドウがリサイズされたときに呼ばれる関数
+function handleResize() {
+    var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var top = document.getElementById("top-section");
+    var h = (windowWidth / 16) * 9;
+    top.style.height = h + "px";
+  }
+  
+  // ウィンドウのリサイズイベントにリスナーを追加
+  window.addEventListener("resize", handleResize);
+
+  window.onload = handleResize();
+  
