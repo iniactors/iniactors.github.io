@@ -13,8 +13,14 @@ $(function(){
 function handleResize() {
     var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var top = document.getElementById("top-section");
-    var h = (windowWidth / 16) * 9;
-    top.style.height = h + "px";
+    var h = (windowWidth / 16);
+    top.style.height = (h*9) + "px";
+    var sns = document.querySelectorAll(".sns-icon");
+    for (var i = 0; i < sns.length; i++) {
+        sns[i].style.marginRight = (h*2.5) + "px";
+    }
+    var X = document.getElementById("Xicon");
+    X.style.marginTop = (h*4) + "px";
   }
   
   // ウィンドウのリサイズイベントにリスナーを追加

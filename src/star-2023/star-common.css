@@ -33,6 +33,11 @@
     padding: 1rem;
     background-color: rgba(50, 50, 100, 10);
   }
+
+  #header-content{
+    align-items: center;
+    justify-content: space-between;
+  }
   
   header img {
     width:15vw;
@@ -46,15 +51,39 @@
 
   #top-section {
     height: 100vh;
-    background-image: url("../img/star-2023/classroom.jpeg");
+    background-image: url("../img/star-2023/classroom.jpg");
     background-size: 100% auto; /* 画像を横幅100%に合わせ、高さを自動調整 */
     background-attachment: scroll;
     background-position: top;
     z-index: 1;
     background-repeat: no-repeat;
   }
-  
-  #top-section img{
-    width:50%;
-    padding:6.5rem;
+
+  #sns-area{
+    text-align: end;
   }
+
+  .sns-icon img{
+    width:7%;
+    padding: 0.5rem;
+  }
+
+  /* モバイルデバイス向けのスタイル */
+@media screen and (max-width: 768px) {
+
+  header{
+    padding: 0.5rem;
+  }
+
+  header img {
+    width: 20vw; /* ヘッダーロゴの幅を調整 */
+  }
+
+  header a {
+    font-size: 3vw; /* ヘッダーメニューのフォントサイズを調整 */
+  }
+
+  #top-section {
+    height: 50vh; /* トップセクションの高さを調整 */
+  }
+}
