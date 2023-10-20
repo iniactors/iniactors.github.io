@@ -51,7 +51,7 @@
 
   #top-section {
     height: 100vh;
-    background-image: url("../img/star-2023/classroom.jpg");
+    background-image: url("../img/star-2023/classroom_logo.png");
     background-size: 100% auto; /* 画像を横幅100%に合わせ、高さを自動調整 */
     background-attachment: scroll;
     background-position: top;
@@ -76,7 +76,7 @@
   }
 
   header img {
-    width: 20vw; /* ヘッダーロゴの幅を調整 */
+    width: 15vw; /* ヘッダーロゴの幅を調整 */
   }
 
   header a {
