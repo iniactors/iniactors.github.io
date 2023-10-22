@@ -13,17 +13,10 @@
     font-family: 'Chalk-S-JP';
     background-color: #0d0d0d;
     color: #fff;
-    height: calc(100vh - 2rem);
     display: flex;
     flex-direction: column;
     text-align: center;
     scroll-behavior: smooth;
-  }
-  
-  @supports (min-height: 100dvh) {
-    body {
-      height: calc(100dvh - 2rem);
-    }
   }
 
   header {
@@ -36,6 +29,15 @@
 
   h1{
     padding-top: 5rem;
+    font-size: 3rem;
+  }
+
+  h2{
+    font-size: 2rem;
+  }
+
+  p{
+    font-size: 30px;
   }
 
   #header-content{
@@ -75,6 +77,7 @@
   .catchcopy{
     font-family:serif;
     padding-top: 1rem;
+    font-size: 1.5rem;
   }
 
   #cast-section div{
@@ -82,12 +85,12 @@
   }
 
   #cast-section img{
-    width:200px;
-    padding:0 3rem;
+    width:300px;
+    padding:0 2rem;
   }
 
   #cast-section p{
-    padding:0 3rem;
+    padding:0 1rem;
   }
 
   .intro{
@@ -115,5 +118,18 @@
 
   #top-section {
     height: 50vh; /* トップセクションの高さを調整 */
+  }
+
+  p{
+    font-size: 20px;
+  }
+
+  #cast-section img{
+    width:200px;
+    padding:0 2rem;
+  }
+
+  h1{
+    font-size: auto;
   }
 }
