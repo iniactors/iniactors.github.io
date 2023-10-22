@@ -23,21 +23,26 @@
     box-sizing: border-box;
     width: 100%;
     position: fixed;
-    padding: 1rem;
+    padding:0.2rem 1rem;
     background-color: rgba(50, 50, 100, 10);
   }
 
   h1{
     padding-top: 5rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   h2{
     font-size: 2rem;
   }
 
+  h3{
+    font-size: 4vw ;
+  }
+
   p{
-    font-size: 30px;
+    font-size: 4vh;
+    padding: 0rem 2rem;
   }
 
   #header-content{
@@ -53,6 +58,10 @@
     font-size: 3vw;
     color: #fff;
     text-decoration: none;
+  }
+
+  span{
+    color: #F0D864;
   }
 
   #top-section {
@@ -77,7 +86,7 @@
   .catchcopy{
     font-family:serif;
     padding-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 5vw;
   }
 
   #cast-section div{
@@ -85,12 +94,16 @@
   }
 
   #cast-section img{
-    width:300px;
+    width:30vh;
     padding:0 2rem;
   }
 
-  #cast-section p{
-    padding:0 1rem;
+  .pic-left{
+    padding-right: 2rem;
+  }
+
+  .pic-right{
+    padding-left: 2rem;
   }
 
   .intro{
@@ -101,7 +114,7 @@
     padding: 0rem 2rem;
   }
 
-  /* モバイルデバイス向けのスタイル */
+
 @media screen and (max-width: 768px) {
 
   header{
@@ -109,27 +122,31 @@
   }
 
   header img {
-    width: 15vw; /* ヘッダーロゴの幅を調整 */
+    width: 20vw;
   }
 
   header a {
-    font-size: 3vw; /* ヘッダーメニューのフォントサイズを調整 */
+    font-size: 3.3vw;
   }
 
   #top-section {
-    height: 50vh; /* トップセクションの高さを調整 */
+    height: 50vh;
   }
 
   p{
-    font-size: 20px;
+    font-size: 4vw;
   }
 
   #cast-section img{
-    width:200px;
+    width:30vw;
     padding:0 2rem;
   }
 
-  h1{
-    font-size: auto;
+  h2{
+    font-size: 5vw;
+  }
+
+  h3{
+    font-size: 5vw;
   }
 }
