@@ -34,6 +34,10 @@
     background-color: rgba(50, 50, 100, 10);
   }
 
+  h1{
+    padding-top: 5rem;
+  }
+
   #header-content{
     align-items: center;
     justify-content: space-between;
@@ -66,6 +70,32 @@
   .sns-icon img{
     width:7%;
     padding: 0.5rem;
+  }
+
+  .catchcopy{
+    font-family:serif;
+    padding-top: 1rem;
+  }
+
+  #cast-section div{
+    padding-top: 1rem;
+  }
+
+  #cast-section img{
+    width:200px;
+    padding:0 3rem;
+  }
+
+  #cast-section p{
+    padding:0 3rem;
+  }
+
+  .intro{
+    padding-right: 3rem;
+  }
+
+  #info-section p{
+    padding: 0rem 2rem;
   }
 
   /* モバイルデバイス向けのスタイル */
