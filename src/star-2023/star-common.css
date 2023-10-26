@@ -121,6 +121,19 @@
     font-size: 2vw;
   }
 
+  #top-section{
+    position: relative;
+  }
+
+  .BB a{
+    font-size: 2vw;
+    color: #fff;
+    position: absolute;
+    right:0;
+    bottom:0;
+    padding: 1.5rem;
+  }
+
   @keyframes rotate {
     0% {
       transform: rotateY(0deg);
