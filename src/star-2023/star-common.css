@@ -94,8 +94,11 @@
   }
 
   #cast-section img{
-    width:30vh;
+    width:30vw;
     padding:0 2rem;
+    position: relative;
+    animation: rotate 9s linear infinite;
+    z-index: -1;
   }
 
   .pic-left{
@@ -112,6 +115,19 @@
 
   #info-section p{
     padding: 0rem 2rem;
+  }
+
+  #attention p{
+    font-size: 2vw;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
   }
 
 
@@ -138,7 +154,7 @@
   }
 
   #cast-section img{
-    width:30vw;
+    width:35vw;
     padding:0 2rem;
   }
 
@@ -148,5 +164,9 @@
 
   h3{
     font-size: 5vw;
+  }
+
+  #attention p{
+    font-size: 3vw;
   }
 }
