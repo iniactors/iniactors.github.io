@@ -44,6 +44,7 @@
   p{
     font-size: 4vh;
     padding: 0rem 2rem;
+    animation: fade-in-wave 2s ease-in-out;
   }
 
   #header-content{
@@ -132,6 +133,23 @@
     padding: 1.5rem;
   }
 
+  #comment-section p{
+    font-size: 2vw;
+    padding:3rem 5rem;
+    background-image: url("../img/brackboard.png");
+    background-size: 100% 100%;
+  }
+
+  .comment-left{
+    padding-right:30vw;
+    margin-left:2.5rem;
+  }
+
+  .comment-right{
+    padding-left:30vw;
+    margin-right:2.5rem;
+  }
+
   @keyframes rotate {
     0% {
       transform: rotateY(0deg);
@@ -140,6 +158,28 @@
       transform: rotateY(360deg);
     }
   }
+
+  .fadein {
+    animation: fadein 5s, flashback 1s infinite;
+    animation-fill-mode:forwards;
+  }
+  
+  @keyframes fadein {
+  
+    from {
+    
+    opacity:0;
+    
+    }
+    
+    
+    to {
+    
+    opacity:1;
+    }
+    
+    }
+
 
 
 @media screen and (max-width: 768px) {
@@ -179,5 +219,22 @@
 
   #attention p{
     font-size: 3vw;
+  }
+
+  #comment-section p{
+    font-size: 2.5vw;
+    padding:3rem 2rem;
+    background-image: url("../img/brackboard.png");
+    background-size: 100% 100%;
+  }
+
+  .comment-left{
+    padding-right:30vw;
+    margin-left:2.5rem;
+  }
+
+  .comment-right{
+    padding-left:30vw;
+    margin-right:2.5rem;
   }
 }
