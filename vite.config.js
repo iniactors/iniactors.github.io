@@ -19,6 +19,7 @@ export default defineConfig({
         ztb2202: resolve(root, '2202-ztb/index.html'),
         ztb2202Links: resolve(root, '2202-ztb/links.html'),
         ztb2202Special: resolve(root, '2202-ztb/special.html'),
+        star2023: resolve(root, 'star-2023/index.html'),
       },
     },
   },
