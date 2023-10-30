@@ -62,10 +62,6 @@
     text-decoration: none;
   }
 
-  span{
-    color: #F0D864;
-  }
-
   #top-section {
     height: 100vh;
     background-image: url("../img/star-2023/classroom_logo.png");
@@ -159,26 +155,12 @@
     }
   }
 
-  .fadein {
-    animation: fadein 5s, flashback 1s infinite;
-    animation-fill-mode:forwards;
+  .catchcopy span{opacity: 0;}
+  .catchcopy.appeartext span{ animation:text_anime_on 1s ease-out forwards; }
+  @keyframes text_anime_on {
+    0% {opacity:0;}
+    100% {opacity:1;}
   }
-  
-  @keyframes fadein {
-  
-    from {
-    
-    opacity:0;
-    
-    }
-    
-    
-    to {
-    
-    opacity:1;
-    }
-    
-    }
 
 
 
