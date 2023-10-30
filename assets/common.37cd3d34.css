@@ -1,0 +1,1 @@
+@media (prefers-reduced-motion: reduce){*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}html{scroll-behavior:auto!important}body{margin:0}.sns-area{display:flex;gap:2rem}.sns-area svg{height:2.25rem}.sns-area a,.sns-area a:visited{color:#fff}footer{margin-bottom:env(safe-area-inset-bottom);font-size:.75rem}
