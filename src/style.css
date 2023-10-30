@@ -7,6 +7,11 @@
   }
 }
 
+@font-face {
+  font-family: 'Chalk-S-JP';
+  src: url('../public/fonts/Chalk-S-JP.otf') format("opentype");
+}
+
 html {
   scroll-behavior: auto !important;
 }
@@ -19,7 +24,6 @@ body {
   color: #ffffff;
   margin: 0;
   font-weight: 300;
-  touch-action: manipulation
 }
 
 header {
@@ -118,6 +122,34 @@ p {
   color: #fff;
   transform: scale(1.1);
 }
+
+.star-link-area {
+  padding-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.star-link {
+  color: #fff;
+  background-image: url("../src/img/brackboard.png");
+  background-size: 100% 100%;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  padding: 0.75rem 5rem;
+  transition: 0.5s;
+  font-family: 'Chalk-S-JP';
+}
+
+.star-link-bottom {
+  font-size: 1rem;
+}
+
+.star-link:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
 
 .sub-text {
   font-size: min(calc(0.75rem + 0.25vw), 5rem);
