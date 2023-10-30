@@ -162,6 +162,11 @@
     100% {opacity:1;}
   }
 
+  .copyright{
+    font-size: 2vw;
+    text-align: end;
+  }
+
 
 
 @media screen and (max-width: 768px) {
