@@ -86,7 +86,7 @@
     animation: rotate 9s linear infinite;
     z-index: 2;
     position: relative;
-    overflow: hidden;
+    transform: translateZ(-35vw);
   }
 
   main span{
@@ -174,7 +174,7 @@
     animation: rotate 9s linear infinite;
     z-index: 1;
     position: relative;
-    overflow: hidden;
+    transform: translateZ(-35vw);
   }
 
   #attention p{
