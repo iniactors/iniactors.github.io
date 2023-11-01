@@ -85,6 +85,7 @@
     padding:0 2rem;
     animation: rotate 9s linear infinite;
     z-index: 2;
+    position: sticky;
   }
 
   .pic-left{
@@ -174,6 +175,7 @@
     padding:0 2rem;
     animation: rotate 9s linear infinite;
     z-index: 1;
+    position: sticky;
   }
 
   #attention p{
