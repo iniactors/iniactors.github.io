@@ -76,6 +76,11 @@
     font-size: 5vw;
   }
 
+  #cast-section{
+    z-index: 2;
+    position: relative;
+  }
+
   #cast-section div{
     padding-top: 1rem;
   }
@@ -84,9 +89,6 @@
     width:35vw;
     padding:0 2rem;
     animation: rotate 9s linear infinite;
-    z-index: 2;
-    position: relative;
-    transform: translateZ(-35vw);
   }
 
   main span{
@@ -168,13 +170,15 @@
     font-size: 4vw;
   }
 
+  #cast-section{
+    z-index: 2;
+    position: relative;
+  }
+
   #cast-section img{
     width:35vw;
     padding:0 2rem;
     animation: rotate 9s linear infinite;
-    z-index: 1;
-    position: relative;
-    transform: translateZ(-35vw);
   }
 
   #attention p{
