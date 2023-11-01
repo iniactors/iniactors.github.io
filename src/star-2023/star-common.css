@@ -22,7 +22,7 @@
     position: fixed;
     padding:0.2rem 1rem;
     background-color: rgba(50, 50, 100, 10);
-    z-index: 100;
+    z-index: 999;
   }
 
   h1{
@@ -81,10 +81,10 @@
   }
 
   #cast-section img{
-    width:30vw;
+    width:35vw;
     padding:0 2rem;
     animation: rotate 9s linear infinite;
-    z-index: -100;
+    z-index: 2;
   }
 
   .pic-left{
@@ -170,10 +170,10 @@
   }
 
   #cast-section img{
-    width:30vw;
+    width:35vw;
     padding:0 2rem;
     animation: rotate 9s linear infinite;
-    z-index: -100;
+    z-index: 1;
   }
 
   #attention p{
