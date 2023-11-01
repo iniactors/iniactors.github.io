@@ -13,10 +13,7 @@
     font-family: 'Chalk-S-JP';
     background-color: #0d0d0d;
     color: #fff;
-    display: flex;
-    flex-direction: column;
     text-align: center;
-    scroll-behavior: smooth;
   }
 
   header {
@@ -25,7 +22,7 @@
     position: fixed;
     padding:0.2rem 1rem;
     background-color: rgba(50, 50, 100, 10);
-    z-index: 999;
+    z-index: 2;
   }
 
   h1{
@@ -33,18 +30,9 @@
     font-size: 2.5rem;
   }
 
-  h2{
-    font-size: 2rem;
-  }
-
-  h3{
-    font-size: 4vw ;
-  }
-
   p{
     font-size: 4vh;
     padding: 0rem 2rem;
-    animation: fade-in-wave 2s ease-in-out;
   }
 
   #header-content{
@@ -95,7 +83,6 @@
   #cast-section img{
     width:30vw;
     padding:0 2rem;
-    position: relative;
     animation: rotate 9s linear infinite;
     z-index: -1;
   }
@@ -146,15 +133,6 @@
     margin-right:2.5rem;
   }
 
-  @keyframes rotate {
-    0% {
-      transform: rotateY(0deg);
-    }
-    100% {
-      transform: rotateY(360deg);
-    }
-  }
-
   .catchcopy span{opacity: 0;}
   .catchcopy.appeartext span{ animation:text_anime_on 1s ease-out forwards; }
   @keyframes text_anime_on {
@@ -192,16 +170,10 @@
   }
 
   #cast-section img{
-    width:35vw;
+    width:30vw;
     padding:0 2rem;
-  }
-
-  h2{
-    font-size: 5vw;
-  }
-
-  h3{
-    font-size: 5vw;
+    animation: rotate 9s linear infinite;
+    z-index: -1;
   }
 
   #attention p{
@@ -223,5 +195,14 @@
   .comment-right{
     padding-left:30vw;
     margin-right:2.5rem;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
   }
 }
