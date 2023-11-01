@@ -89,6 +89,8 @@
     width:35vw;
     padding:0 2rem;
     animation: rotate 9s linear infinite;
+    transform-style: preserve-3d;
+  transform: translateZ(-1px);
   }
 
   main span{
@@ -179,6 +181,8 @@
     width:35vw;
     padding:0 2rem;
     animation: rotate 9s linear infinite;
+    transform-style: preserve-3d;
+  transform: translateZ(-100px);
   }
 
   #attention p{
