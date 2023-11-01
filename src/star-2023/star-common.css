@@ -85,7 +85,11 @@
     padding:0 2rem;
     animation: rotate 9s linear infinite;
     z-index: 2;
-    position: sticky;
+    position: relative;
+  }
+
+  main span{
+    color: yellow;
   }
 
   .pic-left{
@@ -134,13 +138,6 @@
     margin-right:2.5rem;
   }
 
-  .catchcopy span{opacity: 0;}
-  .catchcopy.appeartext span{ animation:text_anime_on 1s ease-out forwards; }
-  @keyframes text_anime_on {
-    0% {opacity:0;}
-    100% {opacity:1;}
-  }
-
   .copyright{
     font-size: 2vw;
     text-align: end;
@@ -175,7 +172,7 @@
     padding:0 2rem;
     animation: rotate 9s linear infinite;
     z-index: 1;
-    position: sticky;
+    position: relative;
   }
 
   #attention p{
