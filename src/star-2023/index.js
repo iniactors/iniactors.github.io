@@ -81,7 +81,3 @@ function handleResize() {
     }
   });
     }}
-
-    window.addEventListener("scroll", function () {
-      console.log(catchcopyCookie);
-    })
