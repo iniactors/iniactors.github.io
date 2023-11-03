@@ -146,6 +146,10 @@
     text-align: end;
   }
 
+  #credit-section img{
+    width: 95vw;
+  }
+
 
 
 @media screen and (max-width: 768px) {
