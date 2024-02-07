@@ -151,7 +151,19 @@
     width: 95vw;
   }
 
+  #box{
+    width: 50vw;
+    height: auto;
+  }
 
+  .keynum{
+    margin: 1rem 0;
+  }
+
+  .num{
+    text-align: center;
+    font-family: 'Chalk-S-JP';
+  }
 
 @media screen and (max-width: 768px) {
 

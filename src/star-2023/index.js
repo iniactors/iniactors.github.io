@@ -28,3 +28,33 @@ function handleResize() {
   window.addEventListener("resize", handleResize);
 
   window.onload = handleResize();
+
+  function arrowUp(n){
+    if(document.getElementById(n).value === "9"){
+        document.getElementById(n).value = "0";
+    }
+    else{
+        document.getElementById(n).value = Number(document.getElementById(n).value) + 1;
+    }
+  }
+
+  function arrowDown(n){
+    if(document.getElementById(n).value === "0"){
+        document.getElementById(n).value = "9";
+    }
+    else{
+        document.getElementById(n).value = Number(document.getElementById(n).value) - 1;
+    }
+  }
+
+  var success = ["8", "1", "6", "4"]
+
+function checkNum(){
+    for(var p=0;p<4;p++){
+        console.log(document.getElementById(p).value);
+        if(document.getElementById(p).value !== success[p]){
+            return ;
+        }
+    }
+    console.log("success");
+}
