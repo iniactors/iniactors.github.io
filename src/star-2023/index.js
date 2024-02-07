@@ -58,3 +58,14 @@ function checkNum(){
     }
     console.log("success");
 }
+
+function imgChange(name) {
+    // 正規表現パターンを正しく構築する
+    var pattern = new RegExp('.+' + name + '\.png$'); 
+    // 画像の URL の末尾が正規表現パターンにマッチするかどうかをチェックする
+    if(pattern.test(document.getElementById(name).src)) {
+        document.getElementById(name).src = "../img/star-2023/" + name + "_hint.png" ;
+    } else {
+        document.getElementById(name).src = "../img/star-2023/" + name + ".png" ;
+    }
+}
