@@ -306,16 +306,24 @@ sns-area
 }
 .sns-area > a {
     margin: 0 5px;
+	height: 100%;
+}
+
+@media (max-width:768px){
+    .sns-area > a {
+        width: 16%;
+    }
 }
 
 .questionnaire {
     margin: 0;
-    padding: 0;
+    padding: 5px;
     text-align: center;
     justify-content: center;
     position: absolute;
     bottom: 10px; /* 下から10pxの位置に配置 */
     right: 10px;  /* 右から10pxの位置に配置 */
+    background-color: rgb(225, 16, 103);
 }
 .questionnaire > a {
     color: whitesmoke;
@@ -354,6 +362,12 @@ story
     line-height: 2;
     color: white;
     font-size: 30px;
+}
+
+@media (max-width:768px){
+    .story-description {
+        font-size: 20px;
+    }
 }
 
 
@@ -460,7 +474,7 @@ cast-silhouette
 /*キャラクター紹介のテキスト*/
 .center-text {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%); /*真ん中に表示するために中央へ移動*/
     color: white;
@@ -472,6 +486,12 @@ cast-silhouette
     background-color: rgba(5, 28, 25, 0.445);
     width: 80%;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);/*影*/
+}
+
+@media (max-width:768px) {
+    .center-text {
+        font-size: 24px;
+    }
 }
 
 /*ボタン*/
@@ -579,7 +599,7 @@ information
 
 .card-title {
     background-color: rgb(179, 179, 192);
-    background-image: url(../images/bg/box_blue.jpg);
+    background-image: url(../../../img/ai-2024/bg/box_blue.jpg);
     margin: 0 0 20px;
     padding: 60px;
     position: relative;
@@ -641,12 +661,6 @@ information
     font-size: 30px;
 }
 
-@media (max-width: 768px){
-    .information-note{
-        font-size: 20px;
-    }
-}
-
 .information-reminder {
     background-color: rgba(5, 28, 25, 0.445);
     border:1px solid #84c1ff;/*枠線*/
@@ -659,6 +673,15 @@ information
     text-align: center;
     padding: 30px;
     margin: 0;
+}
+
+@media (max-width: 768px){
+    .information-note{
+        font-size: 20px;
+    }
+    .information-reminder-contents{
+        font-size: 24px;
+    }
 }
 
 /*
