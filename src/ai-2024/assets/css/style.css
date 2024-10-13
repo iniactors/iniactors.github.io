@@ -66,9 +66,7 @@ section
 .section.info {
     background-image: url(../../../img/ai-2024/bg/bg-more.png);
     position: relative;
-
 }
-
 .section.section-thirdry {
     background-image: linear-gradient(to right, #cad2d8c3 0%, #cfd9df 0%, #e2ebf000 100%#517fa4ab 100%);
     color: #333;
@@ -76,7 +74,6 @@ section
 .section.section-forth {
     background-image: url(../../../img/ai-2024/bg/box_gray.jpg);
 }
-
 .section-headline {
     text-align: center;
     font-size: 40px;
@@ -301,7 +298,6 @@ hero
     max-height: cover;
     object-fit: cover;
     z-index: 2;
-
 }
 
 /*
@@ -335,6 +331,7 @@ sns-area
     bottom: 10px; /* 下から10pxの位置に配置 */
     right: 10px;  /* 右から10pxの位置に配置 */
     background-color: rgb(225, 16, 103);
+    background-image: linear-gradient(to right, #E11067 0%, #84dcdf 100%);
 }
 .questionnaire > a {
     color: whitesmoke;
@@ -370,7 +367,12 @@ story
 .catchcopy {
     font-size: 220%;
     font-family: "kaifont";
-    text-shadow: 1px 1px 2px rgb(166, 162, 112);
+    text-shadow: 1px 1px 3px rgba(207, 207, 204, 0.721);
+    background: linear-gradient(135deg, #ffffff 0%, #84cfcd 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
 }
 .story-description {
     margin: 0;
@@ -678,12 +680,17 @@ information
 .card-nav{
     margin: 10px;
     font-size: 15px;
-    color: rgb(255, 212, 244);
+    background: linear-gradient(-225deg, #b8ffea 0%, #ffdff9 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
 }
 
 #information-emp{
     color: #fff;
-    -webkit-text-stroke: 0.5px rgb(166, 162, 112);
+    text-shadow: 1px 1px 2px rgb(39, 39, 39);
+    font-weight: bold;
 }
 .information-note{
     text-align: center;
@@ -818,18 +825,21 @@ footer {
     margin: 0;
 }
 .footer-contents {
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
 }
 .home-link {
-    color: white;
+    background: linear-gradient(-225deg, #b8ffea 0%, #ffdff9 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
     text-decoration: none;
     padding: 10px;
     margin: 0;
     font-size: 20px;
 }
 .footer-copy {
-
     color: rgb(252, 255, 242);
     padding: 10px;
     font-size: 20px;
