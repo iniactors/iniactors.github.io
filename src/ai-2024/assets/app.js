@@ -1,6 +1,7 @@
 const responsive_menu_btn = document.querySelector('.responsive_btn');
 const header_menu_detail = document.querySelector('.header-nav');
 const menu_links = document.querySelectorAll('.header-navitem > a');
+const body = document.querySelector('body');  // body要素を取得
 
 // ハンバーガーメニューを開閉するイベント
 responsive_menu_btn.addEventListener('click', menuToggle);
@@ -8,6 +9,13 @@ responsive_menu_btn.addEventListener('click', menuToggle);
 function menuToggle() {
     header_menu_detail.classList.toggle('menu_active');
     responsive_menu_btn.classList.toggle('menu_active');  // メニューが開いた時に×印にする
+
+    // メニューが開いているときは背景を固定し、閉じたら解除
+    if (header_menu_detail.classList.contains('menu_active')) {
+        body.classList.add('no_scroll');
+    } else {
+        body.classList.remove('no_scroll');
+    }
 }
 
 // メニューリンクをクリックしたときにメニューを閉じるイベント
@@ -16,6 +24,7 @@ menu_links.forEach(link => {
         if (window.innerWidth <= 768) { // 画面幅が768px以下のときだけメニューを閉じる
             header_menu_detail.classList.remove('menu_active');
             responsive_menu_btn.classList.remove('menu_active');  // 三本線に戻す
+            body.classList.remove('no_scroll');  // メニューが閉じられたら背景固定を解除
         }
     });
 });
