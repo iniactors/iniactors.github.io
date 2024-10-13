@@ -20,7 +20,7 @@ Base style
 */
 body{
     font-family: "kaifont";  /* , "Noto Sans JP", sans-serif, "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif; */
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.5;
     color: #333;
     background-color: #243949;
@@ -58,6 +58,9 @@ section
     background: linear-gradient(to top, #cfd9df 0%, #e2ebf000 100%),url(../../../img/ai-2024/bg/blue-bg.png);  /* 背景画像指定 */
 }
 .section.section-secondary {
+    background-color: rgb(54, 54, 54); /* #f4f5f5 */
+}
+.section.section-comment {
     background-color: rgb(54, 54, 54); /* #f4f5f5 */
 }
 .section.info {
@@ -222,7 +225,7 @@ a > img {
 }
 
 .header-nav.menu_active {
-    background: linear-gradient(to top, #cfd9df 0%, #e2ebf000 100%),url(../images/iniactors_square.jpg);  /* 背景画像指定 */
+    background: linear-gradient(to top, #3e404281 25%, #e2ebf000 100%),url(../../../img/ai-2024/bg/poster_nonletter.png);  /* 背景画像指定 */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -348,25 +351,38 @@ story
 .story {
     background-color: rgba(5, 28, 25, 0.445);
     padding: 10px;
-    margin: 0;
+    margin: 0 100px;
     text-align: center;
     align-items: center;
     justify-content: center;
     border:1px solid #84c1ff;/*枠線*/
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);/*影*/
 }
+.catchcopy {
+    font-size: 220%;
+    text-shadow: 1px 1px 2px rgb(166, 162, 112);
+}
 .story-description {
     margin: 0;
     padding: 0;
-    text-align: center;
-    line-height: 2;
     color: white;
-    font-size: 30px;
+    text-shadow: 1px 1px 2px rgb(39, 39, 39);
+    text-align: center;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    font-size: 20px;
 }
 
 @media (max-width:768px){
+    .story {
+        margin: 0 10px;
+    }
+    .catchcopy {
+        font-size: 160%;
+    }
     .story-description {
-        font-size: 20px;
+        font-size: 16px;
+        line-height: 1.6;
     }
 }
 
@@ -480,7 +496,7 @@ cast-silhouette
     color: white;
     font-size: 180%;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /*テキストに影を付ける*/
+    text-shadow: 1px 1px 2px rgb(39, 39, 39); /*テキストに影を付ける*/
     border:1px solid #84c1ff;/*枠線*/
     padding: 10px;
     background-color: rgba(5, 28, 25, 0.445);
@@ -491,6 +507,9 @@ cast-silhouette
 @media (max-width:768px) {
     .center-text {
         font-size: 24px;
+    }
+    .slider-container {
+        margin: 0 10px;
     }
 }
 
@@ -632,6 +651,7 @@ information
     padding: 10px;
     height: auto;
     width: 100%; /* カードの幅を調整 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);/*影*/
 }
 .card-time{
     font-size: 20px;
@@ -654,11 +674,12 @@ information
 
 #information-emp{
     color: #fff;
-    -webkit-text-stroke: 0.5px rgb(255, 212, 244);
+    -webkit-text-stroke: 0.5px rgb(166, 162, 112);
 }
 .information-note{
     text-align: center;
     font-size: 30px;
+    text-shadow: 1px 1px 2px rgb(39, 39, 39);
 }
 
 .information-reminder {
@@ -673,6 +694,7 @@ information
     text-align: center;
     padding: 30px;
     margin: 0;
+    text-shadow: 1px 1px 2px rgb(39, 39, 39);
 }
 
 @media (max-width: 768px){
@@ -689,29 +711,43 @@ comment
 */
 
 .comment{
-    text-align: left;
+    text-align: center;
 }
 .comment-headline{
     margin: 0 0 15px;
+    text-shadow: 1px 1px 2px rgb(39, 39, 39);
 }
 
 /* .comment-description{} */
 
 .comment-description{
     padding: 30px;
-    margin: 0 0 20px;
-    background-color:#141e2c;/*背景色*/
-    border:1px solid #e3f4f2;/*枠線*/
+    margin: 0 10px 20px;
+    background-color:#06adb615;/*背景色*/
+    border:1px solid #84c1ff;/*枠線*/
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);/*影*/
+    font-size: 20px;
+    text-shadow: 1px 1px 2px rgb(39, 39, 39);
+    line-height: 1.8;
+    letter-spacing: 0.05em;
 }
+
+@media (max-width:768){
+    .comment-description{
+    font-size: 16px;
+    line-height: 1.6;
+    }
+}
+
 .comment-description.scriptwriter{
-    background-color: #06adb615;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
+        url(../../../img/ai-2024/bg/comment-gray.png);
+    background-size: cover;
 }
 .comment-description.main-character{
-    background-color: #06adb615;
-}
-.comment-description.someone{
-    background-color: #06adb615;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+        url(../../../img/ai-2024/bg/comment-gray.png);
+    background-size: cover;
 }
 
 
