@@ -224,7 +224,7 @@ a > img {
 }
 
 .header-nav.menu_active {
-    background: linear-gradient(to top, #3e404281 25%, #e2ebf000 100%),url(../../../img/ai-2024/bg/poster_nonletter.png);  /* 背景画像指定 */
+    background: linear-gradient(to top, #3e404281 25%, #e2ebf000 100%),url(../../../img/ai-2024/bg/poster_nonletter.webp);  /* 背景画像指定 */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -409,50 +409,6 @@ cast1
     align-items: center;
     justify-content: center;
 }
-.cast:hover {
-    background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);
-    color: whitesmoke;
-}
-
-.cast_reverse {
-    margin: 0 0 20px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row-reverse; /* 画像とキャプションの位置を反転 */
-}
-.cast_reverse:hover {
-    background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);
-    color: whitesmoke;
-}
-
-.cast-image {
-    flex-shrink: 0;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin: 0;
-}
-.cast-caption {
-    padding-left: 15px;
-}
-
-.cast-caption_reverse {
-    padding-right: 15px;
-}
-
-.cast-headline {
-    margin: 0 0 20px;
-    font-size: 30px;
-    text-align: center;
-}
-.cast-description {
-    margin: 0;
-    text-align: center;
-}
-
-
 
 /*
 cast-silhouette
@@ -521,6 +477,9 @@ cast-silhouette
     }
     .slider-container {
         margin: 0 10px;
+    }
+    .silhouette-caption {
+        font-size: 18px;
     }
 }
 
