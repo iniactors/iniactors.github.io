@@ -1,3 +1,14 @@
+// ローディング画面
+
+window.onload = function() {
+    const spinner = document.getElementById('loading');
+    spinner.classList.add('loaded');
+}
+
+/***************************************/
+/*           ハンバーガーメニュー       */
+/***************************************/
+
 const responsive_menu_btn = document.querySelector('.responsive_btn');
 const header_menu_detail = document.querySelector('.header-nav');
 const menu_links = document.querySelectorAll('.header-navitem > a');
