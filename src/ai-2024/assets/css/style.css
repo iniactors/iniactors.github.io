@@ -863,3 +863,27 @@ footer {
         font-size: 15px;
     }
 }
+
+/*
+sub.html
+*/
+
+/* .top-button-area {} */
+.top-button {
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+}
+.top-button > a {
+    text-decoration: none;
+    color: white;
+    border: #37ecba solid 1px;
+    padding: 5px;
+}
+/* .illust-area {} */
+.illust-area > img {
+    width: 300px;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+}
