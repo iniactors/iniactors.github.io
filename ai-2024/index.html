@@ -12,11 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     
     
-    
   <script type="module" crossorigin src="/assets/ai2024.25986eb5.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill.c7c6310f.js">
   <link rel="modulepreload" crossorigin href="/assets/year.f5d62913.js">
-  <link rel="stylesheet" href="/assets/index.104b8925.css">
+  <link rel="stylesheet" href="/assets/index.a057dcd6.css">
 </head>
 <body>
 
@@ -25,7 +24,9 @@
         <div class="spinner"></div>
     </div>
 
+    <!--
     <div class="for-header-area"></div>
+    -->
 
     <header class="header-bg">
         <div class="header-contents">
@@ -70,23 +71,27 @@
         </video>
         
         <img class="hero-title" src="/assets/logo-main.2bd16675.png" alt="アイの過ちを教えて">
+        <div class="questionnaire-box">
+            <p class="questionnaire">
+                <a href="#">事前アンケート /</a>
+                <a href="#">公演アンケート</a>
+            </p>
+        </div>
     </div>
 
     <div class="sns-area">
+        <div class="icons">
         <a href="https://twitter.com/iniactors">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="80" height="80" viewBox="0,0,256,256">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256">
                 <g fill="#ffffff" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M41,6l-31.071,36h-3.714l31.072,-36z" fill-rule="nonzero"></path><path d="M31.143,41l-23.323,-34h8.957l23.323,34z" fill-rule="evenodd"></path><path d="M15.724,9l20.578,30h-4.106l-20.578,-30h4.106M17.304,6h-11.382l24.694,36h11.382l-24.694,-36z" fill-rule="nonzero"></path></g></g>
             </svg>
         </a>
         <a href="https://www.instagram.com/iniactors/">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="80" height="80" viewBox="0,0,256,256">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256">
                 <g fill="#fedde5" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M11.46875,5c-3.55078,0 -6.46875,2.91406 -6.46875,6.46875v9.0625c0,3.55078 2.91406,6.46875 6.46875,6.46875h9.0625c3.55078,0 6.46875,-2.91406 6.46875,-6.46875v-9.0625c0,-3.55078 -2.91406,-6.46875 -6.46875,-6.46875zM11.46875,7h9.0625c2.47266,0 4.46875,1.99609 4.46875,4.46875v9.0625c0,2.47266 -1.99609,4.46875 -4.46875,4.46875h-9.0625c-2.47266,0 -4.46875,-1.99609 -4.46875,-4.46875v-9.0625c0,-2.47266 1.99609,-4.46875 4.46875,-4.46875zM21.90625,9.1875c-0.50391,0 -0.90625,0.40234 -0.90625,0.90625c0,0.50391 0.40234,0.90625 0.90625,0.90625c0.50391,0 0.90625,-0.40234 0.90625,-0.90625c0,-0.50391 -0.40234,-0.90625 -0.90625,-0.90625zM16,10c-3.30078,0 -6,2.69922 -6,6c0,3.30078 2.69922,6 6,6c3.30078,0 6,-2.69922 6,-6c0,-3.30078 -2.69922,-6 -6,-6zM16,12c2.22266,0 4,1.77734 4,4c0,2.22266 -1.77734,4 -4,4c-2.22266,0 -4,-1.77734 -4,-4c0,-2.22266 1.77734,-4 4,-4z"></path></g></g>
             </svg>
         </a>
-        <p class="questionnaire">
-            <a href="#">事前アンケート /</a>
-            <a href="#">公演アンケート </a>
-        </p>
+        </div>
     </div>
 
     <section id="story" class="section section-story" >
@@ -188,7 +193,7 @@
                                     </small>
                                     <hr>
                                     <span class="card-nav">
-                                        オンライン生配信（1日目）はこちら
+                                        オンライン生配信（1日目）は<span class="here">こちら</span>
                                     </span>
                                 </p>
                             </div>
@@ -231,7 +236,7 @@
                                     </small>
                                     <hr>
                                     <span class="card-nav">
-                                        オンライン生配信（2日目）はこちら
+                                        オンライン生配信（2日目）は<span class="here">こちら</span>
                                     </span>
                                 </p>
                             </div>
@@ -241,7 +246,7 @@
             </ul>
             <p class="information-note">
                 公演内容は全て同一のものになります。 <br>
-                所要時間は各回 <span id="information-emp"> 1時間 </span> ほどになります。
+                所要時間は各回 1時間 ほどになります。
             </p>
             <div class="information-reminder">
                 <p class="information-reminder-contents">
@@ -274,18 +279,18 @@
                     作中に登場する様々なキャラクターを見たうえで、<br>
                     「自分だったらどうしよう……」<br>
                     と、考えるきっかけとなっていただければ幸いです。
-                    <br><br>
-                    作中に登場する様々なキャラクターを見たうえで、
-                    ぜひ考えてほしいです。<br>
-                    脚本としてこんなに嬉しいことはありません。
                 </p>
             </div>
             <div class="comment-description main-character">
-                <h2 class="comment-headline">--主人公役より</h2>
+                <h2 class="comment-headline">--主人公 水瀬役より</h2>
                 <p class="comment-description">
-                    text text text text text text text text text text text text <br>
-                    text text text text text text text text text text text text text text text text <br>
-                    text text text text text text text text text text text text text text <br> 
+                    今回主人公の水瀬役を務めさせていただきます。<br><br>
+                    水瀬の性格は大人しくて優等生みたいな感じのイメージです。<br>
+                    正確に言うと大人しくなったが正しいのですが、<br>
+                    この物語ではなぜ大人しくなったのか、<br>
+                    そして水瀬の過去に何があったのかがキモとなります。<br><br>
+                    また物語の中で成長していく水瀬を見ていただけたら嬉しいです。<br>
+                    当日、現地での公演をご覧いただければ幸いです。
                 </p>
             </div>
         </div>
