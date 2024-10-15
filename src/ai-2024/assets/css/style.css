@@ -56,7 +56,7 @@ body{
     font-size: 16px;
     line-height: 1.5;
     color: #333;
-    background-color: #243949;
+    background-color: black;
 }
 hr {
     border: 0;
@@ -121,7 +121,7 @@ upper-header
 .for-header-area {
     background-color: #243949;
     width: 100%;
-    height: 90px;
+    height: 70px;
     padding: 0 15px;
 }
 
@@ -131,7 +131,7 @@ header
 .header-bg {
     background-color: #333333b4;
     width: 100%;
-    height: 90px;
+    height: 70px;
     padding: 0;
     position: fixed;
     z-index: 10;
@@ -333,55 +333,67 @@ hero
     z-index: 2;
 }
 
-/*
-sns-area
-*/
-.sns-area {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    text-align: center;
-    background-color: rgb(42, 41, 41);
-    position: relative; /* 親要素にrelativeを設定 */
-}
-.sns-area > a {
-    margin: 0 5px;
-	height: 100%;
-}
-
-@media (max-width:768px){
-    .sns-area > a {
-        width: 16%;
-    }
-}
-
-.questionnaire {
+.questionnaire-box {
     margin: 0;
     padding: 5px;
     text-align: center;
     justify-content: center;
     position: absolute;
-    bottom: 10px; /* 下から10pxの位置に配置 */
-    right: 10px;  /* 右から10pxの位置に配置 */
+    top: 97%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*真ん中に表示するために中央へ移動*/
     background-color: rgb(225, 16, 103);
+    z-index: 5;
+}
+.questionnaire {
+    display: flex;
 }
 .questionnaire > a {
+    padding: 2px;
     color: whitesmoke;
     font-family: "kaifont";
     text-decoration: none;
     border-bottom: 2px solid transparent;
     transition: border-color .25s;
-    font-size: 30px;
+    font-size: 16px;
 }
 .questionnaire > a:hover {
     border-bottom: 2px solid #ccc;
 }
 
 @media (max-width:768px){
+    .questionnaire-box {
+        top: 97%;
+    }
     .questionnaire > a {
-        font-size: 15px;
+        font-size: 14px;
     }
 }
+
+/*
+sns-area
+*/
+.sns-area {
+    margin: 10px 0 0;
+    width: 100%;
+    background-color: rgb(42, 41, 41);
+}
+.icons {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+}
+.icons > a {
+    margin: 0 10px;
+}
+
+@media (max-width:768px){
+    .icons > a {
+        width: 10%;
+    }
+}
+
 
 /*
 story
@@ -494,10 +506,11 @@ cast-silhouette
     left: 50%;
     transform: translate(-50%, -50%); /*真ん中に表示するために中央へ移動*/
     color: white;
-    font-size: 180%;
+    font-size: 20px;
+    line-height: 1.8;
     text-shadow: 1px 1px 2px rgb(39, 39, 39); /*テキストに影を付ける*/
     border:1px solid #84c1ff;/*枠線*/
-    padding: 10px;
+    padding: 16px;
     background-color: rgba(5, 28, 25, 0.445);
     width: 80%;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);/*影*/
@@ -505,7 +518,8 @@ cast-silhouette
 
 @media (max-width:768px) {
     .center-text {
-        font-size: 24px;
+        font-size: 16px;
+        line-height: 1.6;
     }
     .slider-container {
         margin: 0 10px;
@@ -677,6 +691,9 @@ information
     -webkit-text-fill-color: transparent;
     font-weight: bold;
 }
+.here{
+    border-bottom: dashed 1px #ffdff9;
+}
 
 #information-emp{
     color: #fff;
@@ -686,7 +703,9 @@ information
 .information-note{
     text-align: center;
     font-size: 30px;
-    text-shadow: 1px 1px 2px rgb(39, 39, 39);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgb(156 218 230);
+    -webkit-text-stroke: 0.5px #507a78;
 }
 
 .information-reminder {
@@ -706,7 +725,7 @@ information
 
 @media (max-width: 768px){
     .information-note{
-        font-size: 20px;
+        font-size: 18px;
     }
     .information-reminder-contents{
         font-size: 24px;
@@ -757,7 +776,7 @@ comment
     background-size: cover;
 }
 .comment-description.main-character{
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
         url(../../../img/ai-2024/bg/comment-gray.png);
     background-size: cover;
 }
