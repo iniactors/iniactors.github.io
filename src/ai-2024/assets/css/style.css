@@ -341,7 +341,7 @@ hero
     position: absolute;
     top: 97%;
     left: 50%;
-    transform: translate(-150%, -50%); /*真ん中に表示するために中央へ移動*/
+    transform: translate(-150%, -100%); /*真ん中に表示するために中央へ移動*/
     background-color: rgb(225, 16, 103);
     z-index: 5;
 }
@@ -354,7 +354,7 @@ hero
     position: absolute;
     top: 97%;
     left: 50%;
-    transform: translate(50%, -50%); /*真ん中に表示するために中央へ移動*/
+    transform: translate(50%, -100%); /*真ん中に表示するために中央へ移動*/
     background-color: rgb(225, 16, 103);
     z-index: 5;
 }
@@ -387,7 +387,7 @@ hero
 /*
 sns-area
 */
-.sns-area {
+.sns {
     margin: 10px 0 0;
     width: 100%;
     background-color: rgb(42, 41, 41);
@@ -617,6 +617,7 @@ information
     align-items: center; /* カード内で横方向の中央揃え */
     text-align: center; /* テキストの中央揃え */
 }
+
 .card-link{
     display: flex;
     color: #333;
@@ -625,18 +626,7 @@ information
     transition: background-color .25s;
 }
 
-.card-link:hover:before{
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    /* background-color: rgba(0,255,255,.2); */
-    background-image: linear-gradient(to top, #30d0d02b 0%, #33086715 100%);
-    z-index: 1;
-    border-radius: 2%;
-}
+
 .card-image{
     flex-shrink: 0;
     height: auto;
