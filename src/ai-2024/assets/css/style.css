@@ -156,7 +156,7 @@ header
 
 /*ロゴの利用をsvg → img に変える際に追加した*/
 a > img {
-    width: 120px;
+    width: 100%;
     height: 120px;
 }
 
@@ -333,7 +333,7 @@ hero
     z-index: 2;
 }
 
-.questionnaire-box {
+.questionnaire-box-bef {
     margin: 0;
     padding: 5px;
     text-align: center;
@@ -341,10 +341,24 @@ hero
     position: absolute;
     top: 97%;
     left: 50%;
-    transform: translate(-50%, -50%); /*真ん中に表示するために中央へ移動*/
+    transform: translate(-150%, -50%); /*真ん中に表示するために中央へ移動*/
     background-color: rgb(225, 16, 103);
     z-index: 5;
 }
+
+.questionnaire-box-aft {
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    top: 97%;
+    left: 50%;
+    transform: translate(50%, -50%); /*真ん中に表示するために中央へ移動*/
+    background-color: rgb(225, 16, 103);
+    z-index: 5;
+}
+
 .questionnaire {
     display: flex;
 }
