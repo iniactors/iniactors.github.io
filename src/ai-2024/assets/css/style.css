@@ -333,7 +333,7 @@ hero
     z-index: 2;
 }
 
-.questionnaire-box-bef {
+.questionnaire-box {
     margin: 0;
     padding: 5px;
     text-align: center;
@@ -342,19 +342,6 @@ hero
     top: 97%;
     left: 50%;
     transform: translate(-150%, -100%); /*真ん中に表示するために中央へ移動*/
-    background-color: rgb(225, 16, 103);
-    z-index: 5;
-}
-
-.questionnaire-box-aft {
-    margin: 0;
-    padding: 5px;
-    text-align: center;
-    justify-content: center;
-    position: absolute;
-    top: 97%;
-    left: 50%;
-    transform: translate(50%, -100%); /*真ん中に表示するために中央へ移動*/
     background-color: rgb(225, 16, 103);
     z-index: 5;
 }

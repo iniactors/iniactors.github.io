@@ -8,8 +8,8 @@
 }
 
 @font-face {
-  font-family: 'Chalk-S-JP';
-  src: url('../public/fonts/Chalk-S-JP.otf') format("opentype");
+  font-family: 'GTK';
+  src: url('../public/fonts/851Gkktt_005.ttf') format("opentype");
 }
 
 html {
@@ -129,27 +129,36 @@ p {
   justify-content: center;
 }
 
-.star-link {
+.fes {
   color: #fff;
-  background-image: url("../src/img/brackboard.png");
+  background-image: url("../src/img/ai-2024/Frame.png");
   background-size: 100% 100%;
   border: none;
-  border-radius: 0.25rem;
-  font-size: 1.25rem;
-  padding: 0.75rem 5rem;
+  padding: 3rem 6rem;
   transition: 0.5s;
-  font-family: 'Chalk-S-JP';
+  font-family: 'GTK';
+  text-decoration: none;
 }
 
-.star-link-bottom {
-  font-size: 1rem;
+.fes:hover {
+  background-image: url("../src/img/ai-2024/Frame_white.png");
+  background-size: 100% 100%;
 }
 
-.star-link:hover {
-  color: #fff;
-  transform: scale(1.1);
+.ank{
+    border: 1px solid #333;
+    padding: 5px;
+    background: #00a196;
+    margin: 5px 0;
+    width: fit-content;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
 }
 
+.ank:hover{
+  color: #DDDDDD;
+}
 
 .sub-text {
   font-size: min(calc(0.75rem + 0.25vw), 5rem);
