@@ -130,19 +130,23 @@ p {
 }
 
 .fes {
+  margin-top: 2rem;
   color: #fff;
   background-image: url("../src/img/ai-2024/Frame.png");
   background-size: 100% 100%;
   border: none;
-  padding: 3rem 6rem;
+  padding: 12% 12% 10%;
   transition: 0.5s;
   font-family: 'GTK';
   text-decoration: none;
+  font-size: 5vw; /* ビューポート幅の5%に相当 */
+  white-space: nowrap; /* 改行を防ぎ、一行に収める */
 }
 
 .fes:hover {
   background-image: url("../src/img/ai-2024/Frame_white.png");
   background-size: 100% 100%;
+  color: white;
 }
 
 .ank{
