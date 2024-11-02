@@ -815,7 +815,7 @@ credit
     align-items: center; /* 垂直方向に中央寄せ（画像の高さに合わせる場合） */
     margin: 10px 0 0;
     padding: 0;
-    background-color: #333333a5;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.575) 94%, rgba(49, 49, 49, 0.449) 6%);
 }
 .credit-image {
     display: block; /* 画像の下に余白を作らない */
