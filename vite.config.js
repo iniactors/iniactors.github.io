@@ -22,6 +22,7 @@ export default defineConfig({
         star2023: resolve(root, 'star-2023/index.html'),
         ai2024: resolve(root, 'ai-2024/index.html'),
         ai2024sub: resolve(root, 'ai-2024/sub.html'),
+        moon2025: resolve(__dirname, 'moon2025/index.html'),
       },
     },
   },
