@@ -25,6 +25,7 @@ export default defineConfig({
         moon2025: resolve(root, 'moon2025/index.html'),
         moon2025kni: resolve(root, 'moon2025/kni.html'),
         moon2025msk: resolve(root, 'moon2025/msk.html'),
+        moon2025akb: resolve(root, 'moon2025/akb.html'),
       },
     },
   },
