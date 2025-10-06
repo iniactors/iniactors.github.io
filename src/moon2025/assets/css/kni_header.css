@@ -1,0 +1,53 @@
+/* 既存のbodyスタイルに追記 */
+body {
+    background-color: #222;
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
+    /* 固定ヘッダーの後ろにコンテンツが隠れないよう、ヘッダーの高さ分だけ余白を設ける */
+    padding-top: 10vh;
+}
+
+/* ▼▼▼ ヘッダー用の新しいスタイルを追加 ▼▼▼ */
+.site-header {
+    /* ヘッダーを画面上部に固定する */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* 他の要素より手前に表示する */
+
+    /* 高さ・余白 */
+    height: 10vh; /* 高さを画面の10%に設定 */
+    padding: 0 5%; /* 左右に5%の余白 */
+    box-sizing: border-box; /* paddingを含めて幅を100%にする */
+
+    /* 背景と文字 */
+    background-color: rgba(20, 20, 20, 0.7); /* 半透明の黒色 (0.7が透明度) */
+    color: white;
+
+    /* ロゴとナビゲーションを横並びにする設定 */
+    display: flex;
+    justify-content: space-between; /* 両端に寄せる */
+    align-items: center; /* 上下中央に揃える */
+}
+
+.logo {
+    font-size: 1.8rem; /* remは文字サイズの単位 */
+    font-weight: bold;
+}
+
+.header-nav ul {
+    list-style: none; /* リストの黒点を消す */
+    margin: 0;
+    padding: 0;
+    display: flex; /* メニュー項目を横並びにする */
+    gap: 30px; /* 各メニュー項目の間隔 */
+}
+
+.header-nav a {
+    text-decoration: none; /* リンクの下線を消す */
+    color: white; /* 文字色を白に */
+    font-size: 1rem;
+    font-weight: 500;
+}

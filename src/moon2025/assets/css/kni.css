@@ -6,7 +6,11 @@
 
 body {
   --scroll-gap: 30px;
-  background-color: rgb(44, 43, 43);
+    /* 背景色も滑らかに変わるようにtransitionを追加 */
+    transition: background-color 1.5s ease-in-out;
+    background-color: #222;
+    margin: 0;
+    padding-top: 10vh;
 }
 
 h1{
@@ -54,7 +58,7 @@ h1{
 }
 
 .box1 p {
-  margin:0;
+  margin-top: 300px;
   padding:0;
 }
 
@@ -72,10 +76,32 @@ h1{
   padding:0;
 }
 
-/* ページ全体の基本設定 */
-body {
-    margin: 0;
-    font-family: sans-serif;
+.box3{
+  background:#e9ac73;
+  width: 70%;
+  height: 300px;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: auto;
+}
+
+.box3 p {
+  margin-top: 0;
+  padding:0;
+}
+
+.box4{
+  background:#738be9;
+  width: 70%;
+  height: 300px;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: auto;
+}
+
+.box4 p {
+  margin-top: 0;
+  padding:0;
 }
 
 /* ふすまのコンテナ */
@@ -105,14 +131,14 @@ body {
 
 .fusuma-left {
     /* 左側の画像を指定 */
-    background-image: url('../img/fusuma-left.jpg'); 
+    background-image: url('img/ふすま左.jpg'); 
     /* 画像の右端を基準に配置（引き手が中央に来るように）*/
     background-position: right;
 }
 
 .fusuma-right {
     /* 右側の画像を指定 */
-    background-image: url('../img/fusuma-right.jpg');
+    background-image: url('img/ふすま右.jpg');
     /* 画像の左端を基準に配置（引き手が中央に来るように）*/
     background-position: left;
 }
@@ -133,4 +159,132 @@ body {
 .empty-space {
     /* 表示領域の高さ100%に設定 */
     min-height: 60vh; 
+}
+
+
+
+@keyframes sunFlicker {
+    0% {
+        /* 開始と終了の状態（通常時） */
+        box-shadow: 0 0 1vw 0.5vw rgba(255, 190, 0, 0.9),
+                    0 0 3vw 1vw rgba(255, 100, 0, 0.7),
+                    0 0 6vw 2vw rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        /* 中間地点の状態（最も大きく、明るくなった時） */
+        /* ぼかし・広がり・色の濃さを変更して、より大きな動きに */
+        box-shadow: 0 0 1.8vw 0.9vw rgba(255, 200, 0, 1),   /* より明るく、広く */
+                    0 0 5vw 1.8vw rgba(255, 110, 0, 0.8), /* より明るく、広く */
+                    0 0 10vw 3vw rgba(255, 20, 0, 0.6);   /* より明るく、広く */
+    }
+    100% {
+        /* 通常の状態に戻る */
+        box-shadow: 0 0 1vw 0.5vw rgba(255, 190, 0, 0.9),
+                    0 0 3vw 1vw rgba(255, 100, 0, 0.7),
+                    0 0 6vw 2vw rgba(255, 0, 0, 0.5);
+    }
+}
+
+/* --- コンテナのスタイル --- */
+.container {
+    position: relative;
+    width: min(75vw, 800px);
+    margin: 5vw auto;
+}
+
+/* --- moon-sun-wrapper のスタイル --- */
+.moon-sun-wrapper {
+    position: relative; width: 100%;
+    height: min(37.5vw, 400px);
+    border-radius: 50vw 50vw 0 0;
+}
+
+/* ▼▼▼ エフェクト部分のコード ▼▼▼ */
+.moon, .sun {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 50vw 50vw 0 0;
+    transition: opacity 1.5s ease-in-out;
+}
+.moon { 
+    background-color: #f0f0f0;
+    opacity: 1;
+    z-index: 2;
+    box-shadow: 0 0 1vw 0.5vw white, /* 内側の強い光 */
+                0 0 4vw 2vw rgba(255, 255, 255, 0.5);
+}
+
+.sun { 
+    background-color: #ffc107;
+    opacity: 0;
+    z-index: 1;
+    animation: sunFlicker 4s infinite ease-in-out;
+}
+
+.moon-sun-wrapper.show-sun .moon { opacity: 0; }
+.moon-sun-wrapper.show-sun .sun { opacity: 1; }
+
+/* --- ボタンのスタイル --- */
+.toggle-button {
+    position: absolute;
+    top: min(37.5vw, 400px); left: 50%;
+    width: min(15vw, 160px); height: min(15vw, 160px);
+    transform: translateX(-50%) translateY(-5vw);
+    border-radius: 50%; background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer; outline: none;
+    transition: background-color 0.3s, border-color 0.3s;
+    z-index: 10;
+}
+.toggle-button:hover { 
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- シルエットのコンテナ --- */
+.silhouettes {
+    /* 親要素(.moon-sun-wrapper)を基準に配置 */
+    position: absolute;
+    bottom: 0; /* 半円の最下部（地平線）に配置 */
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Flexboxで中の画像を中央・下に揃える */
+    display: flex;
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: flex-end;   /* 垂直方向の下揃え */
+    gap: 2%; /* 影と影の間のすき間 */
+
+    /* 他の要素より手前に表示 */
+    z-index: 5;
+}
+
+/* --- シルエットの画像共通スタイル --- */
+.moon-silhouette,
+.sun-silhouette {
+    /* 大きさを親要素の高さに合わせて調整 */
+    height: 40%; 
+    width: auto; /* 高さに合わせて幅は自動調整 */
+
+    /* フェードイン・アウトのアニメーション設定 */
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* --- 太陽の影の初期状態 --- */
+.sun-silhouette {
+    /* 太陽の影は最初、非表示（透明）にしておく */
+    opacity: 0;
+}
+
+/* --- 切り替え時の動き --- */
+/* 太陽が表示された時（show-sunクラスが付いた時） */
+.moon-sun-wrapper.show-sun .moon-silhouette {
+    /* 月の影をフェードアウト */
+    opacity: 0;
+}
+
+.moon-sun-wrapper.show-sun .sun-silhouette {
+    /* 太陽の影をフェードイン */
+    opacity: 1;
 }

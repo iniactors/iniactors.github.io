@@ -1,0 +1,45 @@
+/* --- 雲のアニメーション --- */
+.cloud-container {
+    width: 100%;
+    height: 15vh; /* 雲が表示されるエリアの高さ */
+    position: relative; /* 子要素を配置する基準 */
+    overflow: hidden; /* エリアからはみ出た雲を隠す */
+    margin-bottom: -5vh; /* 月との間隔を少し詰める */
+}
+
+.cloud-track {
+    /* 2セット分の雲を格納するため、横幅を200%にする */
+    width: 200%;
+    height: 100%;
+    
+    /* 雲を横並びにする */
+    display: flex;
+    align-items: center; /* 雲を上下中央に配置 */
+
+    /* アニメーションを設定 */
+    animation: scroll-clouds 40s linear infinite;
+}
+
+/* 雲をスクロールさせるアニメーション本体 */
+@keyframes scroll-clouds {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* 横幅の半分(-100%)移動すると、ちょうど1セット分が流れる */
+        transform: translateX(-50%);
+    }
+}
+
+/* 個々の雲のスタイル */
+.cloud {
+    height: auto;
+    opacity: 0.8; /* 少しだけ透明にする */
+}
+
+/* 雲に個性と奥行きを出す（サイズや位置をランダムに見せる） */
+.cloud-1 { width: 10%; margin-right: 5%; }
+.cloud-2 { width: 15%; margin-top: -5%; margin-right: 8%; }
+.cloud-3 { width: 12%; margin-top: 3%; margin-right: 3%; }
+.cloud-4 { width: 18%; margin-top: -3%; margin-right: 10%; }
+.cloud-5 { width: 13%; margin-top: 2%; margin-right: 6%; }

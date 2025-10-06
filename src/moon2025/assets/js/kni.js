@@ -18,3 +18,26 @@ window.addEventListener('load', () => {
         fusumaOverlay.style.display = 'none';
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('toggleButton');
+    const moonSunWrapper = document.getElementById('moonSunWrapper');
+    const body = document.body; // body要素も取得しておく
+
+    // 色を定義しておくと管理しやすいです
+    const nightColor = '#222';
+    const dayColor = '#9cd7e9ff'; // 夜明けのような少し明るい紺色
+
+    toggleButton.addEventListener('click', () => {
+        // 月と太陽の表示を切り替える
+        moonSunWrapper.classList.toggle('show-sun');
+        // もしmoonSunWrapperに 'show-sun' クラスが付いているなら（太陽なら）
+        if (moonSunWrapper.classList.contains('show-sun')) {
+            // 空の色を太陽の色にする
+            body.style.backgroundColor = dayColor;
+        } else {
+            // そうでなければ（月なら）空の色を月の色に戻す
+            body.style.backgroundColor = nightColor;
+        }
+    });
+});
