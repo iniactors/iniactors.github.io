@@ -131,14 +131,14 @@ h1{
 
 .fusuma-left {
     /* 左側の画像を指定 */
-    background-image: url('img/ふすま左.jpg'); 
+    background-image: url('./../img/fusuma-left.jpg'); 
     /* 画像の右端を基準に配置（引き手が中央に来るように）*/
     background-position: right;
 }
 
 .fusuma-right {
     /* 右側の画像を指定 */
-    background-image: url('img/ふすま右.jpg');
+    background-image: url('./../img/fusuma-right.jpg');
     /* 画像の左端を基準に配置（引き手が中央に来るように）*/
     background-position: left;
 }
