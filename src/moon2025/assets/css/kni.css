@@ -48,33 +48,6 @@ h1{
   gap: 0 var(--scroll-gap);
 }
 
-.box1{
-  background:#e7e973;
-  width: 70%;
-  height: 300px;
-  margin: auto;
-  margin-bottom: 20px;
-  padding: auto;
-}
-
-.box1 p {
-  margin-top: 300px;
-  padding:0;
-}
-
-.box2{
-  background:#cb7cfc;
-  width: 70%;
-  height: 300px;
-  margin: auto;
-  margin-bottom: 20px;
-  padding: auto;
-}
-
-.box2 p {
-  margin:0;
-  padding:0;
-}
 
 .box3{
   background:#e9ac73;
@@ -288,3 +261,60 @@ h1{
     /* 太陽の影をフェードイン */
     opacity: 1;
 }
+
+/*------------ここから-------------*/
+.divider {
+    /* 中の要素を中央に配置するための設定 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* 上下の余白 */
+    margin: 1rem 0; /* remは文字サイズ基準の単位 */
+}
+/* 中央の文字やアイコンのスタイル */
+.divider span {
+    font-size: 1.2rem;
+}
+
+/* style.css に追加 */
+
+.divider-icon {
+    height: 2.5em; /* アイコンの高さを、親要素の文字サイズの1.5倍に設定 */
+    width: auto;   /* 高さに合わせて幅は自動調整 */
+    vertical-align: middle; /* テキストの縦方向の中央に揃える */
+}
+
+.section {
+    padding: 4rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #fff;
+}
+.section-headline {
+    font-size: 2rem;
+    color: #fedde5;
+    text-align: center;
+    margin-bottom: -1.3rem;
+}
+
+.story { 
+    text-align: center;
+    font-family: "Shippori Mincho", serif;
+}
+.story-description {
+    margin-top: -1.5rem;
+    line-height: 2;   
+}
+
+.divider-icon2 {
+    height: 1.5em; /* アイコンの高さを、親要素の文字サイズの1.5倍に設定 */
+    width: auto;   /* 高さに合わせて幅は自動調整 */
+    vertical-align: middle; /* テキストの縦方向の中央に揃える */
+}
+.divider-icon3 {
+    height: 1.7em; /* アイコンの高さを、親要素の文字サイズの1.5倍に設定 */
+    width: auto;   /* 高さに合わせて幅は自動調整 */
+    vertical-align: middle; /* テキストの縦方向の中央に揃える */
+}
+/*-------ここまでストーリーの変更----------*/
