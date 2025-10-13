@@ -11,6 +11,13 @@ body {
     background-color: #222;
     margin: 0;
     padding-top: 10vh;
+    background: linear-gradient(
+        to bottom,
+        #0d0d0d 0%,    /* 上部：黒に近い夜空 */
+        #1a237e 40%,   /* 中央やや上：深い青 */
+        #3949ab 70%,   /* 中央やや下：青紫 */
+        #ec407a 100%   /* 下部：夜明けを思わせるピンク */);
+    --scroll-gap: 30px;
 }
 
 h1{
@@ -46,21 +53,6 @@ h1{
   display: flex;
   flex-wrap: nowrap;
   gap: 0 var(--scroll-gap);
-}
-
-
-.box3{
-  background:#e9ac73;
-  width: 70%;
-  height: 300px;
-  margin: auto;
-  margin-bottom: 20px;
-  padding: auto;
-}
-
-.box3 p {
-  margin-top: 0;
-  padding:0;
 }
 
 .box4{
@@ -318,3 +310,151 @@ h1{
     vertical-align: middle; /* テキストの縦方向の中央に揃える */
 }
 /*-------ここまでストーリーの変更----------*/
+
+/*-------ここからコメント----------*/
+/* --- コメントセクションのスタイル --- */
+h3{
+    text-decoration: underline;
+}
+.comments-section {
+    position: relative;
+    min-height: 200vh;
+    
+    overflow: hidden;
+    padding: 50px 20px;
+}
+
+/* 泡をフワフワさせるアニメーション */
+@keyframes floatBubble {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(10px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+/* --- 泡の共通スタイル（動きと配置のみ） --- */
+.bubble-large,
+.bubble-small {
+    position: absolute;
+    animation: floatBubble 10s infinite ease-in-out;
+    /* 描画を最適化し、ちらつきやぼやけを軽減するおままじない */
+    transform: translateZ(0); 
+    will-change: transform;
+}
+
+/* --- 大きい泡のスタイル --- */
+.bubble-large {
+    width: 70vw; 
+    height: 70vw;
+    max-width: 800px;
+    max-height: 800px;
+    
+    border-radius: 50%;
+    background: url('./../img/shabon.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* --- 泡の中のコメント用コンテンツ --- */
+/* --- 泡の中のコメント用コンテンツ（修正版） --- */
+.comment-content {
+    /* 親要素(.bubble-large)の真ん中に強制的に配置 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+
+    /* テキスト領域を泡より小さく設定 */
+    width: 50%;
+    height: 50%;
+    padding: 1em; /* 内側の余白 */
+    box-sizing: border-box; /* paddingを含めてサイズを計算 */
+
+    /* テキストを上下左右の中央に揃える */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    /* 長い文章のはみ出し対策 */
+    overflow-y: auto;
+    word-break: break-all;
+}
+/* --- 小さい泡のスタイル --- */
+.bubble-small {
+    width: 15vw;
+    height: 15vw;
+    max-width: 180px;
+    max-height: 180px;
+
+    /* 不要な効果を強制的にリセット */
+    background: none;
+    box-shadow: none !important;
+    border: none;
+    backdrop-filter: none;
+}
+
+/* --- 小さい泡の中の画像スタイル --- */
+.item-image {
+    width: 100%;
+    height: auto;
+}
+/* --- 個々の泡の配置とアニメーションのタイミング調整 --- */
+/* --- 個々の泡の配置（新レイアウト） --- */
+
+/* 大きい泡（コメント）の配置 */
+/* 大きい泡（コメント）の配置 (画面内に収めるバージョン) */
+.comment-1 { /* 左上の泡 */
+    top: 10vh;  /* 画面の上から10%の位置 */
+    left: 5vw;  /* 画面の左端から5%の位置 */
+    z-index: 10; 
+}
+
+.comment-2 { /* 右下の泡 */
+    top: 100vh; /* 画面の上から100%（約1画面分下）の位置 */
+    right: 5vw; /* 画面の右端から5%の位置 */
+    z-index: 11; 
+}
+
+/* 小さい泡（アイテム）の配置 */
+.item-comic { 
+    /* 画像の左下の赤い丸の位置 */
+    top: 70%;
+    left: 10%;
+    z-index: 20;
+}
+.item-tennis { 
+    /* 画像の右の赤い丸の位置 */
+    top: 40%;
+    right: 5%;
+    z-index: 20;
+}
+.item-icecream { 
+    /* 画像の左上の赤い丸の位置 */
+    top: 5%;
+    left: 5%;
+    z-index: 20;
+}
+
+/* --- メディアクエリ（スマホ用レイアウト）も更新 --- */
+/* 画面の横幅が900px以下の場合に適用されるスタイル */
+@media (max-width: 900px) {
+    .bubble-large {
+        position: relative;
+        width: 80vw;
+        height: 80vw;
+        margin: 10vw auto;
+    }
+
+    /* スマホでは小さい泡は非表示にする（任意） */
+    .bubble-small {
+        display: none;
+    }
+
+    /* 個別の位置指定をリセット */
+    .comment-1, .comment-2 {
+        top: auto;
+        left: auto;
+        right: auto;
+    }
+}
+/*-------ここまでコメント----------*/
