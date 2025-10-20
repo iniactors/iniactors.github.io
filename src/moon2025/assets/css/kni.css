@@ -20,6 +20,11 @@ body {
     --scroll-gap: 30px;
 }
 
+#main-content-area {
+    position: relative; /* z-indexを効かせるため */
+    z-index: 1; /* 背景より手前に表示 */
+}
+
 h1{
   color: #ffffff;
 }
@@ -55,20 +60,6 @@ h1{
   gap: 0 var(--scroll-gap);
 }
 
-.box4{
-  background:#738be9;
-  width: 70%;
-  height: 300px;
-  margin: auto;
-  margin-bottom: 20px;
-  padding: auto;
-}
-
-.box4 p {
-  margin-top: 0;
-  padding:0;
-}
-
 /* ふすまのコンテナ */
 #fusuma-overlay {
     position: fixed; /* 画面に固定 */
@@ -96,14 +87,14 @@ h1{
 
 .fusuma-left {
     /* 左側の画像を指定 */
-    background-image: url('./../img/fusuma-left.jpg'); 
+    background-image: url('./../img/fusuma.left.png'); 
     /* 画像の右端を基準に配置（引き手が中央に来るように）*/
     background-position: right;
 }
 
 .fusuma-right {
     /* 右側の画像を指定 */
-    background-image: url('./../img/fusuma-right.jpg');
+    background-image: url('./../img/fusuma.right.png');
     /* 画像の左端を基準に配置（引き手が中央に来るように）*/
     background-position: left;
 }
@@ -151,10 +142,88 @@ h1{
 }
 
 /* --- コンテナのスタイル --- */
+/* --- キャラ紹介セクション --- */
+/* --- キャラ紹介セクション --- */
+.character-intro-section {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* 画面下部に余白を持たせる */
+}
+
+.frame-container {
+    position: relative;
+    width: 90vw;
+    max-width: 900px;
+    aspect-ratio: 1 / 1; /* 額縁画像の縦横比に合わせて調整 */
+    z-index: 1; /* 背景と月/太陽の中間に配置 */
+}
+
+/* --- 色が変わる背景 --- */
+.frame-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a2e;
+    transition: background-color 1.5s ease-in-out;
+    z-index: 1; /* 一番奥 */
+}
+
+/* --- 月と太陽、ボタンを額縁の中央に配置するためのラッパー --- */
+.moon-sun-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* 額縁の内側の幅に合わせて調整 */
+    height: 80%; /* 額縁の内側の高さに合わせて調整 */
+    display: flex; /* 中央寄せのため */
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* 背景より手前、額縁画像より奥 */
+}
+
+/* --- 既存の月と太陽のコンテナを小さくする --- */
 .container {
     position: relative;
-    width: min(75vw, 800px);
-    margin: 5vw auto;
+    width: min(50vw, 400px); /* ▼▼▼ 月と太陽のサイズを小さく ▼▼▼ */
+    height: min(50vw, 400px); /* ▼▼▼ 月と太陽のサイズを小さく ▼▼▼ */
+    margin: 0; /* 中央寄せは親要素で行うため不要 */
+    z-index: 2; /* frame-backgroundより手前 */
+}
+
+/* --- 額縁画像を最前面に表示 --- */
+.frame-overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* ▼▼▼ この部分を全面的に書き換える ▼▼▼ */
+    background-image: url('./../img/frame.png'); /* 背景として画像を指定 */
+    background-size: 100% 100%; /* コンテナいっぱいに引き伸ばす */
+    background-repeat: no-repeat;
+    /* ▲▲▲ ここまで ▲▲▲ */
+    
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* 太陽の時にこのクラスが付く */
+.frame-background.is-day {
+    background-color: #a3d5ff; /* 朝の空の色（お好みに調整してください） */
+}
+
+
+/* --- 既存の月と太陽のコンテナを調整 --- */
+.container {
+    position: relative; /* 背景の上に表示されるように */
+    z-index: 2;
+    margin: 0 auto; /* 中央揃え（上下の余白は不要に） */
 }
 
 /* --- moon-sun-wrapper のスタイル --- */
@@ -398,9 +467,6 @@ h3{
     width: 100%;
     height: auto;
 }
-/* --- 個々の泡の配置とアニメーションのタイミング調整 --- */
-/* --- 個々の泡の配置（新レイアウト） --- */
-
 /* 大きい泡（コメント）の配置 */
 /* 大きい泡（コメント）の配置 (画面内に収めるバージョン) */
 .comment-1 { /* 左上の泡 */
@@ -458,3 +524,26 @@ h3{
     }
 }
 /*-------ここまでコメント----------*/
+/*-------ここからクレジット----------*/
+
+/*-------ここまでクレジット----------*/
+/* クレジット */
+.credit-image {
+    max-width: 100%;
+    display: block;
+    margin: 1rem auto;
+}
+
+/* フッター */
+footer {
+    background-color: #111;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #aaa;
+}
+.home-link {
+    color: #fedde5;
+    text-decoration: none;
+    font-weight: 500;
+}
+.home-link:hover { text-decoration: underline; }
