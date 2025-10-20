@@ -1,1 +1,0 @@
-window.addEventListener("load",()=>{const t=document.querySelector(".fusuma-left"),s=document.querySelector(".fusuma-right"),e=document.getElementById("fusuma-overlay");setTimeout(()=>{t.classList.add("open"),s.classList.add("open")},500),e.addEventListener("transitionend",()=>{e.style.display="none"})});
