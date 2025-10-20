@@ -1,0 +1,61 @@
+/* =========================
+ヘッダー
+========================= */
+.header-bg {
+    background-color: #111;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.header-contents {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.header-nav { display: none; }
+.header-navlist {
+    display: flex;
+    gap: 1.5rem;
+}
+.header-navitem a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.header-navitem a:hover { color: #fedde5; }
+
+/* ハンバーガーメニュー */
+.responsive_btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+.menu_line {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+}
+
+/* =========================
+SNSアイコン
+========================= */
+.sns {
+    text-align: center;
+    margin: 0;
+}
+.icons a {
+    margin: 0 0.5rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+.icons a:hover { transform: scale(1.2); }

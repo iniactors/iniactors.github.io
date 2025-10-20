@@ -1,0 +1,155 @@
+/* --- オープニングセクション --- */
+.opening-section {
+    position: relative; /* fixedからrelativeに変更 */
+    height: 90vh; /* 画面の高さ(100vh) - ヘッダーの高さ(10vh) */
+    overflow: hidden;
+}
+
+/* --- 中央のロゴ --- */
+.logo-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw; /* ロゴのサイズ */
+    max-width: 500px;
+    z-index: 30; /* 雲より手前に表示 */
+}
+.logo-main img {
+    width: 100%;
+    height: auto;
+}
+
+/* --- 雲のアニメーション --- */
+@keyframes scroll-cloud {
+    from { transform: translateX(-100%); } /* 画面左の外側からスタート */
+    to { transform: translateX(100vw); }   /* 画面右の外側へゴール */
+}
+
+/* --- 個々の雲のスタイルと配置（応用編） --- */
+.clouds-wrapper .cloud {
+    position: absolute;
+
+    /* ▼▼▼ opacityの代わりにこれを追加 ▼▼▼ */
+    mix-blend-mode: screen;
+
+    animation-name: scroll-cloud;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* それぞれの雲の高さ、サイズ、流れる速さを指定 */
+.cloud-1 { 
+    top: -10%; 
+    width: 20%; 
+    animation-duration: 40s; 
+    animation-delay: 0s; /* すぐに開始 */
+    z-index: 20;
+}
+.cloud-2 { 
+    top: 10%; 
+    width: 15%; 
+    animation-duration: 55s; 
+    animation-delay: -15s; /* 15秒進んだ状態から開始 */
+    z-index: 40;
+}
+.cloud-3 { 
+    top: 30%; 
+    width: 25%; 
+    animation-duration: 35s; 
+    animation-delay: -25s; /* 5秒進んだ状態から開始 */
+    z-index: 20;
+}
+.cloud-4 { 
+    top: 50%; 
+    width: 12%; 
+    animation-duration: 60s; 
+    animation-delay: -30s; /* 30秒進んだ状態から開始 */
+    z-index: 20;
+}
+.cloud-5 { 
+    top: 62%; 
+    width: 22%; 
+    animation-duration: 38s; 
+    animation-delay: -5s; /* 25秒進んだ状態から開始 */
+    z-index: 40;
+}
+.cloud-6 { 
+    top: 69%; 
+    width: 18%; 
+    animation-duration: 45s; 
+    animation-delay: -10s; /* 10秒進んだ状態から開始 */
+    z-index: 20;
+}
+.cloud-7 { 
+    top: 80%; 
+    width: 14%; 
+    animation-duration: 50s; 
+    animation-delay: -40s; /* 40秒進んだ状態から開始 */
+    z-index: 20;
+}
+/* --- キラキラ星のスタイル --- */
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 2s infinite ease-in-out alternate;
+    z-index: 15; /* 雲とロゴの間（雲より奥、ロゴより手前） */
+}
+
+@keyframes twinkle {
+    0% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.8); }
+}
+
+/* --- 流れ星のスタイル --- */
+.shooting-star-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 45; /* ロゴよりもさらに手前 */
+}
+
+.shooting-star {
+    position: absolute;
+    width: 5px; /* ▼▼▼ 流れ星本体の幅を大きく (2px → 5px) ▼▼▼ */
+    height: 5px; /* ▼▼▼ 流れ星本体の高さを大きく (2px → 5px) ▼▼▼ */
+    background: white;
+    border-radius: 50%;
+    
+    /* ▼▼▼ 影をより大きく、強く光らせる ▼▼▼ */
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8), /* 本体を強く光らせる */
+                0 0 40px 10px rgba(255, 255, 255, 0.5), /* 周囲の大きな光 */
+                0 0 80px 20px rgba(255, 255, 255, 0.2); /* 遠くの淡い光 */
+    
+    opacity: 0;
+    /* initial-positionはJSで設定するため、keyframesでなくtransformを使用 */
+    transform: translate(var(--start-x, -100vw), var(--start-y, 10vh)) rotate(var(--rotate-deg, -45deg));
+    
+    /* 流れ星のアニメーションはJavaScriptで制御 */
+}
+
+/* 流れ星のアニメーション定義を修正 */
+@keyframes shooting-star-anim {
+    0% {
+        transform: translate(var(--start-x, -100vw), var(--start-y, 10vh)) rotate(var(--rotate-deg, -45deg));
+        opacity: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    90% { /* 画面をほぼ横断するまで表示 */
+        transform: translate(var(--end-x, 100vw), var(--end-y, 80vh)) rotate(var(--rotate-deg, -45deg));
+        opacity: 1;
+    }
+    100% { /* 最後は消える */
+        transform: translate(var(--end-x, 100vw), var(--end-y, 80vh)) rotate(var(--rotate-deg, -45deg));
+        opacity: 0;
+    }
+}

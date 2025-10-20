@@ -6,7 +6,23 @@
 
 body {
   --scroll-gap: 30px;
-  background-color: rgb(44, 43, 43);
+    /* 背景色も滑らかに変わるようにtransitionを追加 */
+    transition: background-color 1.5s ease-in-out;
+    background-color: #222;
+    margin: 0;
+    padding-top: 10vh;
+    background: linear-gradient(
+        to bottom,
+        #0d0d0d 0%,    /* 上部：黒に近い夜空 */
+        #1a237e 40%,   /* 中央やや上：深い青 */
+        #3949ab 70%,   /* 中央やや下：青紫 */
+        #ec407a 100%   /* 下部：夜明けを思わせるピンク */);
+    --scroll-gap: 30px;
+}
+
+#main-content-area {
+    position: relative; /* z-indexを効かせるため */
+    z-index: 1; /* 背景より手前に表示 */
 }
 
 h1{
@@ -44,40 +60,6 @@ h1{
   gap: 0 var(--scroll-gap);
 }
 
-.box1{
-  background:#e7e973;
-  width: 70%;
-  height: 300px;
-  margin: auto;
-  margin-bottom: 20px;
-  padding: auto;
-}
-
-.box1 p {
-  margin:0;
-  padding:0;
-}
-
-.box2{
-  background:#cb7cfc;
-  width: 70%;
-  height: 300px;
-  margin: auto;
-  margin-bottom: 20px;
-  padding: auto;
-}
-
-.box2 p {
-  margin:0;
-  padding:0;
-}
-
-/* ページ全体の基本設定 */
-body {
-    margin: 0;
-    font-family: sans-serif;
-}
-
 /* ふすまのコンテナ */
 #fusuma-overlay {
     position: fixed; /* 画面に固定 */
@@ -105,14 +87,14 @@ body {
 
 .fusuma-left {
     /* 左側の画像を指定 */
-    background-image: url('../img/fusuma-left.jpg'); 
+    background-image: url('./../img/fusuma.left.png'); 
     /* 画像の右端を基準に配置（引き手が中央に来るように）*/
     background-position: right;
 }
 
 .fusuma-right {
     /* 右側の画像を指定 */
-    background-image: url('../img/fusuma-right.jpg');
+    background-image: url('./../img/fusuma.right.png');
     /* 画像の左端を基準に配置（引き手が中央に来るように）*/
     background-position: left;
 }
@@ -134,3 +116,480 @@ body {
     /* 表示領域の高さ100%に設定 */
     min-height: 60vh; 
 }
+
+
+
+@keyframes sunFlicker {
+    0% {
+        /* 開始と終了の状態（通常時） */
+        box-shadow: 0 0 1vw 0.5vw rgba(255, 190, 0, 0.9),
+                    0 0 3vw 1vw rgba(255, 100, 0, 0.7),
+                    0 0 6vw 2vw rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        /* 中間地点の状態（最も大きく、明るくなった時） */
+        /* ぼかし・広がり・色の濃さを変更して、より大きな動きに */
+        box-shadow: 0 0 1.8vw 0.9vw rgba(255, 200, 0, 1),   /* より明るく、広く */
+                    0 0 5vw 1.8vw rgba(255, 110, 0, 0.8), /* より明るく、広く */
+                    0 0 10vw 3vw rgba(255, 20, 0, 0.6);   /* より明るく、広く */
+    }
+    100% {
+        /* 通常の状態に戻る */
+        box-shadow: 0 0 1vw 0.5vw rgba(255, 190, 0, 0.9),
+                    0 0 3vw 1vw rgba(255, 100, 0, 0.7),
+                    0 0 6vw 2vw rgba(255, 0, 0, 0.5);
+    }
+}
+
+/* --- コンテナのスタイル --- */
+.character-section-wrapper {
+    position: relative;
+    height: 200vh;
+}
+.character-intro-section {
+    position: relative;
+    height: 100%;
+    background-color: #a3d5ff; /* 朝の色 */
+    transition: background-color 1.5s ease-in-out;
+    overflow: hidden;
+    clip-path: url(#wavy-clip); /* SVGでセクション全体を切り抜く */
+}
+.character-intro-section.is-night {
+    background-color: #253858; /* 夜の色 */
+}
+
+/* --- 波形マスクは削除（HTMLからも削除済み） --- */
+/* .wave-mask { ... } のルールはすべて削除してください */
+
+/* --- 1. 背景の月と太陽（一番奥） --- */
+.celestial-background {
+    position: absolute; bottom: 20vh; left: 50%;
+    transform: translateX(-50%);
+    width: 100vw; max-width: 1000px;
+    height: 40vw; max-height: 400px;
+    z-index: 10; overflow: hidden;
+}
+.moon, .sun {
+    position: absolute; left: 0; top: 13%;
+    width: 100%; height: 200%;
+    border-radius: 50%;
+    transition: opacity 1.5s ease-in-out;
+    will-change: opacity;
+}
+.sun {
+    background: radial-gradient(circle, #fff8dc, #ffcc00);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+    opacity: 1;
+}
+.moon {
+    background: radial-gradient(circle, #f0f8ff, #a0b0c0);
+    box-shadow: 0 0 40px rgba(173, 216, 230, 0.7);
+    opacity: 0;
+}
+.character-intro-section.is-night .moon { opacity: 1; }
+.character-intro-section.is-night .sun { opacity: 0; }
+
+/* --- 3. 波形マスク（真ん中）--- */
+.wave-mask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40vh;
+    z-index: 20;
+    pointer-events: none;
+}
+.wave-mask svg { width: 100%; height: 100%; }
+.wave-mask path {
+    fill: #141f33; /* 濃い青色 */
+    stroke: none;
+}
+
+/* --- 2. キャラクター（波より手前） --- */
+.character-container {
+    position: absolute; bottom: 40vh; left: 50%;
+    transform: translateX(-50%);
+    width: 60vw; max-width: 600px;
+    height: 80vh; z-index: 20;
+    pointer-events: none;
+}
+.characters-for-sun, .characters-for-moon {
+    position: absolute; width: 100%; height: 100%;
+    display: flex; justify-content: center; align-items: flex-end;
+    transition: opacity 1.0s ease-in-out;
+}
+.characters-for-sun { opacity: 1; }
+.characters-for-moon { opacity: 0; pointer-events: none; }
+.character-intro-section.is-night .characters-for-sun { opacity: 0; pointer-events: none; }
+.character-intro-section.is-night .characters-for-moon { opacity: 1; pointer-events: auto; }
+.char {
+    position: absolute; height: 90%; width: auto;
+    object-fit: contain; bottom: 0;
+    transform-origin: bottom center;
+}
+
+/* ▼▼▼ 各キャラクターの位置調整 ▼▼▼ */
+.sun-char-1 { left: 10%; transform: translateX(-50%) translateY(10%); }
+.sun-char-2 { left: 50%; transform: translateX(-50%); }
+.sun-char-3 { left: 90%; transform: translateX(-50%) translateY(10%); will-change: opacity; }
+
+/* 月モードのキャラクター（参考として残しますが、必要に応じて調整） */
+.moon-char-1 {
+    left: 22%;
+    transform: translateX(-50%); 
+}
+.moon-char-2 {
+    left: 75%;
+    transform: translateX(-50%);
+}
+.moon-desc { opacity: 0; visibility: hidden; }
+.sun-desc { opacity: 1; visibility: visible; }
+
+.character-intro-section.is-night .moon-desc { opacity: 1; visibility: visible; }
+.character-intro-section.is-night .sun-desc { opacity: 0; visibility: hidden; }
+.toggle-button {
+    position: absolute;
+    top: 165vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 40;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 3px solid white;
+    cursor: pointer;
+}
+/* --- 説明ボックスのコンテナ --- */
+.description-boxes-container {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 18; pointer-events: none;
+}
+.description-box {
+    position: absolute;
+    width: 25vw; max-width: 300px;
+    padding: 1.5em; box-sizing: border-box;
+    background-color: rgba(26, 26, 46, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    color: white; font-family: 'Shippori Mincho', serif;
+    pointer-events: auto;
+    transition: opacity 0.8s, visibility 0.8s;
+}
+.description-box h3 {
+    text-align: center; margin-top: 0; padding-bottom: 0.5em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.is-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+.character-intro-section.is-night .description-box {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+/* --- 説明ボックスの表示切り替え --- */
+.sun-desc,
+.moon-desc {
+    /* フェードイン・アウトのアニメーション設定 */
+    transition: opacity 1.0s ease-in-out;
+}
+.moon-desc { opacity: 0; visibility: hidden; }
+.sun-desc { opacity: 1; visibility: visible; }
+.character-intro-section.is-night .moon-desc { opacity: 1; visibility: visible; }
+.character-intro-section.is-night .sun-desc { opacity: 0; visibility: hidden; }
+/* --- 個々のボックスの配置 --- */
+.desc-box-you { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 30%; /* 例: 20% → 30% */
+    left: 10%; 
+}
+.desc-box-asahi { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 25%; /* 例: 15% → 30% */
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+.desc-box-hikari { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 30%; /* 例: 20% → 30% */
+    right: 10%; 
+}
+.desc-box-shinonome { top: 25%; left: 20%; }
+.desc-box-dreamer { top: 25%; right: 20%; }
+/* --- シルエットのコンテナ --- */
+.silhouettes {
+    /* 親要素(.moon-sun-wrapper)を基準に配置 */
+    position: absolute;
+    bottom: 0; /* 半円の最下部（地平線）に配置 */
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Flexboxで中の画像を中央・下に揃える */
+    display: flex;
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: flex-end;   /* 垂直方向の下揃え */
+    gap: 2%; /* 影と影の間のすき間 */
+
+    /* 他の要素より手前に表示 */
+    z-index: 5;
+}
+
+/* --- シルエットの画像共通スタイル --- */
+.moon-silhouette,
+.sun-silhouette {
+    /* 大きさを親要素の高さに合わせて調整 */
+    height: 40%; 
+    width: auto; /* 高さに合わせて幅は自動調整 */
+
+    /* フェードイン・アウトのアニメーション設定 */
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* --- 太陽の影の初期状態 --- */
+.sun-silhouette {
+    /* 太陽の影は最初、非表示（透明）にしておく */
+    opacity: 0;
+}
+
+/* --- 切り替え時の動き --- */
+/* 太陽が表示された時（show-sunクラスが付いた時） */
+.moon-sun-wrapper.show-sun .moon-silhouette {
+    /* 月の影をフェードアウト */
+    opacity: 0;
+}
+
+.moon-sun-wrapper.show-sun .sun-silhouette {
+    /* 太陽の影をフェードイン */
+    opacity: 1;
+}
+
+/*------------ここから-------------*/
+.divider {
+    /* 中の要素を中央に配置するための設定 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* 上下の余白 */
+    margin: 1rem 0; /* remは文字サイズ基準の単位 */
+}
+/* 中央の文字やアイコンのスタイル */
+.divider span {
+    font-size: 1.2rem;
+}
+
+/* style.css に追加 */
+
+.divider-icon {
+    height: 2.5em; /* アイコンの高さを、親要素の文字サイズの1.5倍に設定 */
+    width: auto;   /* 高さに合わせて幅は自動調整 */
+    vertical-align: middle; /* テキストの縦方向の中央に揃える */
+}
+
+.section {
+    padding: 4rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #fff;
+}
+.section-headline {
+    font-size: 2rem;
+    color: #fedde5;
+    text-align: center;
+    margin-bottom: -1.3rem;
+}
+
+.story { 
+    text-align: center;
+    font-family: "Shippori Mincho", serif;
+}
+.story-description {
+    margin-top: -1.5rem;
+    line-height: 2;   
+}
+
+.divider-icon2 {
+    height: 1.5em; /* アイコンの高さを、親要素の文字サイズの1.5倍に設定 */
+    width: auto;   /* 高さに合わせて幅は自動調整 */
+    vertical-align: middle; /* テキストの縦方向の中央に揃える */
+}
+.divider-icon3 {
+    height: 1.7em; /* アイコンの高さを、親要素の文字サイズの1.5倍に設定 */
+    width: auto;   /* 高さに合わせて幅は自動調整 */
+    vertical-align: middle; /* テキストの縦方向の中央に揃える */
+}
+/*-------ここまでストーリーの変更----------*/
+
+/*-------ここからコメント----------*/
+/* --- コメントセクションのスタイル --- */
+h3{
+    text-decoration: underline;
+}
+.comments-section {
+    position: relative;
+    min-height: 200vh;
+    
+    overflow: hidden;
+    padding: 50px 20px;
+}
+
+/* 泡をフワフワさせるアニメーション */
+@keyframes floatBubble {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(10px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+/* --- 泡の共通スタイル（動きと配置のみ） --- */
+.bubble-large,
+.bubble-small {
+    position: absolute;
+    animation: floatBubble 10s infinite ease-in-out;
+    /* 描画を最適化し、ちらつきやぼやけを軽減するおままじない */
+    transform: translateZ(0); 
+    will-change: transform;
+}
+
+/* --- 大きい泡のスタイル --- */
+.bubble-large {
+    width: 70vw; 
+    height: 70vw;
+    max-width: 800px;
+    max-height: 800px;
+    
+    border-radius: 50%;
+    background: url('./../img/shabon.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* --- 泡の中のコメント用コンテンツ --- */
+/* --- 泡の中のコメント用コンテンツ（修正版） --- */
+.comment-content {
+    /* 親要素(.bubble-large)の真ん中に強制的に配置 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+
+    /* テキスト領域を泡より小さく設定 */
+    width: 50%;
+    height: 50%;
+    padding: 1em; /* 内側の余白 */
+    box-sizing: border-box; /* paddingを含めてサイズを計算 */
+
+    /* テキストを上下左右の中央に揃える */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    /* 長い文章のはみ出し対策 */
+    overflow-y: auto;
+    word-break: break-all;
+}
+/* --- 小さい泡のスタイル --- */
+.bubble-small {
+    width: 15vw;
+    height: 15vw;
+    max-width: 180px;
+    max-height: 180px;
+
+    /* 不要な効果を強制的にリセット */
+    background: none;
+    box-shadow: none !important;
+    border: none;
+    backdrop-filter: none;
+}
+
+/* --- 小さい泡の中の画像スタイル --- */
+.item-image {
+    width: 100%;
+    height: auto;
+}
+/* 大きい泡（コメント）の配置 */
+/* 大きい泡（コメント）の配置 (画面内に収めるバージョン) */
+.comment-1 { /* 左上の泡 */
+    top: 10vh;  /* 画面の上から10%の位置 */
+    left: 5vw;  /* 画面の左端から5%の位置 */
+    z-index: 10; 
+}
+
+.comment-2 { /* 右下の泡 */
+    top: 100vh; /* 画面の上から100%（約1画面分下）の位置 */
+    right: 5vw; /* 画面の右端から5%の位置 */
+    z-index: 11; 
+}
+
+/* 小さい泡（アイテム）の配置 */
+.item-comic { 
+    /* 画像の左下の赤い丸の位置 */
+    top: 70%;
+    left: 10%;
+    z-index: 20;
+}
+.item-tennis { 
+    /* 画像の右の赤い丸の位置 */
+    top: 40%;
+    right: 5%;
+    z-index: 20;
+}
+.item-icecream { 
+    /* 画像の左上の赤い丸の位置 */
+    top: 5%;
+    left: 5%;
+    z-index: 20;
+}
+
+/* --- メディアクエリ（スマホ用レイアウト）も更新 --- */
+/* 画面の横幅が900px以下の場合に適用されるスタイル */
+@media (max-width: 900px) {
+    .bubble-large {
+        position: relative;
+        width: 80vw;
+        height: 80vw;
+        margin: 10vw auto;
+    }
+
+    /* スマホでは小さい泡は非表示にする（任意） */
+    .bubble-small {
+        display: none;
+    }
+
+    /* 個別の位置指定をリセット */
+    .comment-1, .comment-2 {
+        top: auto;
+        left: auto;
+        right: auto;
+    }
+}
+/*-------ここまでコメント----------*/
+/*-------ここからクレジット----------*/
+
+/*-------ここまでクレジット----------*/
+/* クレジット */
+.credit-image {
+    max-width: 100%;
+    display: block;
+    margin: 1rem auto;
+}
+
+/* フッター */
+footer {
+    background-color: #111;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #aaa;
+}
+.home-link {
+    color: #fedde5;
+    text-decoration: none;
+    font-weight: 500;
+}
+.home-link:hover { text-decoration: underline; }
