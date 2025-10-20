@@ -142,139 +142,185 @@ h1{
 }
 
 /* --- コンテナのスタイル --- */
-/* --- キャラ紹介セクション --- */
-/* --- キャラ紹介セクション --- */
+.character-section-wrapper {
+    position: relative;
+    height: 200vh;
+}
 .character-intro-section {
-    padding: 50px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh; /* 画面下部に余白を持たせる */
-}
-
-.frame-container {
     position: relative;
-    width: 90vw;
-    max-width: 900px;
-    aspect-ratio: 1 / 1; /* 額縁画像の縦横比に合わせて調整 */
-    z-index: 1; /* 背景と月/太陽の中間に配置 */
-}
-
-/* --- 色が変わる背景 --- */
-.frame-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 100%;
-    background-color: #1a1a2e;
+    background-color: #a3d5ff; /* 朝の色 */
     transition: background-color 1.5s ease-in-out;
-    z-index: 1; /* 一番奥 */
+    overflow: hidden;
+    clip-path: url(#wavy-clip); /* SVGでセクション全体を切り抜く */
+}
+.character-intro-section.is-night {
+    background-color: #253858; /* 夜の色 */
 }
 
-/* --- 月と太陽、ボタンを額縁の中央に配置するためのラッパー --- */
-.moon-sun-content {
+/* --- 波形マスクは削除（HTMLからも削除済み） --- */
+/* .wave-mask { ... } のルールはすべて削除してください */
+
+/* --- 1. 背景の月と太陽（一番奥） --- */
+.celestial-background {
+    position: absolute; bottom: 20vh; left: 50%;
+    transform: translateX(-50%);
+    width: 100vw; max-width: 1000px;
+    height: 40vw; max-height: 400px;
+    z-index: 10; overflow: hidden;
+}
+.moon, .sun {
+    position: absolute; left: 0; top: 13%;
+    width: 100%; height: 200%;
+    border-radius: 50%;
+    transition: opacity 1.5s ease-in-out;
+    will-change: opacity;
+}
+.sun {
+    background: radial-gradient(circle, #fff8dc, #ffcc00);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+    opacity: 1;
+}
+.moon {
+    background: radial-gradient(circle, #f0f8ff, #a0b0c0);
+    box-shadow: 0 0 40px rgba(173, 216, 230, 0.7);
+    opacity: 0;
+}
+.character-intro-section.is-night .moon { opacity: 1; }
+.character-intro-section.is-night .sun { opacity: 0; }
+
+/* --- 3. 波形マスク（真ん中）--- */
+.wave-mask {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%; /* 額縁の内側の幅に合わせて調整 */
-    height: 80%; /* 額縁の内側の高さに合わせて調整 */
-    display: flex; /* 中央寄せのため */
-    justify-content: center;
-    align-items: center;
-    z-index: 2; /* 背景より手前、額縁画像より奥 */
-}
-
-/* --- 既存の月と太陽のコンテナを小さくする --- */
-.container {
-    position: relative;
-    width: min(50vw, 400px); /* ▼▼▼ 月と太陽のサイズを小さく ▼▼▼ */
-    height: min(50vw, 400px); /* ▼▼▼ 月と太陽のサイズを小さく ▼▼▼ */
-    margin: 0; /* 中央寄せは親要素で行うため不要 */
-    z-index: 2; /* frame-backgroundより手前 */
-}
-
-/* --- 額縁画像を最前面に表示 --- */
-.frame-overlay-image {
-    position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    
-    /* ▼▼▼ この部分を全面的に書き換える ▼▼▼ */
-    background-image: url('./../img/frame.png'); /* 背景として画像を指定 */
-    background-size: 100% 100%; /* コンテナいっぱいに引き伸ばす */
-    background-repeat: no-repeat;
-    /* ▲▲▲ ここまで ▲▲▲ */
-    
+    height: 40vh;
+    z-index: 20;
     pointer-events: none;
-    z-index: 5;
+}
+.wave-mask svg { width: 100%; height: 100%; }
+.wave-mask path {
+    fill: #141f33; /* 濃い青色 */
+    stroke: none;
 }
 
-/* 太陽の時にこのクラスが付く */
-.frame-background.is-day {
-    background-color: #a3d5ff; /* 朝の空の色（お好みに調整してください） */
+/* --- 2. キャラクター（波より手前） --- */
+.character-container {
+    position: absolute; bottom: 40vh; left: 50%;
+    transform: translateX(-50%);
+    width: 60vw; max-width: 600px;
+    height: 80vh; z-index: 20;
+    pointer-events: none;
+}
+.characters-for-sun, .characters-for-moon {
+    position: absolute; width: 100%; height: 100%;
+    display: flex; justify-content: center; align-items: flex-end;
+    transition: opacity 1.0s ease-in-out;
+}
+.characters-for-sun { opacity: 1; }
+.characters-for-moon { opacity: 0; pointer-events: none; }
+.character-intro-section.is-night .characters-for-sun { opacity: 0; pointer-events: none; }
+.character-intro-section.is-night .characters-for-moon { opacity: 1; pointer-events: auto; }
+.char {
+    position: absolute; height: 90%; width: auto;
+    object-fit: contain; bottom: 0;
+    transform-origin: bottom center;
 }
 
+/* ▼▼▼ 各キャラクターの位置調整 ▼▼▼ */
+.sun-char-1 { left: 10%; transform: translateX(-50%) translateY(10%); }
+.sun-char-2 { left: 50%; transform: translateX(-50%); }
+.sun-char-3 { left: 90%; transform: translateX(-50%) translateY(10%); will-change: opacity; }
 
-/* --- 既存の月と太陽のコンテナを調整 --- */
-.container {
-    position: relative; /* 背景の上に表示されるように */
-    z-index: 2;
-    margin: 0 auto; /* 中央揃え（上下の余白は不要に） */
+/* 月モードのキャラクター（参考として残しますが、必要に応じて調整） */
+.moon-char-1 {
+    left: 22%;
+    transform: translateX(-50%); 
 }
-
-/* --- moon-sun-wrapper のスタイル --- */
-.moon-sun-wrapper {
-    position: relative; width: 100%;
-    height: min(37.5vw, 400px);
-    border-radius: 50vw 50vw 0 0;
+.moon-char-2 {
+    left: 75%;
+    transform: translateX(-50%);
 }
+.moon-desc { opacity: 0; visibility: hidden; }
+.sun-desc { opacity: 1; visibility: visible; }
 
-/* ▼▼▼ エフェクト部分のコード ▼▼▼ */
-.moon, .sun {
-    position: absolute; top: 0; left: 0;
-    width: 100%; height: 100%;
-    border-radius: 50vw 50vw 0 0;
-    transition: opacity 1.5s ease-in-out;
-}
-.moon { 
-    background-color: #f0f0f0;
-    opacity: 1;
-    z-index: 2;
-    box-shadow: 0 0 1vw 0.5vw white, /* 内側の強い光 */
-                0 0 4vw 2vw rgba(255, 255, 255, 0.5);
-}
-
-.sun { 
-    background-color: #ffc107;
-    opacity: 0;
-    z-index: 1;
-    animation: sunFlicker 4s infinite ease-in-out;
-}
-
-.moon-sun-wrapper.show-sun .moon { opacity: 0; }
-.moon-sun-wrapper.show-sun .sun { opacity: 1; }
-
-/* --- ボタンのスタイル --- */
+.character-intro-section.is-night .moon-desc { opacity: 1; visibility: visible; }
+.character-intro-section.is-night .sun-desc { opacity: 0; visibility: hidden; }
 .toggle-button {
     position: absolute;
-    top: min(37.5vw, 400px); left: 50%;
-    width: min(15vw, 160px); height: min(15vw, 160px);
-    transform: translateX(-50%) translateY(-5vw);
-    border-radius: 50%; background-color: rgba(255, 255, 255, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    cursor: pointer; outline: none;
-    transition: background-color 0.3s, border-color 0.3s;
-    z-index: 10;
+    top: 165vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 40;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 3px solid white;
+    cursor: pointer;
 }
-.toggle-button:hover { 
-    background-color: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.6);
+/* --- 説明ボックスのコンテナ --- */
+.description-boxes-container {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 18; pointer-events: none;
 }
-
+.description-box {
+    position: absolute;
+    width: 25vw; max-width: 300px;
+    padding: 1.5em; box-sizing: border-box;
+    background-color: rgba(26, 26, 46, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    color: white; font-family: 'Shippori Mincho', serif;
+    pointer-events: auto;
+    transition: opacity 0.8s, visibility 0.8s;
+}
+.description-box h3 {
+    text-align: center; margin-top: 0; padding-bottom: 0.5em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.is-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+.character-intro-section.is-night .description-box {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+/* --- 説明ボックスの表示切り替え --- */
+.sun-desc,
+.moon-desc {
+    /* フェードイン・アウトのアニメーション設定 */
+    transition: opacity 1.0s ease-in-out;
+}
+.moon-desc { opacity: 0; visibility: hidden; }
+.sun-desc { opacity: 1; visibility: visible; }
+.character-intro-section.is-night .moon-desc { opacity: 1; visibility: visible; }
+.character-intro-section.is-night .sun-desc { opacity: 0; visibility: hidden; }
+/* --- 個々のボックスの配置 --- */
+.desc-box-you { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 30%; /* 例: 20% → 30% */
+    left: 10%; 
+}
+.desc-box-asahi { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 25%; /* 例: 15% → 30% */
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+.desc-box-hikari { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 30%; /* 例: 20% → 30% */
+    right: 10%; 
+}
+.desc-box-shinonome { top: 25%; left: 20%; }
+.desc-box-dreamer { top: 25%; right: 20%; }
 /* --- シルエットのコンテナ --- */
 .silhouettes {
     /* 親要素(.moon-sun-wrapper)を基準に配置 */

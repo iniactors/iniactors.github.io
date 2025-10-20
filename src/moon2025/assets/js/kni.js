@@ -21,31 +21,19 @@ window.addEventListener('load', () => {
 // 以前bodyの色を変えていたJavaScriptを、以下のように修正します。
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ... (星や流れ星のコードは省略) ...
-
     const toggleButton = document.getElementById('toggleButton');
-    const moonSunWrapper = document.getElementById('moonSunWrapper');
-    
-    // ▼▼▼ 色を変える対象をbodyから変更 ▼▼▼
-    const frameBackground = document.getElementById('frame-background');
+    const characterSection = document.getElementById('character-section');
 
-    if (toggleButton) { // ボタンが存在する場合のみ処理を実行
+    if (toggleButton && characterSection) {
+        // 初期状態を太陽モードにする
+        characterSection.classList.remove('is-night');
+        
         toggleButton.addEventListener('click', () => {
-            // 月と太陽の表示を切り替える
-            moonSunWrapper.classList.toggle('show-sun');
-    
-            // ▼▼▼ 額縁の背景の色を切り替える ▼▼▼
-            frameBackground.classList.toggle('is-day');
+            // この一行だけで、CSSが残りのすべてを処理します
+            characterSection.classList.toggle('is-night');
         });
     }
 });
-
-// HTMLからid="book-trigger"の要素（本のコンテナ）を取得
-const bookTrigger = document.getElementById('book-trigger');
-
-
-
-// --- キラキラ星の生成 ---
 // --- キラキラ星の生成 ---
 const starsContainer = document.getElementById('stars-container');
 const numStars = 250; // ▼▼▼ 星の数を増やす (例: 100 → 250) ▼▼▼
