@@ -141,7 +141,7 @@ h1{
     }
 }
 
-/* --- コンテナのスタイル --- */
+/*----------ここからキャラクター紹介---------*/
 .character-section-wrapper {
     position: relative;
     height: 200vh;
@@ -321,55 +321,8 @@ h1{
 }
 .desc-box-shinonome { top: 25%; left: 20%; }
 .desc-box-dreamer { top: 25%; right: 20%; }
-/* --- シルエットのコンテナ --- */
-.silhouettes {
-    /* 親要素(.moon-sun-wrapper)を基準に配置 */
-    position: absolute;
-    bottom: 0; /* 半円の最下部（地平線）に配置 */
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    /* Flexboxで中の画像を中央・下に揃える */
-    display: flex;
-    justify-content: center; /* 水平方向の中央揃え */
-    align-items: flex-end;   /* 垂直方向の下揃え */
-    gap: 2%; /* 影と影の間のすき間 */
-
-    /* 他の要素より手前に表示 */
-    z-index: 5;
-}
-
-/* --- シルエットの画像共通スタイル --- */
-.moon-silhouette,
-.sun-silhouette {
-    /* 大きさを親要素の高さに合わせて調整 */
-    height: 40%; 
-    width: auto; /* 高さに合わせて幅は自動調整 */
-
-    /* フェードイン・アウトのアニメーション設定 */
-    transition: opacity 1.5s ease-in-out;
-}
-
-/* --- 太陽の影の初期状態 --- */
-.sun-silhouette {
-    /* 太陽の影は最初、非表示（透明）にしておく */
-    opacity: 0;
-}
-
-/* --- 切り替え時の動き --- */
-/* 太陽が表示された時（show-sunクラスが付いた時） */
-.moon-sun-wrapper.show-sun .moon-silhouette {
-    /* 月の影をフェードアウト */
-    opacity: 0;
-}
-
-.moon-sun-wrapper.show-sun .sun-silhouette {
-    /* 太陽の影をフェードイン */
-    opacity: 1;
-}
-
-/*------------ここから-------------*/
+/*------------ここまでキャラクター紹介-----------*/
+/*------------ここからストーリー-------------*/
 .divider {
     /* 中の要素を中央に配置するための設定 */
     display: flex;
@@ -383,8 +336,6 @@ h1{
 .divider span {
     font-size: 1.2rem;
 }
-
-/* style.css に追加 */
 
 .divider-icon {
     height: 2.5em; /* アイコンの高さを、親要素の文字サイズの1.5倍に設定 */
@@ -427,7 +378,6 @@ h1{
 /*-------ここまでストーリーの変更----------*/
 
 /*-------ここからコメント----------*/
-/* --- コメントセクションのスタイル --- */
 h3{
     text-decoration: underline;
 }
@@ -552,9 +502,15 @@ h3{
 @media (max-width: 900px) {
     .bubble-large {
         position: relative;
-        width: 80vw;
-        height: 80vw;
+        width: 95vw;  /* 横幅を画面の90%に */
+        height: 150vw; /* 高さを同じにして正円を保つ */
         margin: 10vw auto;
+    }
+
+    .bubble-large .comment-content {
+        width: 85%; /* 内側のテキスト領域を泡の85%まで広げる */
+        height: 85%;
+        font-size: 0.9rem; /* スマホでは少しだけ文字を小さくする */
     }
 
     /* スマホでは小さい泡は非表示にする（任意） */
@@ -570,9 +526,6 @@ h3{
     }
 }
 /*-------ここまでコメント----------*/
-/*-------ここからクレジット----------*/
-
-/*-------ここまでクレジット----------*/
 /* クレジット */
 .credit-image {
     max-width: 100%;
