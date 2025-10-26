@@ -18,27 +18,39 @@
     padding: 1rem;
 }
 
-.header-nav { display: none; }
+
+
+
 .header-navlist {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 .header-navitem a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    font-size: 1.5rem;
 }
 .header-navitem a:hover { color: #fedde5; }
 
 /* ハンバーガーメニュー */
 .responsive_btn {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 25px;
     height: 20px;
     cursor: pointer;
+}
+
+@media (max-width:768px) {
+    .header-nav { 
+        display: none;
+    }
+    .responsive_btn {
+        display: flex;
+    }
 }
 .menu_line {
     width: 100%;

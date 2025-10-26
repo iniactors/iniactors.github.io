@@ -1,0 +1,64 @@
+/* =====================
+   モバイル対応
+===================== */
+@media (max-width: 768px) {
+  .character-section-wrapper {
+    padding: 2rem 1rem;
+  }
+
+  .description-boxes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .description-box {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 1rem;
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+  }
+
+  .character-container img {
+    width: 80%;
+    max-width: 250px;
+    height: auto;
+  }
+
+  .characters-for-sun,
+  .characters-for-moon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .celestial-background {
+    display: none; /* モバイルでは背景装飾を省略 */
+  }
+
+  .toggle-button {
+    width: 80%;
+    max-width: 200px;
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+}
+
+@media (min-width: 769px) {
+  .character-section-wrapper {
+    padding: 4rem;
+  }
+
+  .description-box {
+    max-width: 500px;
+  }
+
+  .character-container img {
+    width: 200px;
+    height: auto;
+  }
+}
