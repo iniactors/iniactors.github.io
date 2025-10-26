@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap" rel="stylesheet">
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <script type="module" crossorigin src="/assets/modulepreload-polyfill.c7c6310f.js"></script>
-  <script type="module" crossorigin src="/assets/kni.3c5b1d3f.js"></script>
-  <link rel="stylesheet" href="/assets/akb.33f0ab3d.css">
+    
+    
+    <link rel="stylesheet" href="assets/css/kni.credit.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1G1lCq0kA5V5GZCZ1tAN4e/" crossorigin="anonymous"/>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Noto+Sans+JP:wght@100..900&family=Yuji+Mai&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+
+  <script type="module" crossorigin src="/assets/moon2025akb.3db0e6ef.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill.c7c6310f.js">
+  <link rel="modulepreload" crossorigin href="/assets/kni.60b054fb.js">
+  <link rel="stylesheet" href="/assets/kni.21c2cd74.css">
 </head>
 <body>
     <header class="header-bg">
@@ -60,8 +73,30 @@
             </div>
         </div>
     </header>
-    <div class="hero">
-        <img class="hero-title" src="/assets/logo-moon.faacd9ec.png" alt="月が夢を見るのなら">
+    <section class="opening-section">
+        <div class="logo-main">
+            <img src="/assets/logo-moon.faacd9ec.png" alt="サイトロゴ">
+        </div>
+
+        <div class="stars-container" id="stars-container">
+            </div>
+
+        <div class="shooting-star-container">
+            <div class="shooting-star"></div>
+        </div>
+
+        <div class="clouds-wrapper">
+            <img src="/assets/cloud2.87225a9d.png" alt="雲" class="cloud cloud-1">
+            <img src="/assets/cloud3.0c824f40.png" alt="雲" class="cloud cloud-2">
+            <img src="/assets/cloud3.0c824f40.png" alt="雲" class="cloud cloud-3">
+            <img src="/assets/cloud2.87225a9d.png" alt="雲" class="cloud cloud-4">
+            <img src="/assets/cloud3.0c824f40.png" alt="雲" class="cloud cloud-5">
+            <img src="/assets/cloud2.87225a9d.png" alt="雲" class="cloud cloud-6">
+            <img src="/assets/cloud2.87225a9d.png" alt="雲" class="cloud cloud-7">
+        </div>
+    </section>
+    
+    <div class="catchcopy-area">
         <p class="catchcopy">
             これは本当の<b>願い</b>を見つけるための物語
         </p>
@@ -72,10 +107,15 @@
         </div>
     </div>
 
-    
-
+    <main id="main-content-area">
+    <!-- ストーリー -->
     <section id="story" class="section section-story" >
         <h1 class="section-headline">ストーリー</h1>
+        <div class="divider">
+            <span>
+                <img src="/assets/moon_story.59bbaae7.png" alt="装飾マーク" class="divider-icon">
+            </span>
+        </div>
         <div class="story">
             <br>
             <p class="story-description">
@@ -84,164 +124,185 @@
                 「夢の中でも会える方法があるらしいぜ、みんなで同じ夢をみれるんだって!」<br>
                 面白そうな話に興味津々の二人に手を引かれ、<br>
                 半信半疑のアサヒも噂の 検証に付き合うことに...<br>
+                <div class="divider">
+                    <span>
+                        <img src="/assets/moon_story2.2e2a3afb.png" alt="装飾マーク" class="divider-icon2">
+                    </span>
+                </div>
                 その晩、三人は『夢の世界』で再会する。<br>
                 しかしアサヒは噂が本当だったことで<br>
-                舞い上がったヨウ とヒカリとはぐれてしまう。 <br>
-                途方に暮れていたアサヒに一人の男が声を掛ける。<br> 
+                舞い上がったヨウ とヒカリとはぐれてしまう。 <br> 
+                <div class="divider">
+                    <span>
+                        <img src="/assets/moon_story3.6119c1e2.png" alt="装飾マーク" class="divider-icon3">
+                    </span>
+                </div>
+                途方に暮れていたアサヒに一人の男が声を掛ける。<br>
                 「よっ、少年。ここに来るのは初めてか?」<br>
                 男はシノノメと名乗り自らを『夢の世界』の案内人だと称した。<br>
                 同時刻、ヨウとヒカリはMr.Dreamerを名乗る怪しげな男と出会うことになる...
             </p>
         </div>
     </section>
+    <!-- 登場人物 -->
+    <div class="character-section-wrapper">
+        <section class="character-intro-section" id="character-section">
+        <div class="description-boxes-container">
+            <div class="description-box desc-box-you sun-desc">
+                <h1 class="chara-role">友達</h1>
+                <h3>ヨウ</h3>
+                <p>明朗快活な青年でトラブルメイカー的な存在。 アサヒ、ヒカリとは親友で、面白そうなものを見つけてはいつも二人を巻き込んでいる。</p>
+            </div>
+            <div class="description-box desc-box-asahi sun-desc">
+                <h1 class="chara-role">主人公</h1>
+                <h3>アサヒ</h3>
+                <p>本作の主人公。 ぶっきらぼうな性格で親友であるヨウとヒカリにはいつも振り回されている。 文句を言いつつも毎回二人に付いていく友達思いな青年。</p>
+            </div>
+            <div class="description-box desc-box-hikari sun-desc">
+                <h1 class="chara-role">友達</h1>
+                <h3>ヒカリ</h3>
+                <p>明るい性格の女の子で、男子と遊んでるほうが楽しいっていうタイプ。 いつもヨウが始めた悪ノリに乗っかって二人でアサヒを振り回す。</p>
+            </div>
+            <div class="description-box desc-box-shinonome moon-desc">
+                <h1 class="chara-role">夢の世界の案内人</h1>
+                <h3>Mr.Dreamer</h3>
+                <p>『夢の世界』の案内人を務める謎の男。 様々な場所に姿を現しては、住人たちを”本当に欲しいもの”へ導いている。</p>
+            </div>
+            <div class="description-box desc-box-dreamer moon-desc">
+                <h1 class="chara-role">夢の世界の案内人</h1>
+                <h3>シノノメ</h3>
+                <p>『夢の世界』の案内人を自称する謎の男。 アサヒのことを少年と呼び、何かとかまってくる。</p>
+            </div>
+        </div>
+        <!-- キャラクターの足場 -->
+        <div class="celestial-background">
+            <div class="moon"></div>
+            <div class="sun"></div>
+        </div>
+        <div class="character-container">
+            <div class="characters-for-sun">
+                <img src="/assets/You.cbe117b8.webp" alt="主人公の友達 ヨウ" class="char sun-char-1">
+                <img src="/assets/Asahi.66e191e7.webp" alt="主人公 アサヒ" class="char sun-char-2">
+                <img src="/assets/Hikari.affb4b49.webp" alt="主人公の友達 ヒカリ" class="char sun-char-3">
+            </div>
+            <div class="characters-for-moon">
+                <img src="/assets/Mr_D.6391cf81.webp" alt="夢の世界の案内人 Mr.Dreamer" class="char moon-char-1">
+                <img src="/assets/Shinonome.abb30b7e.webp" alt="夢の世界の案内人 シノノメ" class="char moon-char-2">
+            </div>
+        </div>
+        </section>
+        <!-- 月と太陽の切り替えボタン -->
+        <button id="toggleButton" class="toggle-button"><p>Tap</p></button>
+    </div>
+    <svg width="0" height="0">
+        <defs>
+            <clipPath id="wavy-clip" clipPathUnits="objectBoundingBox">
+            <path d="M0,0.15 Q0.25,0.2 0.5,0.15 T1,0.15 V0.85 Q0.75,0.8 0.5,0.85 T0,0.85 Z" />
+            </clipPath>
+        </defs>
+    </svg>
 
-    <section id="cast" class="section section-secondary">
-        <h1 class="section-headline">登場人物</h1>
-        <div class="cast-container">
-            <p>アサヒ</p>
-            <p>ヨウ</p>
-            <p>ヒカリ</p>
-            <p>シノノメ</p>
-            <p>Mr.Dreamer</p>
+    <section class="character-intro-section">
+        <div class="frame-container">
+            <div class="frame-background" id="frame-background"></div>
+            <div class="moon-sun-content"></div>
+            <div class="frame-overlay-image"></div>
         </div>
     </section>
 
-    <section id="information" class="section info">
+    <!-- 公演情報 -->
+    <div class="info-area">
         <h1 class="section-headline">公演情報</h1>
-        
-            <ul class="grid grid-col2">
-                <li class="grid-item">
-                    <article class="card">
-                        <div target="_blank" rel="noopener noreferrer" class="card-link">
-                            <div class="card-title">
-                                <p class="card-day">
-                                    1日目
-                                </p>
-                            </div>
-                            <div class="card-info">
-                                <time class="card-time" datetime="2024-11-02">2025年 11月2日(日)</time>                                
-                                <p class="card-description">
-                                    <span class="time-session">
-                                        午前の部
-                                    </span>
-                                    <br>
-                                    <span class="card-content">
-                                        開場 10:00&emsp;開演 10:30
-                                    </span>
-                                    <br><br>
-                                    <span class="time-session">
-                                        午後の部
-                                    </span>
-                                    <br>
-                                    <span class="card-content">
-                                        開場 12:15&emsp;開演 12:45
-                                    </span>
-                                    <br><br>
-                                    <span class="card-content">
-                                        INIADホールにて公演
-                                    </span>
-                                    <br>
-                                    <small>
-                                        東洋大学赤羽台キャンパス（INIAD HUB-1）1階 INIADホール
-                                    </small>
-                                    <!--
-                                    <hr>
-                                    <span class="card-nav">
-                                        オンライン生配信（1日目）は<a href="https://akabanedai-fes.com/08/" target="_blank" rel="noopener noreferrer" class="here">こちら</a>
-                                    </span>
-                                    -->
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                </li>
-                <li class="grid-item">
-                    <article class="card">
-                        <div class="card-link">
-                            <div class="card-title">
-                                <p class="card-day">
-                                    2日目
-                                </p>
-                            </div>
-                            <div class="card-info">
-                                <time class="card-time" datetime="2024-11-03">2025年 11月3日(月)</time>                                
-                                <p class="card-description">
-                                    <span class="time-session">
-                                        午前の部
-                                    </span>
-                                    <br>
-                                    <span class="card-content">
-                                        開場 11:45&emsp;開演 12:15
-                                    </span>
-                                    <br><br>
-                                    <span class="time-session">
-                                        午後の部
-                                    </span>
-                                    <br>
-                                    <span class="card-content">
-                                        開場 14:45&emsp;開演 15:00
-                                    </span>
-                                    <br><br>
-                                    <span class="card-content">
-                                        INIADホールにて公演
-                                    </span>
-                                    <br>
-                                    <small>
-                                        東洋大学赤羽台キャンパス（INIAD HUB-1）1階 INIADホール
-                                    </small>
-                                    <!--
-                                    <hr>
-                                    <span class="card-nav">
-                                        オンライン生配信（2日目）は<a href="https://akabanedai-fes.com/08/" target="_blank" rel="noopener noreferrer"  class="here">こちら</a>
-                                    </span>
-                                    -->
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                </li>
-            </ul>
-            <p class="information-note">
-                公演内容は全て同一のものになります。 <br>
-                所要時間は各回 1時間 ほどになります。
-            </p>
-            <div class="information-reminder">
-                <p class="information-reminder-contents">
-                    
-                    次の公演は <span id="information-emp">- 11/2(日) 10:30 -</span>  より始まります
+        <div class="divider">
+            <span>
+                <img src="/assets/moon_story.59bbaae7.png" alt="装飾マーク" class="divider-icon">
+            </span>
+        </div>
+        <div class="pfm-info-wrap">
+            <div class="pfm-info">
+                <h2>1日目</h2>
+                <h3>午前の部</h3>
+                <p>開場 10:00 開演 10:30</p>
+                <h3>午後の部</h3>
+                <p>開場 12:15 開演 12:45</p>
+                <p>INIADホールにて公演</p>
+                <p>
+                    東洋大学赤羽台キャンパス（INIAD HUB-1）1階 INIADホール
                 </p>
             </div>
-            
-    </section>
+            <div class="pfm-info">
+                <h2>2日目</h2>
+                <h3>午前の部</h3>
+                <p>開場 11:45 開演 12:15</p>
+                <h3>午後の部</h3>
+                <p>開場 14:45 開演 15:00</p>
+                <p>INIADホールにて公演</p>
+                <p>
+                    東洋大学赤羽台キャンパス（INIAD HUB-1）1階 INIADホール
+                </p>
+            </div>
+        </div>
+    </div>
 
-    <section id="comment" class="section section-comment">
+    <!-- ここからコメント -->
+    <section class="comments-section">
         <h1 class="section-headline">コメント</h1>
-        <!-- <p class="released">Coming soon</p> -->
-        <div class="comment">
-            <div class="comment-description scriptwriter">
-                <h2 class="comment-headline">--脚本家より</h2>
-                <p class="comment-description">
+        <div class="divider">
+            <span>
+                <img src="/assets/moon_story.59bbaae7.png" alt="装飾マーク" class="divider-icon">
+            </span>
+        </div>
+        <div class="bubble-large comment-bubble comment-1">
+            <div class="comment-content">
+                <p class="comment-author">脚本家より</p>
+                <p class="comment-text">
                     あなたは一生目を覚まさない代わりに<br>
                     都合のいい明晰夢を見続けることが出来るとしたら<br>
-                    その提 案に乗るでしょうか？ <br>
+                    その提 案に乗るでしょうか？ <br><br>
                     逃げたくなるような辛い現実や忘れたい過去は<br>
                     誰にだってあると思います。<br>
                     そういった現実にどう 向き合っていくのか、<br>
                     はたして自分はどうしたいのか、<br>
-                    登場人物たちと一緒に考えながら鑑賞いただけると幸いです。
-                </p>
-            </div>
-            <div class="comment-description main-character">
-                <h2 class="comment-headline">--主人公 アサヒ役より</h2>
-                <p class="comment-description">
-                    Comming soon
+                    登場人物たちと一緒に考えながら<br>
+                    鑑賞いただけると幸いです。
                 </p>
             </div>
         </div>
-    </section>
+        <div class="bubble-large comment-bubble comment-2">
+            <div class="comment-content">
+                <p class="comment-author">主人公より</p>
+                <p class="comment-text">
+                    主人公のアサヒを演じさせていただきます。<br><br>
+                    アサヒは、人間関係において不器用ながらも、<br>
+                    とても優しいキャラクターです。<br>
+                    友達が困っている時、すぐに動ける優しさを持っています。<br>
+                    うまくいかなくても、<br>
+                    最後まで真剣に悩み続けるアサヒの姿を、<br>
+                    見届けてあげてください。<br>
+                    お楽しみに！
+                </p>
+            </div>
+        </div>
 
-    <section id="credit" class="section section-forth">
+        <div class="bubble-small item-bubble item-comic">
+            <img src="/assets/comic-trans.e726128d.png" alt="漫画" class="item-image">
+        </div>
+        <div class="bubble-small item-bubble item-tennis">
+            <img src="/assets/racket-trans.2830b9b5.png" alt="テニスラケット" class="item-image">
+        </div>
+        <div class="bubble-small item-bubble item-icecream">
+            <img src="/assets/ice-trans.78690679.png" alt="アイス" class="item-image">
+        </div>
+    </section>
+    <!-- ここまでコメント -->
+    <!-- ここからクレジット（仮） -->
+    <section id="credit" class="section-credit">
         <h1 class="section-headline">クレジット</h1>
+        <div class="divider">
+            <span>
+                <img src="/assets/moon_story.59bbaae7.png" alt="装飾マーク" class="divider-icon">
+            </span>
+        </div>
         <details class="details">
             <summary class="summary">▽OPEN</summary>
         <!--
@@ -253,6 +314,8 @@
 
         </details>
     </section>
+    <!-- ここまでクレジット（仮） -->
+    </main> 
 
     <footer>
         <hr class="footer-line">
@@ -265,11 +328,14 @@
         </div>
     </footer>
 
+    <!--
     <div id="fusuma-overlay">
         <div class="fusuma fusuma-left"></div>
         <div class="fusuma fusuma-right"></div>
     </div>
-
+    -->
+    
+    
     
 </body>
 </html>
