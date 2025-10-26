@@ -11,8 +11,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw; /* ロゴのサイズ */
-    max-width: 500px;
+    width: 80vh; /* ロゴのサイズ */
     z-index: 30; /* 雲より手前に表示 */
 }
 .logo-main img {
@@ -36,6 +35,8 @@
     animation-name: scroll-cloud;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+
+    opacity: 70%;
 }
 
 /* それぞれの雲の高さ、サイズ、流れる速さを指定 */
