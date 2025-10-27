@@ -19,6 +19,12 @@
     height: auto;
 }
 
+@media (max-width:450px) {
+    .logo-main {
+        width: 100vw;
+    }
+}
+
 /* --- 雲のアニメーション --- */
 @keyframes scroll-cloud {
     from { transform: translateX(-100%); } /* 画面左の外側からスタート */
