@@ -109,9 +109,9 @@
     transition: opacity 1.0s ease-in-out;
 }
 .characters-for-sun { opacity: 1; }
-.characters-for-moon { opacity: 0; pointer-events: none; }
+.characters-for-moon { opacity: 0; }
 .character-intro-section.is-night .characters-for-sun { opacity: 0; pointer-events: none; }
-.character-intro-section.is-night .characters-for-moon { opacity: 1; pointer-events: auto; }
+.character-intro-section.is-night .characters-for-moon { opacity: 1; pointer-events: none; }
 .char {
     position: absolute; height: 90%; width: auto;
     object-fit: contain; bottom: 0;
@@ -147,7 +147,7 @@
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
     border: 3px solid white;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -158,10 +158,11 @@
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* 光るような演出も */
 }
 .toggle-button p {
-    color: rgb(28, 216, 185);
+    color: #df0354;
     text-shadow: whitesmoke 1px 1px 1px;
     font-weight: bold;
     font-size: 1.4rem;
+    margin: 0;
 }
 
 
@@ -184,6 +185,11 @@
     pointer-events: auto;
     transition: opacity 0.8s, visibility 0.8s;
 }
+/*
+.description-box:hover {
+    background-color: rgb(6, 39, 75);
+}
+*/
 .description-box h3 {
     text-align: center;
     margin-top: 0;
@@ -256,7 +262,7 @@
     }
     .characters-for-moon > img {
         width: 100%;
-        top: 46%; /* 案内人サイドの高さ */
+        top: 30%; /* 案内人サイドの高さ */
     }
 
     .moon-char-1 {
@@ -284,7 +290,7 @@
     }
     .desc-box-you { 
     /* ▼▼▼ このtopの値を変更 ▼▼▼ */
-    top: 26%; /* 例: 20% → 30% */
+    top: 24%; /* 例: 20% → 30% */
     left: 10%; 
     }
     .desc-box-asahi { 
@@ -299,12 +305,12 @@
         right: 10%; 
     }
     .desc-box-shinonome { 
-        top: 26%; 
+        top: 18%; 
         left: 5%;
         width: 40%; /* 見出しのボックスの幅 */
     }
     .desc-box-dreamer { 
-        top: 26%; 
+        top: 18%; 
         right: 5%; 
         width: 40%; /* 見出しのボックスの幅 */
     }
@@ -330,6 +336,7 @@
     }
     .description-box h3 {
         border: 1px solid transparent;
+        font-size: 1.2rem;
     }
     .description-box p {
     display: none;
@@ -351,6 +358,66 @@
         left: 75%;
         transform: translateX(-50%);
 }
+    .desc-box-you { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 28%; /* 例: 20% → 30% */
+    }
+    .desc-box-asahi { 
+        /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+        top: 24%; /* 例: 15% → 30% */
+    }
+    .desc-box-hikari { 
+        /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+        top: 28%;
+    }
+    .desc-box-shinonome { 
+        top: 26%; 
+        left: 5%;
+        width: 40%; /* 見出しのボックスの幅 */
+    }
+    .desc-box-dreamer { 
+        top: 26%; 
+        right: 5%; 
+        width: 40%; /* 見出しのボックスの幅 */
+    }
+}
+
+
+.arrow {
+    color: #ffe69c;
 }
 
 /*------------ここまでキャラクター紹介-----------*/
+
+
+/*
+モーダルウインドウ BootStrap部分以外
+*/
+.modal-title {
+    margin: 10px auto;
+    font-size: 2rem;
+}
+.custom-modal {
+  width: 90%;  /* 画面幅の90% */
+  height: auto;
+  margin: 1.5rem auto; /* 上下に少し余白 */
+}
+.modal-body {
+  overflow-y: auto; /* 内容が多い場合にスクロール */
+}
+.custom-modal .modal-body {
+  font-size: 1.2rem; /* 1.3倍の文字サイズ */
+  line-height: 1.6;  /* 行間も広げると読みやすい */
+  text-align: center; /* 中央寄せにしたい場合 */
+}
+.custom-modal img {
+  height: auto;     /* 縦横比を維持 */
+  max-height: 50vh; /* 画面高さの50%以内に収める */
+  display: block;
+  margin: 0 auto;   /* 中央寄せ */
+}
+
+/* モーダル表示中に背景をスクロール不可にする */
+.no-scroll {
+  overflow: hidden;
+}
