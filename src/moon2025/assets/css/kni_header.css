@@ -83,3 +83,67 @@ SNSアイコン
     transition: transform 0.3s ease;
 }
 .icons a:hover { transform: scale(1.2); }
+
+
+/* =========================
+キャッチコピーとアンケート
+========================= */
+.catchcopy-area {
+    text-align: center;
+}
+.catchcopy {
+    color: white;
+    font-size: 3rem;
+}
+.catchcopy > b {
+    color: pink;
+}
+.questionnaire-box {
+    margin: 10px auto;
+}
+.questionnaire > a {
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.button-40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    padding: .9em 2em;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 7px 10px rgb(0 0 0 / 10%);
+    background-color: #df0354;
+    color: #333;
+    font-size: 1em;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.button-40:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 10px rgb(0 0 0 / 15%);
+}
+
+.button-40::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+    content: '';
+}
+
+@media (max-width:768px) {
+    .catchcopy {
+        font-size: 1.5rem;
+    }
+    .questionnaire > a {
+        font-size: 1.2rem;
+    }
+}
