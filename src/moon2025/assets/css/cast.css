@@ -1,103 +1,356 @@
-/* --- コンテナのスタイル --- */
-.container {
+@keyframes sunFlicker {
+    0% {
+        /* 開始と終了の状態（通常時） */
+        box-shadow: 0 0 1vw 0.5vw rgba(255, 190, 0, 0.9),
+                    0 0 3vw 1vw rgba(255, 100, 0, 0.7),
+                    0 0 6vw 2vw rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        /* 中間地点の状態（最も大きく、明るくなった時） */
+        /* ぼかし・広がり・色の濃さを変更して、より大きな動きに */
+        box-shadow: 0 0 1.8vw 0.9vw rgba(255, 200, 0, 1),   /* より明るく、広く */
+                    0 0 5vw 1.8vw rgba(255, 110, 0, 0.8), /* より明るく、広く */
+                    0 0 10vw 3vw rgba(255, 20, 0, 0.6);   /* より明るく、広く */
+    }
+    100% {
+        /* 通常の状態に戻る */
+        box-shadow: 0 0 1vw 0.5vw rgba(255, 190, 0, 0.9),
+                    0 0 3vw 1vw rgba(255, 100, 0, 0.7),
+                    0 0 6vw 2vw rgba(255, 0, 0, 0.5);
+    }
+}
+
+/*----------ここからキャラクター紹介---------*/
+.character-section-wrapper {
     position: relative;
-    width: min(75vw, 800px);
-    margin: 5vw auto;
+    height: 180vh; /* キャラクター紹介エリアの高さ */
+}
+.character-intro-section {
+    position: relative;
+    height: 100%;
+    background-color: #a3d5ff; /* 朝の色 */
+    transition: background-color 1.5s ease-in-out;
+    overflow: hidden;
+    clip-path: url(#wavy-clip); /* SVGでセクション全体を切り抜く */
+}
+.character-intro-section.is-night {
+    background-color: #253858; /* 夜の色 */
 }
 
-/* --- moon-sun-wrapper のスタイル --- */
-.moon-sun-wrapper {
-    position: relative; width: 100%;
-    height: min(37.5vw, 400px);
-    border-radius: 50vw 50vw 0 0;
-}
+/* --- 波形マスクは削除（HTMLからも削除済み） --- */
+/* .wave-mask { ... } のルールはすべて削除してください */
 
-/* ▼▼▼ エフェクト部分のコード ▼▼▼ */
-.moon, .sun {
-    position: absolute; top: 0; left: 0;
-    width: 100%; height: 100%;
-    border-radius: 50vw 50vw 0 0;
-    transition: opacity 1.5s ease-in-out;
-}
-.moon { 
-    background-color: #f0f0f0;
-    opacity: 1;
-    z-index: 2;
-    box-shadow: 0 0 1vw 0.5vw white, /* 内側の強い光 */
-                0 0 4vw 2vw rgba(255, 255, 255, 0.5);
-}
-
-.sun { 
-    background-color: #ffc107;
-    opacity: 0;
-    z-index: 1;
-    animation: sunFlicker 4s infinite ease-in-out;
-}
-
-.moon-sun-wrapper.show-sun .moon { opacity: 0; }
-.moon-sun-wrapper.show-sun .sun { opacity: 1; }
-
-/* --- ボタンのスタイル --- */
-.toggle-button {
+/* --- 1. 背景の月と太陽（一番奥） --- */
+.celestial-background {
     position: absolute;
-    top: min(37.5vw, 400px); left: 50%;
-    width: min(15vw, 160px); height: min(15vw, 160px);
-    transform: translateX(-50%) translateY(-5vw);
-    border-radius: 50%; background-color: rgba(255, 255, 255, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    cursor: pointer; outline: none;
-    transition: background-color 0.3s, border-color 0.3s;
+    bottom: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    max-width: 1000px;
+    height: 40vw;
+    max-height: 400px;
     z-index: 10;
-}
-.toggle-button:hover { 
-    background-color: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.6);
+    overflow: hidden;
 }
 
-/* --- シルエットのコンテナ --- */
-.silhouettes {
-    /* 親要素(.moon-sun-wrapper)を基準に配置 */
+.moon, .sun {
+    position: absolute; left: 0; top: 13%;
+    width: 100%; height: 200%;
+    border-radius: 50%;
+    transition: opacity 1.5s ease-in-out;
+    will-change: opacity;
+}
+.sun {
+    background: radial-gradient(circle, #fff8dc, #ffcc00);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+    opacity: 1;
+}
+.moon {
+    background: radial-gradient(circle, #f0f8ff, #a0b0c0);
+    box-shadow: 0 0 40px rgba(173, 216, 230, 0.7);
+    opacity: 0;
+}
+.character-intro-section.is-night .moon { opacity: 1; }
+.character-intro-section.is-night .sun { opacity: 0; }
+
+/* --- 3. 波形マスク（真ん中）--- */
+.wave-mask {
     position: absolute;
-    bottom: 0; /* 半円の最下部（地平線）に配置 */
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-
-    /* Flexboxで中の画像を中央・下に揃える */
-    display: flex;
-    justify-content: center; /* 水平方向の中央揃え */
-    align-items: flex-end;   /* 垂直方向の下揃え */
-    gap: 2%; /* 影と影の間のすき間 */
-
-    /* 他の要素より手前に表示 */
-    z-index: 5;
+    height: 40vh;
+    z-index: 20;
+    pointer-events: none;
+}
+.wave-mask svg { width: 100%; height: 100%; }
+.wave-mask path {
+    fill: #141f33; /* 濃い青色 */
+    stroke: none;
 }
 
-/* --- シルエットの画像共通スタイル --- */
-.moon-silhouette,
-.sun-silhouette {
-    /* 大きさを親要素の高さに合わせて調整 */
-    height: 40%; 
-    width: auto; /* 高さに合わせて幅は自動調整 */
+/* --- 2. キャラクター（波より手前） --- */
+.chara-role {
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: rgb(2, 105, 174) 1px 1px 1px;
+}
+.character-container {
+    position: absolute; bottom: 40vh; left: 50%;
+    transform: translateX(-50%);
+    width: 60vw; max-width: 600px;
+    height: 80vh; z-index: 20;
+    pointer-events: none;
+}
+.characters-for-sun, .characters-for-moon {
+    position: absolute; width: 100%; height: 100%;
+    display: flex; justify-content: center; align-items: flex-end;
+    transition: opacity 1.0s ease-in-out;
+}
+.characters-for-sun { opacity: 1; }
+.characters-for-moon { opacity: 0; pointer-events: none; }
+.character-intro-section.is-night .characters-for-sun { opacity: 0; pointer-events: none; }
+.character-intro-section.is-night .characters-for-moon { opacity: 1; pointer-events: auto; }
+.char {
+    position: absolute; height: 90%; width: auto;
+    object-fit: contain; bottom: 0;
+    transform-origin: bottom center;
+}
 
+/* ▼▼▼ 各キャラクターの位置調整 ▼▼▼ */
+.sun-char-1 { left: 10%; transform: translateX(-50%) translateY(10%); }
+.sun-char-2 { left: 50%; transform: translateX(-50%); }
+.sun-char-3 { left: 90%; transform: translateX(-50%) translateY(10%); will-change: opacity; }
+
+
+/* 月モードのキャラクター（参考として残しますが、必要に応じて調整） */
+.moon-char-1 {
+    left: 22%;
+    transform: translateX(-50%); 
+}
+.moon-char-2 {
+    left: 75%;
+    transform: translateX(-50%);
+}
+.moon-desc { opacity: 0; visibility: hidden; }
+.sun-desc { opacity: 1; visibility: visible; }
+
+.character-intro-section.is-night .moon-desc { opacity: 1; visibility: visible; }
+.character-intro-section.is-night .sun-desc { opacity: 0; visibility: hidden; }
+.toggle-button {
+    position: absolute;
+    top: 148vh; /* ボタンの上下の位置を指定 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 40;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 3px solid white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* hover時の拡大アニメーション */
+.toggle-button:hover {
+    transform: translateX(-50%) scale(1.2); /* 拡大＋位置キープ */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* 光るような演出も */
+}
+.toggle-button p {
+    color: rgb(28, 216, 185);
+    text-shadow: whitesmoke 1px 1px 1px;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+
+/* --- キャラ説明ボックスのコンテナ --- */
+.description-boxes-container {
+    width: 100%; height: 100%;
+    z-index: 18;
+    pointer-events: none;
+}
+.description-box {
+    position: absolute;
+    width: 25vw; max-width: 300px;
+    padding: 1.5em; box-sizing: border-box;
+    background-color: rgba(26, 26, 46, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    color: white; font-family: 'Shippori Mincho', serif;
+    pointer-events: auto;
+    transition: opacity 0.8s, visibility 0.8s;
+}
+.description-box h3 {
+    text-align: center;
+    margin-top: 0;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.is-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+.character-intro-section.is-night .description-box {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+/* --- 説明ボックスの表示切り替え --- */
+.sun-desc,
+.moon-desc {
     /* フェードイン・アウトのアニメーション設定 */
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 1.0s ease-in-out;
+}
+.moon-desc { opacity: 0; visibility: hidden;}
+.sun-desc { opacity: 1; visibility: visible; }
+.character-intro-section.is-night .moon-desc { opacity: 1; visibility: visible; }
+.character-intro-section.is-night .sun-desc { opacity: 0; visibility: hidden; }
+
+/* --- 個々のボックスの配置 --- */
+.desc-box-you { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 24%; /* 例: 20% → 30% */
+    left: 10%; 
+}
+.desc-box-asahi { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 21%; /* 例: 15% → 30% */
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+.desc-box-hikari { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 25%; /* 例: 20% → 30% */
+    right: 10%; 
+}
+.desc-box-shinonome { top: 20%; left: 20%; }
+.desc-box-dreamer { top: 20%; right: 20%; }
+
+/* IPadProとか */
+@media (max-width: 820px) {
+    .character-section-wrapper {
+        height: 130vh; /* キャラ紹介のセクションの高さ */
+    }
+    .celestial-background {
+        bottom: 10vh; /* 足場の高さ */
+        width: 120vw;
+        height: 120vw;
+    }
+    .toggle-button {
+        top: 97vh;
+    }
+    .description-box h3 {
+        border: 1px solid transparent;
+    }
+    .description-box p {
+    display: none;
+    }
+    .characters-for-sun > img {
+        width: 100%;
+        top: 28%; /* 主人公サイドの子達の高さ */
+    }
+    .characters-for-moon > img {
+        width: 100%;
+        top: 46%; /* 案内人サイドの高さ */
+    }
+
+    .moon-char-1 {
+        left: 22%;
+        transform: translateX(-50%); 
+}
+    .moon-char-2 {
+        left: 75%;
+        transform: translateX(-50%);
+}
+    .sun-char-1 { left: 5%; transform: translateX(-50%) translateY(10%); }
+    .sun-char-2 { left: 50%; transform: translateX(-50%); }
+    .sun-char-3 { left: 100%; transform: translateX(-50%) translateY(10%); will-change: opacity; }
+
+    .desc-box-you, .desc-box-asahi, .desc-box-hikari {
+        font-size: 16px;
+        padding: 10px 10px;
+    }
+    .desc-box-shinonome, .desc-box-dreamer {
+        font-size: 16px;
+        padding: 10px 10px;
+    }
+    .chara-role {
+        font-size: 16px;
+    }
+    .desc-box-you { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 26%; /* 例: 20% → 30% */
+    left: 10%; 
+    }
+    .desc-box-asahi { 
+        /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+        top: 21%; /* 例: 15% → 30% */
+        left: 50%; 
+        transform: translateX(-50%); 
+    }
+    .desc-box-hikari { 
+        /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+        top: 26%; /* 例: 20% → 30% */
+        right: 10%; 
+    }
+    .desc-box-shinonome { 
+        top: 26%; 
+        left: 5%;
+        width: 40%; /* 見出しのボックスの幅 */
+    }
+    .desc-box-dreamer { 
+        top: 26%; 
+        right: 5%; 
+        width: 40%; /* 見出しのボックスの幅 */
+    }
+
+    .toggle-button {
+    top: 105vh; /* ボタンの上下の位置を指定 */
+}
 }
 
-/* --- 太陽の影の初期状態 --- */
-.sun-silhouette {
-    /* 太陽の影は最初、非表示（透明）にしておく */
-    opacity: 0;
+/* スマホ */
+@media(max-width:450px) {
+    .celestial-background {
+        width: 150vw;
+        height: 80vw;
+        bottom: 10vh;
+    }
+
+    .character-section-wrapper {
+        height: 120vh; /* キャラ紹介のセクションの高さ */
+    }
+    .toggle-button {
+        top: 98vh;
+    }
+    .description-box h3 {
+        border: 1px solid transparent;
+    }
+    .description-box p {
+    display: none;
+    }
+    .characters-for-sun > img {
+        width: 100%;
+        top: 40%; /* 主人公サイドの子達の高さ */
+    }
+    .characters-for-moon > img {
+        width: 100%;
+        top: 46%; /* 案内人サイドの高さ */
+    }
+
+    .moon-char-1 {
+        left: 22%;
+        transform: translateX(-50%); 
+}
+    .moon-char-2 {
+        left: 75%;
+        transform: translateX(-50%);
+}
 }
 
-/* --- 切り替え時の動き --- */
-/* 太陽が表示された時（show-sunクラスが付いた時） */
-.moon-sun-wrapper.show-sun .moon-silhouette {
-    /* 月の影をフェードアウト */
-    opacity: 0;
-}
-
-.moon-sun-wrapper.show-sun .sun-silhouette {
-    /* 太陽の影をフェードイン */
-    opacity: 1;
-}
+/*------------ここまでキャラクター紹介-----------*/
