@@ -21,6 +21,10 @@ body {
     --scroll-gap: 30px;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 #main-content-area {
     position: relative; /* z-indexを効かせるため */
     z-index: 1; /* 背景より手前に表示 */
@@ -502,7 +506,21 @@ h1{
     align-items: center;
     gap: 1rem;
     padding: 3rem;
+    width: 45vw;
     background-image: url('../img/info-happy.jpg');
+}
+.pfm-head {
+    color: #18171A;
+}
+
+.pfm-info > h2 {
+    font-size: 1.2rem;
+}
+
+.list-design > li{
+    color: white;
+    margin: 20px;
+    font-size: 1.5rem;
 }
 
 /*
@@ -517,10 +535,16 @@ h1{
     .pfm-info-wrap {
         display: block;
     }
-    .pfm-info {margin: 30px;}
+    .pfm-info {
+        margin: 30px;
+        width: 90vw;
+    }
+    .list-design > li{
+        text-align: left;
+        list-style: none;
+        font-size: 1.2rem;
+    }
 }
-
-
 /* =============================
    コメントセクション（泡演出付き）
    ============================= */
@@ -681,9 +705,60 @@ h3 {
         font-size: 0.85rem;
     }
 
-    /* 小さい泡は非表示 */
+    /* 小さい泡は非表示 
     .bubble-small {
         display: none;
+    } */
+
+    /* 位置指定をリセット */
+    .comment-1,
+    .comment-2 {
+        top: auto;
+        left: auto;
+        right: auto;
+    }
+
+    .comment-1 {
+        right: 20%;
+    }
+    .comment-2 {
+        margin-top: -20vh;
+        left: 10%;
+    }
+
+    .bubble-small {
+        width: 16rem;
+    }
+
+    .item-icecream {
+        top: 5%;
+        left: -8%;
+    }
+    .item-tennis {
+        top: 38%;
+        right: -5%;
+    }
+    .item-comic {
+        top: 78%;
+        left: 0%;
+    }
+
+    .comment-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* IPadProサイズ 
+@media (max-width: 820px) {
+    .comment-text {
+        font-size: 0.9rem;
+    }
+} */
+
+/* スマホサイズ */
+@media (max-width: 450px) {
+    .comment-text {
+        font-size: 0.5rem;
     }
 
     /* 位置指定をリセット */
@@ -695,11 +770,28 @@ h3 {
     }
 
     .comment-1 {
-        left: 10%;
+        right: 20%;
     }
     .comment-2 {
-        margin-top: -30vh;
-        right: 20%;
+        margin-top: -20vh;
+        left: 10%;
+    }
+
+    .bubble-small {
+        width: 8rem;
+    }
+
+    .item-icecream {
+        top: 15%;
+        left: -8%;
+    }
+    .item-tennis {
+        top: 40%;
+        right: -5%;
+    }
+    .item-comic {
+        top: 75%;
+        left: 0%;
     }
 }
 
@@ -716,6 +808,10 @@ h3 {
     max-width: 100%;
     display: block;
     margin: 1rem auto;
+}
+
+.details {
+    margin-bottom: 20px;
 }
 
 @media (max-width:768px) {
