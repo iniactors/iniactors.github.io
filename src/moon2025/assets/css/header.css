@@ -53,7 +53,7 @@
         display: flex;
     }*/
     .header-navlist {
-        gap: 0.5rem;
+        gap: 1rem;
         list-style: none;
     }
     .header-navitem a {
@@ -70,6 +70,12 @@
     background-color: #fff;
 }
 
+@media (max-width:450px) {
+    .header-navitem > a {
+        font-size: 0.7rem;
+    }
+}
+
 /* =========================
 SNSアイコン
 ========================= */
@@ -78,7 +84,7 @@ SNSアイコン
     margin: 0;
 }
 .icons a {
-    margin: 0 0.5rem;
+    margin: 0.5rem 0.5rem;
     display: inline-block;
     transition: transform 0.3s ease;
 }
@@ -96,7 +102,13 @@ SNSアイコン
     font-size: 3rem;
 }
 .catchcopy > b {
-    color: pink;
+    background: linear-gradient(5deg, #8d7ca6 30%, #ffffff 50%, #d17aba 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.narrow-catchcopy {
+    display: none;
 }
 .questionnaire-box {
     margin: 10px auto;
@@ -145,5 +157,18 @@ SNSアイコン
     }
     .questionnaire > a {
         font-size: 1.2rem;
+    }
+    .narrow-catchcopy {
+        display: none;
+    }
+}
+
+@media (max-width:450px) {
+    .wide-catchcopy {
+        display: none;
+    }
+    .narrow-catchcopy {
+        display: block;
+        font-size: 1.8rem;
     }
 }

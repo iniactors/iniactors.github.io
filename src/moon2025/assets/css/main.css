@@ -198,9 +198,11 @@ h1{
     margin: 0 20px;
 }
 .pfm-info {
-    background-color: rgb(252, 255, 239);
+    /* background-color: rgb(252, 255, 239); */
+    background-color: transparent;
     border-radius: 3rem;
-    color: rgb(24, 23, 26);
+    /* color: rgb(24, 23, 26); */
+    color: white;
     display: flex;
     justify-content: center;
     flex-flow: column;
@@ -208,14 +210,24 @@ h1{
     gap: 1rem;
     padding: 3rem;
     width: 45vw;
-    background-image: url('../img/info-happy.jpg');
+    background-image: url('../img/info-star.png');
 }
 .pfm-head {
-    color: #18171A;
+    /* color: #18171A; */
+    color: white;
 }
 
 .pfm-info > h2 {
     font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.pfm-info > h3 {
+    font-weight: bold;
+}
+
+.pfm-info > p {
+    font-size: 1.5rem;
 }
 
 .list-design > li{
@@ -239,6 +251,9 @@ h1{
     .pfm-info {
         margin: 30px;
         width: 90vw;
+    }
+    .pfm-info > p {
+        font-size: 1.3rem;
     }
     .list-design > li{
         text-align: left;

@@ -41,3 +41,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+/*
+モーダルウインドウ
+*/
+$(function () {
+    // ボタンをクリックしたらモーダル表示
+  $(".modalBtn").on("click", function () {
+    $(".modalBg").fadeIn();
+    $("body").addClass("no-scroll"); // スクロール禁止
+  });
+  // ×ボタンクリックでモーダル閉じる
+  $(".modalClose").on("click", function () {
+    $(".modalBg").fadeOut();
+    $("body").removeClass("no-scroll"); // スクロール解除
+  });
+});
