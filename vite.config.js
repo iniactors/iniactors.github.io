@@ -23,7 +23,6 @@ export default defineConfig({
         ai2024: resolve(root, 'ai-2024/index.html'),
         ai2024sub: resolve(root, 'ai-2024/sub.html'),
         moon2025: resolve(root, 'moon2025/index.html'),
-        moon2025akb: resolve(root, 'moon2025/akb.html'),
       },
     },
   },
