@@ -4,6 +4,68 @@
   box-sizing: border-box;
 }
 
+/*
+ふすまローディング
+*/
+/* ふすまのコンテナ */
+#fusuma-overlay {
+    position: fixed; /* 画面に固定 */
+    top: 0;
+    left: 0;
+    width: 100vw; /* 画面幅いっぱいに */
+    height: 100vh; /* 画面高さいっぱいに */
+    z-index: 10000; /* 最も手前に表示 */
+    display: flex; /* 子要素を横並びにする */
+    pointer-events: none; /* アニメーション後に下の要素をクリックできるように */
+}
+
+/* 左右のふすま共通のスタイル */
+.fusuma {
+    width: 50%; /* 画面の半分を覆う */
+    height: 100%;
+    background-repeat: no-repeat; /* ふすまの基本色 */
+    /* ↓お好みの和紙や木目の画像を指定すると、よりリアルになります */
+    /* background-image: url('path/to/your/fusuma-image.jpg'); */
+    background-size: cover;
+    
+    /* アニメーションの設定 */
+    transform: translateX(0);
+    transition: transform 2.5s ease-in-out;
+}
+
+.fusuma-left {
+    /* 左側の画像を指定 */
+    background-image: url('./../img/fusuma.left.png'); 
+    /* 画像の右端を基準に配置（引き手が中央に来るように）*/
+    background-position: right;
+}
+
+.fusuma-right {
+    /* 右側の画像を指定 */
+    background-image: url('./../img/fusuma.right.png');
+    /* 画像の左端を基準に配置（引き手が中央に来るように）*/
+    background-position: left;
+}
+
+/* ▼ アニメーション実行用のクラス ▼ */
+/* .open が付与されたら、このスタイルが適用される */
+
+/* 左のふすまを開く */
+.fusuma-left.open {
+    transform: translateX(-100%); /* 左に自身の幅だけ移動 */
+}
+
+/* 右のふすまを開く */
+.fusuma-right.open {
+    transform: translateX(100%); /* 右に自身の幅だけ移動 */
+}
+
+.empty-space {
+    /* 表示領域の高さ100%に設定 */
+    min-height: 60vh; 
+}
+
+
 body {
     font-family: 'Kaisei Decol';
   --scroll-gap: 30px;
@@ -64,68 +126,6 @@ h1{
   flex-wrap: nowrap;
   gap: 0 var(--scroll-gap);
 }
-
-/* ふすまのコンテナ */
-#fusuma-overlay {
-    position: fixed; /* 画面に固定 */
-    top: 0;
-    left: 0;
-    width: 100vw; /* 画面幅いっぱいに */
-    height: 100vh; /* 画面高さいっぱいに */
-    z-index: 1000; /* 最も手前に表示 */
-    display: flex; /* 子要素を横並びにする */
-    pointer-events: none; /* アニメーション後に下の要素をクリックできるように */
-}
-
-/* 左右のふすま共通のスタイル */
-.fusuma {
-    width: 50%; /* 画面の半分を覆う */
-    height: 100%;
-    background-repeat: no-repeat; /* ふすまの基本色 */
-    /* ↓お好みの和紙や木目の画像を指定すると、よりリアルになります */
-    /* background-image: url('path/to/your/fusuma-image.jpg'); */
-    background-size: cover;
-    
-    /* アニメーションの設定 */
-    transition: transform 2.5s ease-in-out;
-}
-
-.fusuma-left {
-    /* 左側の画像を指定 */
-    background-image: url('./../img/fusuma.left.png'); 
-    /* 画像の右端を基準に配置（引き手が中央に来るように）*/
-    background-position: right;
-}
-
-.fusuma-right {
-    /* 右側の画像を指定 */
-    background-image: url('./../img/fusuma.right.png');
-    /* 画像の左端を基準に配置（引き手が中央に来るように）*/
-    background-position: left;
-}
-
-/* ▼ アニメーション実行用のクラス ▼ */
-/* .open が付与されたら、このスタイルが適用される */
-
-/* 左のふすまを開く */
-.fusuma-left.open {
-    transform: translateX(-100%); /* 左に自身の幅だけ移動 */
-}
-
-/* 右のふすまを開く */
-.fusuma-right.open {
-    transform: translateX(100%); /* 右に自身の幅だけ移動 */
-}
-
-.empty-space {
-    /* 表示領域の高さ100%に設定 */
-    min-height: 60vh; 
-}
-
-
-
-
-
 
 /*------------ここからストーリー-------------*/
 .divider {
