@@ -1,42 +1,468 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>月が夢を見るのなら: INIActors 2025年学祭公演</title>
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- 基本情報 -->
     <meta name="theme-color" content="#0d0d0d" />
     <meta
         name="description"
         content="INIActors 2025年学祭公演「月が夢を見るのなら」INIADホールにて開幕!"
     />
-    <meta
-        property="og:title"
-        content="月が夢を見るのなら: INIActors 2025年学祭公演"
-    />
-    <meta
-        property="og:description"
-        content="INIActors 2025年学祭公演「月が夢を見るのなら」INIADホールにて開幕!"
-    />
+
+    <!-- OGP / SNS共有設定 -->
+    <meta property="og:title" content="月が夢を見るのなら: INIActors 2025年学祭公演" />
+    <meta property="og:description" content="INIActors 2025年学祭公演「月が夢を見るのなら」INIADホールにて開幕!" />
     <meta property="og:url" content="https://iniactors.github.io/moon2025/" />
-    <meta
-        property="og:image"
-        content="https://iniactors.github.io/moon_share.png"
-    />
+    <meta property="og:image" content="https://iniactors.github.io/moon-share.png" />
+    <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://iniactors.github.io/moon2025/" />
+
+    <!-- アイコン -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- フォント（重複削除＋整理） -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;500&family=Shippori+Mincho&family=Kaisei+Decol&family=Noto+Sans+JP:wght@100..900&family=Yuji+Mai&family=Zen+Old+Mincho&display=swap"
         rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/comingSoon.css">
+
+    <!-- CSS（読み込み順を整理） -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/cloud.css" />
+    <link rel="stylesheet" href="assets/css/cast.css" />
 </head>
 
 <body>
-    <div class="stars"></div>
-    <h1>Coming Soon</h1>
+    <header class="header-bg">
+        <div class="header-contents">
+            <!--
+            <div class="responsive_btn">
+                <div class="menu_line"></div>
+                <div class="menu_line"></div>
+                <div class="menu_line"></div>
+            </div>
+            -->
+            <nav class="header-nav">
+                <ul class="header-navlist">
+                    <li class="header-navitem">
+                        <a href="#story">ストーリー</a>
+                    </li>
+                    <li class="header-navitem">
+                        <a href="#cast">登場人物</a>
+                    </li>
+                    <li class="header-navitem">
+                        <a href="#information">公演情報</a>
+                    </li>
+                    <li class="header-navitem">
+                        <a href="#comment">コメント</a>
+                    </li>
+                    <li class="header-navitem">
+                        <a href="#credit">クレジット</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="opening-section">
+        <div class="logo-main">
+            <img src="./assets/img/logo-moon.png" alt="サイトロゴ">
+        </div>
+
+        <!-- 装飾 -->
+        <div class="stars-container" id="stars-container"></div>
+
+        <div class="shooting-star-container">
+            <div class="shooting-star"></div>
+        </div>
+
+        <div class="clouds-wrapper">
+            <!--<img src="./assets/img/cloud3.png" alt="雲" class="cloud cloud-1">-->
+            <img src="./assets/img/cloud.png" alt="雲" class="cloud cloud-2">
+            <img src="./assets/img/cloud4.png" alt="雲" class="cloud cloud-3">
+            <!--<img src="./assets/img/cloud3.png" alt="雲" class="cloud cloud-4">-->
+            <img src="./assets/img/cloud3.png" alt="雲" class="cloud cloud-5">
+            <img src="./assets/img/cloud4.png" alt="雲" class="cloud cloud-6">
+            <img src="./assets/img/cloud.png" alt="雲" class="cloud cloud-7">
+        </div>
+    </section>
+
+
+    <!-- キャッチコピーとアンケート -->
+    <div class="catchcopy-area">
+        <p class="catchcopy wide-catchcopy">
+            - これは本当の<b>願い</b>を見つけるための物語 -
+        </p>
+        <p class="catchcopy narrow-catchcopy">
+            - これは 本当の<b>願い </b>を<br>見つけるための 物語 -
+        </p>
+        <!-- 公演アンケート
+        <div class="questionnaire-box">
+            <p class="questionnaire button-40">
+                <a href="https://forms.gle/2hNs9aNozxpyBcjAA">公演アンケート</a>
+            </p>
+        </div>
+        -->
+    </div>
+
+    <main id="main-content-area">
+    <!-- ストーリー -->
+    <section id="story" class="section section-story" >
+        <h1 class="section-headline">ストーリー</h1>
+        <div class="divider">
+            <span>
+                <img src="./assets/img/moon_story.png" alt="装飾マーク" class="divider-icon">
+            </span>
+        </div>
+        <div class="story">
+            <br>
+            <p class="story-description">
+                高校生のアサヒ、ヨウ、ヒカリは学校内でも指折りの問題児<br>
+                今日も3人で補習授業を受けた帰り、ヨウが怪しい噂の話を始める<br>
+                「夢の中でも会える方法があるらしいぜ、みんなで同じ夢をみれるんだって!」<br>
+                面白そうな話に興味津々の二人に手を引かれ、<br>
+                半信半疑のアサヒも噂の 検証に付き合うことに...<br>
+                <div class="divider">
+                    <span>
+                        <img src="./assets/img/moon_story2.png" alt="装飾マーク" class="divider-icon2">
+                    </span>
+                </div>
+                その晩、三人は『夢の世界』で再会する。<br>
+                しかしアサヒは噂が本当だったことで<br>
+                舞い上がったヨウ とヒカリとはぐれてしまう。 <br> 
+                <div class="divider">
+                    <span>
+                        <img src="./assets/img/moon_story3.png" alt="装飾マーク" class="divider-icon3">
+                    </span>
+                </div>
+                途方に暮れていたアサヒに一人の男が声を掛ける。<br>
+                「よっ、少年。ここに来るのは初めてか?」<br>
+                男はシノノメと名乗り自らを『夢の世界』の案内人だと称した。<br>
+                同時刻、ヨウとヒカリはMr.Dreamerを名乗る怪しげな男と出会うことになる...
+            </p>
+        </div>
+    </section>
+    <!-- 登場人物 -->
+    <div id="cast" class="character-section-wrapper">
+        <section class="character-intro-section" id="character-section">
+        <div class="description-boxes-container">
+            <div class="description-box desc-box-you sun-desc" data-bs-toggle="modal" data-bs-target="#modal-you">
+                <h1 class="chara-role">友達</h1>
+                <h3>ヨウ <em class="arrow">⇩</em></h3>
+                <p>明朗快活な青年でトラブルメイカー的な存在。 アサヒ、ヒカリとは親友で、面白そうなものを見つけてはいつも二人を巻き込んでいる。</p>
+            </div>
+            <div class="description-box desc-box-asahi sun-desc" data-bs-toggle="modal" data-bs-target="#modal-asahi">
+                <h1 class="chara-role">主人公</h1>
+                <h3>アサヒ <em class="arrow">⇩</em></h3>
+                <p>本作の主人公。 ぶっきらぼうな性格で親友であるヨウとヒカリにはいつも振り回されている。 文句を言いつつも毎回二人に付いていく友達思いな青年。</p>
+            </div>
+            <div class="description-box desc-box-hikari sun-desc" data-bs-toggle="modal" data-bs-target="#modal-hikari">
+                <h1 class="chara-role">友達</h1>
+                <h3>ヒカリ <em class="arrow">⇩</em></h3>
+                <p>明るい性格の女の子で、男子と遊んでるほうが楽しいっていうタイプ。 いつもヨウが始めた悪ノリに乗っかって二人でアサヒを振り回す。</p>
+            </div>
+            <div class="description-box desc-box-shinonome moon-desc" data-bs-toggle="modal" data-bs-target="#modal-dreamer">
+                <h1 class="chara-role">夢の世界の案内人</h1>
+                <h3>Mr.Dreamer <em class="arrow">⇩</em></h3>
+                <p>『夢の世界』の案内人を務める謎の男。 様々な場所に姿を現しては、住人たちを”本当に欲しいもの”へ導いている。</p>
+            </div>
+            <div class="description-box desc-box-dreamer moon-desc" data-bs-toggle="modal" data-bs-target="#modal-shinonome">
+                <h1 class="chara-role">夢の世界の案内人</h1>
+                <h3>シノノメ <em class="arrow">⇩</em></h3>
+                <p>『夢の世界』の案内人を自称する謎の男。 アサヒのことを少年と呼び、何かとかまってくる。</p>
+            </div>
+        </div>
+        <!-- キャラクターの足場 -->
+        <div class="celestial-background">
+            <div class="moon"></div>
+            <div class="sun"></div>
+        </div>
+        <div class="character-container">
+            <div class="characters-for-sun">
+                <img src="./assets/img/You.webp" alt="主人公の友達 ヨウ" class="char sun-char-1">
+                <img src="./assets/img/Asahi.webp" alt="主人公 アサヒ" class="char sun-char-2">
+                <img src="./assets/img/Hikari.webp" alt="主人公の友達 ヒカリ" class="char sun-char-3">
+            </div>
+            <div class="characters-for-moon">
+                <img src="./assets/img/Mr_D.webp" alt="夢の世界の案内人 Mr.Dreamer" class="char moon-char-1">
+                <img src="./assets/img/Shinonome.webp" alt="夢の世界の案内人 シノノメ" class="char moon-char-2">
+            </div>
+        </div>
+        </section>
+        <!-- 月と太陽の切り替えボタン -->
+        <button id="toggleButton" class="toggle-button"><p>Tap</p></button>
+    </div>
+    <svg width="0" height="0">
+        <defs>
+            <clipPath id="wavy-clip" clipPathUnits="objectBoundingBox">
+            <path d="M0,0.15 Q0.25,0.2 0.5,0.15 T1,0.15 V0.85 Q0.75,0.8 0.5,0.85 T0,0.85 Z" />
+            </clipPath>
+        </defs>
+    </svg>
+
+    <section class="character-intro-section">
+        <div class="frame-container">
+            <div class="frame-background" id="frame-background"></div>
+            <div class="moon-sun-content"></div>
+            <div class="frame-overlay-image"></div>
+        </div>
+    </section>
+
+    <!-- 公演情報 -->
+    <div id="information" class="info-area">
+        <h1 class="section-headline">公演情報</h1>
+        <div class="divider">
+            <span>
+                <img src="./assets/img/moon_story.png" alt="装飾マーク" class="divider-icon">
+            </span>
+        </div>
+        <div class="pfm-info-wrap">
+            <div class="pfm-info">
+                <h1 class="pfm-head">1日目</h1>
+                <h2>11月2日（日）</h2>
+                <h3>午前の部</h3>
+                <p>開場 10:00 開演 10:30</p>
+                <h3>午後の部</h3>
+                <p>開場 12:15 開演 12:45</p>
+                <p><b>INIADホール</b>にて公演</p>
+                <!--
+                <p>
+                    東洋大学赤羽台キャンパス（INIAD HUB-1）1階 INIADホール
+                </p>
+                -->
+            </div>
+            <div class="pfm-info">
+                <h1 class="pfm-head">2日目</h1>
+                <h2>11月3日（月・祝）</h2>
+                <h3>午前の部</h3>
+                <p>開場 11:45 開演 12:15</p>
+                <h3>午後の部</h3>
+                <p>開場 14:45 開演 15:00</p>
+                <p><b>INIADホール</b>にて公演</p>
+                <!--
+                <p>
+                    東洋大学赤羽台キャンパス（INIAD HUB-1）1階 INIADホール
+                </p>
+                -->
+            </div>
+        </div>
+        <ul class="list-design">
+            <li>公演時間は各回一時間ほどです。</li>
+            <li>途中入退場は自由です。ご都合に合わせてお越しください。</li>
+            <li>公演内容は全て同一です。</li>
+        </ul>
+    </div>
+
+    <!-- ここからコメント -->
+    <section id="comment" class="comments-section">
+        <h1 class="section-headline">コメント</h1>
+        <div class="divider">
+            <span>
+                <img src="./assets/img/moon_story.png" alt="装飾マーク" class="divider-icon">
+            </span>
+        </div>
+        <div class="bubble-large comment-bubble comment-1">
+            <div class="comment-content">
+                <p class="comment-author">脚本家より</p>
+                <p class="comment-text">
+                    あなたは一生目を覚まさない代わりに<br>
+                    都合のいい明晰夢を見続けることが出来るとしたら<br>
+                    その提 案に乗るでしょうか？ <br><br>
+                    逃げたくなるような辛い現実や忘れたい過去は<br>
+                    誰にだってあると思います。<br>
+                    そういった現実にどう 向き合っていくのか、<br>
+                    はたして自分はどうしたいのか、<br>
+                    登場人物たちと一緒に考えながら<br>
+                    鑑賞いただけると幸いです。
+                </p>
+            </div>
+        </div>
+        <div class="bubble-large comment-bubble comment-2">
+            <div class="comment-content">
+                <p class="comment-author">主人公より</p>
+                <p class="comment-text">
+                    主人公のアサヒを演じさせていただきます。<br><br>
+                    アサヒは、人間関係において不器用ながらも、<br>
+                    とても優しいキャラクターです。<br>
+                    友達が困っている時、<br>
+                    すぐに動ける優しさを持っています。<br><br>
+                    うまくいかなくても、<br>
+                    最後まで真剣に悩み続けるアサヒの姿を、<br>
+                    見届けてあげてください。<br>
+                    お楽しみに！
+                </p>
+            </div>
+        </div>
+
+        <div class="bubble-small item-bubble item-comic">
+            <img src="./assets/img/comic-trans.png" alt="漫画" class="item-image">
+        </div>
+        <div class="bubble-small item-bubble item-tennis">
+            <img src="./assets/img/racket-trans.png" alt="テニスラケット" class="item-image">
+        </div>
+        <div class="bubble-small item-bubble item-icecream">
+            <img src="./assets/img/ice-trans.png" alt="アイス" class="item-image">
+        </div>
+    </section>
+    <!-- ここまでコメント -->
+    <!-- ここからクレジット（仮） -->
+    <section id="credit" class="section-credit">
+        <h1 class="section-headline">クレジット</h1>
+        <div class="divider">
+            <span>
+                <img src="./assets/img/moon_story.png" alt="装飾マーク" class="divider-icon">
+            </span>
+        </div>
+        <details class="details">
+            <summary class="summary">OPEN</summary>
+        <!--
+            <img src="../img/ai-2024/credit.png" class="credit-image">
+        -->
+        <picture class="credit">
+            <p>Coming Soon</p>
+            <!--
+            <img class="credit-image" src="../img/ai-2024/credit.png" alt="credit-image">
+            -->
+        </picture>
+
+        </details>
+    </section>
+    <!-- ここまでクレジット（仮） -->
+    </main> 
+
+    <footer>
+        <hr class="footer-line">
+        <div class="footer-contents">
+            <div class="sns">
+                <div class="icons">
+                <a href="https://twitter.com/iniactors" target="_blank" rel="noopener noreferrer" >
+                    <svg class="sns-item" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256">
+                        <g fill="#ffffff" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M41,6l-31.071,36h-3.714l31.072,-36z" fill-rule="nonzero"></path><path d="M31.143,41l-23.323,-34h8.957l23.323,34z" fill-rule="evenodd"></path><path d="M15.724,9l20.578,30h-4.106l-20.578,-30h4.106M17.304,6h-11.382l24.694,36h11.382l-24.694,-36z" fill-rule="nonzero"></path></g></g>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/iniactors/" target="_blank" rel="noopener noreferrer" >
+                    <img class="sns-item" src="./assets/img/communication.png" alt="Instagram" width="50px" height="50px">
+                </a>
+                </div>
+            </div>
+            <a class="home-link" href="https://iniactors.github.io/" target="_blank" rel="noopener noreferrer" >INIActors公式サイトへ</a>
+            <br>
+            <small class="footer-copy">
+                &copy; 2019-<span id="year"></span> INIActors All Rights Reserved.
+            </small>
+        </div>
+    </footer>
+
+    <!-- キャラクター紹介のモーダルウインドウ -->
+    <!-- ヨウのモーダル -->
+<div class="modal fade" id="modal-you" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered custom-modal">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">ヨウ</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <!-- 画像 -->
+        <img src="./assets/img/You.webp" alt="ヨウ" class="img-fluid mb-3">
+        <!-- 説明文 -->
+        <p>明朗快活な青年でトラブルメイカー的な存在。アサヒ、ヒカリとは親友で、面白そうなものを見つけてはいつも二人を巻き込んでいる。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- アサヒ -->
+<div class="modal fade" id="modal-asahi" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered custom-modal">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">アサヒ</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <!-- 画像 -->
+        <img src="./assets/img/Asahi.webp" alt="アサヒ" class="img-fluid mb-3">
+        <!-- 説明文 -->
+        <p>本作の主人公。 ぶっきらぼうな性格で親友であるヨウとヒカリにはいつも振り回されている。 文句を言いつつも毎回二人に付いていく友達思いな青年。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ヒカリ -->
+<div class="modal fade" id="modal-hikari" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered custom-modal">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">ヒカリ</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <!-- 画像 -->
+        <img src="./assets/img/Hikari.webp" alt="ヒカリ" class="img-fluid mb-3">
+        <!-- 説明文 -->
+        <p>明るい性格の女の子で、男子と遊んでるほうが楽しいタイプ。 いつもヨウが始めた悪ノリに乗っかって二人でアサヒを振り回す。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mr.Dreamer -->
+<div class="modal fade" id="modal-dreamer" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered custom-modal">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Mr.Dreamer</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <!-- 画像 -->
+        <img src="./assets/img/Mr_D.webp" alt="Mr.Dreamer" class="img-fluid mb-3">
+        <!-- 説明文 -->
+        <p>『夢の世界』の案内人を務める謎の男。 様々な場所に姿を現しては、住人たちを”本当に欲しいもの”へ導いている。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- シノノメ -->
+<div class="modal fade" id="modal-shinonome" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered custom-modal">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">シノノメ</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <!-- 画像 -->
+        <img src="./assets/img/Shinonome.webp" alt="シノノメ" class="img-fluid mb-3">
+        <!-- 説明文 -->
+        <p>『夢の世界』の案内人を自称する謎の男。 アサヒのことを少年と呼び、何かとかまってくる。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    
+    <div id="fusuma-overlay">
+        <div class="fusuma fusuma-left"></div>
+        <div class="fusuma fusuma-right"></div>
+    </div>
+    
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="assets/js/first.js"></script>
+    <script type="module" src="assets/js/second.js"></script>
+    <script type="module" src="../year.js"></script>
 </body>
 </html>
