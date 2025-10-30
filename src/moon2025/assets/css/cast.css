@@ -1,0 +1,423 @@
+@keyframes sunFlicker {
+    0% {
+        /* 開始と終了の状態（通常時） */
+        box-shadow: 0 0 1vw 0.5vw rgba(255, 190, 0, 0.9),
+                    0 0 3vw 1vw rgba(255, 100, 0, 0.7),
+                    0 0 6vw 2vw rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        /* 中間地点の状態（最も大きく、明るくなった時） */
+        /* ぼかし・広がり・色の濃さを変更して、より大きな動きに */
+        box-shadow: 0 0 1.8vw 0.9vw rgba(255, 200, 0, 1),   /* より明るく、広く */
+                    0 0 5vw 1.8vw rgba(255, 110, 0, 0.8), /* より明るく、広く */
+                    0 0 10vw 3vw rgba(255, 20, 0, 0.6);   /* より明るく、広く */
+    }
+    100% {
+        /* 通常の状態に戻る */
+        box-shadow: 0 0 1vw 0.5vw rgba(255, 190, 0, 0.9),
+                    0 0 3vw 1vw rgba(255, 100, 0, 0.7),
+                    0 0 6vw 2vw rgba(255, 0, 0, 0.5);
+    }
+}
+
+/*----------ここからキャラクター紹介---------*/
+.character-section-wrapper {
+    position: relative;
+    height: 180vh; /* キャラクター紹介エリアの高さ */
+}
+.character-intro-section {
+    position: relative;
+    height: 100%;
+    background-color: #a3d5ff; /* 朝の色 */
+    transition: background-color 1.5s ease-in-out;
+    overflow: hidden;
+    clip-path: url(#wavy-clip); /* SVGでセクション全体を切り抜く */
+}
+.character-intro-section.is-night {
+    background-color: #253858; /* 夜の色 */
+}
+
+/* --- 波形マスクは削除（HTMLからも削除済み） --- */
+/* .wave-mask { ... } のルールはすべて削除してください */
+
+/* --- 1. 背景の月と太陽（一番奥） --- */
+.celestial-background {
+    position: absolute;
+    bottom: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    max-width: 1000px;
+    height: 40vw;
+    max-height: 400px;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.moon, .sun {
+    position: absolute; left: 0; top: 13%;
+    width: 100%; height: 200%;
+    border-radius: 50%;
+    transition: opacity 1.5s ease-in-out;
+    will-change: opacity;
+}
+.sun {
+    background: radial-gradient(circle, #fff8dc, #ffcc00);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+    opacity: 1;
+}
+.moon {
+    background: radial-gradient(circle, #f0f8ff, #a0b0c0);
+    box-shadow: 0 0 40px rgba(173, 216, 230, 0.7);
+    opacity: 0;
+}
+.character-intro-section.is-night .moon { opacity: 1; }
+.character-intro-section.is-night .sun { opacity: 0; }
+
+/* --- 3. 波形マスク（真ん中）--- */
+.wave-mask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40vh;
+    z-index: 20;
+    pointer-events: none;
+}
+.wave-mask svg { width: 100%; height: 100%; }
+.wave-mask path {
+    fill: #141f33; /* 濃い青色 */
+    stroke: none;
+}
+
+/* --- 2. キャラクター（波より手前） --- */
+.chara-role {
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: rgb(2, 105, 174) 1px 1px 1px;
+}
+.character-container {
+    position: absolute; bottom: 40vh; left: 50%;
+    transform: translateX(-50%);
+    width: 60vw; max-width: 600px;
+    height: 80vh; z-index: 20;
+    pointer-events: none;
+}
+.characters-for-sun, .characters-for-moon {
+    position: absolute; width: 100%; height: 100%;
+    display: flex; justify-content: center; align-items: flex-end;
+    transition: opacity 1.0s ease-in-out;
+}
+.characters-for-sun { opacity: 1; }
+.characters-for-moon { opacity: 0; }
+.character-intro-section.is-night .characters-for-sun { opacity: 0; pointer-events: none; }
+.character-intro-section.is-night .characters-for-moon { opacity: 1; pointer-events: none; }
+.char {
+    position: absolute; height: 90%; width: auto;
+    object-fit: contain; bottom: 0;
+    transform-origin: bottom center;
+}
+
+/* ▼▼▼ 各キャラクターの位置調整 ▼▼▼ */
+.sun-char-1 { left: 10%; transform: translateX(-50%) translateY(10%); }
+.sun-char-2 { left: 50%; transform: translateX(-50%); }
+.sun-char-3 { left: 90%; transform: translateX(-50%) translateY(10%); will-change: opacity; }
+
+
+/* 月モードのキャラクター（参考として残しますが、必要に応じて調整） */
+.moon-char-1 {
+    left: 22%;
+    transform: translateX(-50%); 
+}
+.moon-char-2 {
+    left: 75%;
+    transform: translateX(-50%);
+}
+.moon-desc { opacity: 0; visibility: hidden; }
+.sun-desc { opacity: 1; visibility: visible; }
+
+.character-intro-section.is-night .moon-desc { opacity: 1; visibility: visible; }
+.character-intro-section.is-night .sun-desc { opacity: 0; visibility: hidden; }
+.toggle-button {
+    position: absolute;
+    top: 148vh; /* ボタンの上下の位置を指定 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 40;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 3px solid white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* hover時の拡大アニメーション */
+.toggle-button:hover {
+    transform: translateX(-50%) scale(1.2); /* 拡大＋位置キープ */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* 光るような演出も */
+}
+.toggle-button p {
+    color: #df0354;
+    text-shadow: whitesmoke 1px 1px 1px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+
+/* --- キャラ説明ボックスのコンテナ --- */
+.description-boxes-container {
+    width: 100%; height: 100%;
+    z-index: 18;
+    pointer-events: none;
+}
+.description-box {
+    position: absolute;
+    width: 25vw; max-width: 300px;
+    padding: 1.5em; box-sizing: border-box;
+    background-color: rgba(26, 26, 46, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    color: white; font-family: 'Shippori Mincho', serif;
+    pointer-events: auto;
+    transition: opacity 0.8s, visibility 0.8s;
+}
+/*
+.description-box:hover {
+    background-color: rgb(6, 39, 75);
+}
+*/
+.description-box h3 {
+    text-align: center;
+    margin-top: 0;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.is-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+.character-intro-section.is-night .description-box {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+/* --- 説明ボックスの表示切り替え --- */
+.sun-desc,
+.moon-desc {
+    /* フェードイン・アウトのアニメーション設定 */
+    transition: opacity 1.0s ease-in-out;
+}
+.moon-desc { opacity: 0; visibility: hidden;}
+.sun-desc { opacity: 1; visibility: visible; }
+.character-intro-section.is-night .moon-desc { opacity: 1; visibility: visible; }
+.character-intro-section.is-night .sun-desc { opacity: 0; visibility: hidden; }
+
+/* --- 個々のボックスの配置 --- */
+.desc-box-you { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 24%; /* 例: 20% → 30% */
+    left: 10%; 
+}
+.desc-box-asahi { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 21%; /* 例: 15% → 30% */
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+.desc-box-hikari { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 25%; /* 例: 20% → 30% */
+    right: 10%; 
+}
+.desc-box-shinonome { top: 20%; left: 20%; }
+.desc-box-dreamer { top: 20%; right: 20%; }
+
+/* IPadProとか */
+@media (max-width: 820px) {
+    .character-section-wrapper {
+        height: 130vh; /* キャラ紹介のセクションの高さ */
+    }
+    .celestial-background {
+        bottom: 10vh; /* 足場の高さ */
+        width: 120vw;
+        height: 120vw;
+    }
+    .toggle-button {
+        top: 97vh;
+    }
+    .description-box h3 {
+        border: 1px solid transparent;
+    }
+    .description-box p {
+    display: none;
+    }
+    .characters-for-sun > img {
+        width: 100%;
+        top: 28%; /* 主人公サイドの子達の高さ */
+    }
+    .characters-for-moon > img {
+        width: 100%;
+        top: 30%; /* 案内人サイドの高さ */
+    }
+
+    .moon-char-1 {
+        left: 22%;
+        transform: translateX(-50%); 
+}
+    .moon-char-2 {
+        left: 75%;
+        transform: translateX(-50%);
+}
+    .sun-char-1 { left: 5%; transform: translateX(-50%) translateY(10%); }
+    .sun-char-2 { left: 50%; transform: translateX(-50%); }
+    .sun-char-3 { left: 100%; transform: translateX(-50%) translateY(10%); will-change: opacity; }
+
+    .desc-box-you, .desc-box-asahi, .desc-box-hikari {
+        font-size: 16px;
+        padding: 10px 10px;
+    }
+    .desc-box-shinonome, .desc-box-dreamer {
+        font-size: 16px;
+        padding: 10px 10px;
+    }
+    .chara-role {
+        font-size: 16px;
+    }
+    .desc-box-you { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 24%; /* 例: 20% → 30% */
+    left: 10%; 
+    }
+    .desc-box-asahi { 
+        /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+        top: 21%; /* 例: 15% → 30% */
+        left: 50%; 
+        transform: translateX(-50%); 
+    }
+    .desc-box-hikari { 
+        /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+        top: 26%; /* 例: 20% → 30% */
+        right: 10%; 
+    }
+    .desc-box-shinonome { 
+        top: 18%; 
+        left: 5%;
+        width: 40%; /* 見出しのボックスの幅 */
+    }
+    .desc-box-dreamer { 
+        top: 18%; 
+        right: 5%; 
+        width: 40%; /* 見出しのボックスの幅 */
+    }
+
+    .toggle-button {
+    top: 105vh; /* ボタンの上下の位置を指定 */
+}
+}
+
+/* スマホ */
+@media(max-width:450px) {
+    .celestial-background {
+        width: 150vw;
+        height: 80vw;
+        bottom: 10vh;
+    }
+
+    .character-section-wrapper {
+        height: 120vh; /* キャラ紹介のセクションの高さ */
+    }
+    .toggle-button {
+        top: 98vh;
+    }
+    .description-box h3 {
+        border: 1px solid transparent;
+        font-size: 1.2rem;
+    }
+    .description-box p {
+    display: none;
+    }
+    .characters-for-sun > img {
+        width: 100%;
+        top: 40%; /* 主人公サイドの子達の高さ */
+    }
+    .characters-for-moon > img {
+        width: 100%;
+        top: 46%; /* 案内人サイドの高さ */
+    }
+
+    .moon-char-1 {
+        left: 22%;
+        transform: translateX(-50%); 
+}
+    .moon-char-2 {
+        left: 75%;
+        transform: translateX(-50%);
+}
+    .desc-box-you { 
+    /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+    top: 28%; /* 例: 20% → 30% */
+    }
+    .desc-box-asahi { 
+        /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+        top: 24%; /* 例: 15% → 30% */
+    }
+    .desc-box-hikari { 
+        /* ▼▼▼ このtopの値を変更 ▼▼▼ */
+        top: 28%;
+    }
+    .desc-box-shinonome { 
+        top: 26%; 
+        left: 5%;
+        width: 40%; /* 見出しのボックスの幅 */
+    }
+    .desc-box-dreamer { 
+        top: 26%; 
+        right: 5%; 
+        width: 40%; /* 見出しのボックスの幅 */
+    }
+}
+
+
+.arrow {
+    color: #ffe69c;
+}
+
+/*------------ここまでキャラクター紹介-----------*/
+
+
+/*
+モーダルウインドウ BootStrap部分以外
+*/
+.modal-title {
+    margin: 10px auto;
+    font-size: 2rem;
+}
+.custom-modal {
+  width: 90%;  /* 画面幅の90% */
+  height: auto;
+  margin: 1.5rem auto; /* 上下に少し余白 */
+}
+.modal-body {
+  overflow-y: auto; /* 内容が多い場合にスクロール */
+}
+.custom-modal .modal-body {
+  font-size: 1.2rem; /* 1.3倍の文字サイズ */
+  line-height: 1.6;  /* 行間も広げると読みやすい */
+  text-align: center; /* 中央寄せにしたい場合 */
+}
+.custom-modal img {
+  height: auto;     /* 縦横比を維持 */
+  max-height: 50vh; /* 画面高さの50%以内に収める */
+  display: block;
+  margin: 0 auto;   /* 中央寄せ */
+}
+
+/* モーダル表示中に背景をスクロール不可にする */
+.no-scroll {
+  overflow: hidden;
+}

@@ -1,0 +1,174 @@
+/* =========================
+ヘッダー
+========================= */
+.header-bg {
+    background-color: #111111;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.header-contents {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+
+
+.header-navlist {
+    display: flex;
+    gap: 2rem;
+}
+.header-navitem a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 1.5rem;
+}
+.header-navitem a:hover { color: #fedde5; }
+
+/* ハンバーガーメニュー */
+.responsive_btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+@media (max-width:768px) {
+    /*
+    .header-nav { 
+        display: none;
+    }
+    .responsive_btn {
+        display: flex;
+    }*/
+    .header-navlist {
+        gap: 1rem;
+        list-style: none;
+    }
+    .header-navitem a {
+        font-size: 1rem;
+    }
+    .sns-item {
+        width: 30px;
+        height: 30px;
+    }
+}
+.menu_line {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+}
+
+@media (max-width:450px) {
+    .header-navitem > a {
+        font-size: 0.7rem;
+    }
+}
+
+/* =========================
+SNSアイコン
+========================= */
+.sns {
+    text-align: center;
+    margin: 0;
+}
+.icons a {
+    margin: 0.5rem 0.5rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+.icons a:hover { transform: scale(1.2); }
+
+
+/* =========================
+キャッチコピーとアンケート
+========================= */
+.catchcopy-area {
+    text-align: center;
+}
+.catchcopy {
+    color: white;
+    font-size: 3rem;
+}
+.catchcopy > b {
+    background: linear-gradient(5deg, #8d7ca6 30%, #ffffff 50%, #d17aba 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.narrow-catchcopy {
+    display: none;
+}
+.questionnaire-box {
+    margin: 10px auto;
+}
+.questionnaire > a {
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.button-40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    padding: .9em 2em;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 7px 10px rgb(0 0 0 / 10%);
+    background-color: #df0354;
+    color: #333;
+    font-size: 1em;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.button-40:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 10px rgb(0 0 0 / 15%);
+}
+
+.button-40::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+    content: '';
+}
+
+@media (max-width:768px) {
+    .catchcopy {
+        font-size: 1.5rem;
+    }
+    .questionnaire > a {
+        font-size: 1.2rem;
+    }
+    .narrow-catchcopy {
+        display: none;
+    }
+}
+
+@media (max-width:450px) {
+    .wide-catchcopy {
+        display: none;
+    }
+    .narrow-catchcopy {
+        display: block;
+        font-size: 1.8rem;
+    }
+}
