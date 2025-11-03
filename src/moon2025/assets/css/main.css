@@ -525,6 +525,9 @@ h3 {
     display: block;
     margin: 1rem auto;
 }
+.summary {
+    color: rgb(255, 255, 255);
+}
 
 .details {
     margin-bottom: 20px;
