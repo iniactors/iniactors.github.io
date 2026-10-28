@@ -357,24 +357,34 @@
     </div>
   </section>
 
-  <!-- 5. クレジットセクション（一番下・紙飛行機あしらい） -->
-  <section id="credits" class="section-padding section-credits">
-    <div class="container">
-      <div class="section-header text-center mb-5">
-        <div class="kamih-container">
-          <img src="./assets/img/kamih.png" alt="紙飛行機" class="kamih-bg-img" />
-          <h2 class="kamih-text">クレジット</h2>
-        </div>
+  <!-- クレジット見出し（kamih.png を使った元のデザイン） -->
+      <div class="credit-title-wrap">
+        <img src="./assets/img/kamih.png" alt="" class="credit-plane-img" />
+        <h2 class="credit-title">クレジット</h2>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <div class="campus-card p-4">
-            <p class="text-muted mb-0">キャスト・スタッフクレジットは準備中です。</p>
+
+      <!-- クレジット開閉エリア（▶ OPEN / ▼ CLOSE） -->
+      <details class="credits-details">
+        <summary class="credits-summary">
+          <span class="credits-toggle-text"></span>
+        </summary>
+        
+        <!-- 開いたときの中身（coming soon... 表示） -->
+        <div class="credits-img-wrap">
+          <div class="credits-coming-soon">
+            <p class="coming-soon-text">coming soon...</p>
           </div>
+
+          <!-- ▼ 画像完成後に以下を有効化（上の div は削除または非表示にしてください） ▼ -->
+          <!--
+          <img 
+            src="./assets/img/credits.png" 
+            alt="学祭公演 クレジット一覧" 
+            class="credits-img"
+          />
+          -->
         </div>
-      </div>
-    </div>
-  </section>
+      </details>
 
   <!-- 最下部フッター（黒背景エリア） -->
   <footer class="site-footer">

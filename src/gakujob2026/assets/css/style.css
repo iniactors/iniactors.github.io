@@ -712,7 +712,7 @@ section.py-5 {
   position: absolute;
   top: 46%;                 /* 白枠の上端に合わせて上へ引き上げ */
   left: 41.5%;
-  width: 45%;
+  width: 40%;
   height: 42%;
   display: flex;
   flex-direction: column;
@@ -1089,66 +1089,139 @@ section.py-5 {
 }
 
 /* =========================================
-   クレジットセクション（kamih.png 紙飛行機）
+   クレジット：kamih.png を使った見出しデザイン
 ========================================= */
-.kamih-container {
+.credit-title-wrap {
   position: relative;
-  display: inline-block;
-  width: min(440px, 88vw);
-  height: auto;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 520px;
+  margin: 0 auto 20px;
+  padding: 10px 0;
 }
 
-.kamih-bg-img {
+/* 背景に配置される紙飛行機と軌跡の画像 */
+.credit-plane-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
+  max-width: 480px;
   height: auto;
-  display: block;
   pointer-events: none;
+  z-index: 1;
+}
+
+/* 「クレジット」見出しテキスト */
+.credit-title {
+  position: relative;
+  z-index: 2;
+  font-family: 'Zen Kurenaido', 'Noto Sans JP', sans-serif;
+  font-size: clamp(2rem, 3.8vw, 2.6rem);
+  letter-spacing: 0.2em;
+  color: #223344;
+  margin: 0;
+  /* 飛行機の軌跡線の右側に文字が心地よく収まるよう微調整 */
+  padding-left: 60px;
+  padding-bottom: 8px;
+}
+
+/* =========================================
+   クレジット：OPEN / CLOSE トグル
+========================================= */
+.credits-details {
+  text-align: center;
+  margin-top: 14px;
+}
+
+.credits-summary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times New Roman", "Yu Mincho", "Yomogi", serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.14em;
+  color: #223344;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: opacity 0.2s;
+}
+
+.credits-summary::-webkit-details-marker {
+  display: none;
+}
+
+/* 閉じているとき：▶ OPEN */
+.credits-details:not([open]) .credits-toggle-text::before {
+  content: "▶  OPEN";
+}
+
+/* 開いているとき：▼ CLOSE */
+.credits-details[open] .credits-toggle-text::before {
+  content: "▼  CLOSE";
+}
+
+.credits-summary:hover {
+  opacity: 0.75;
+}
+
+/* 展開されるクレジット画像エリア */
+/* =========================================
+   クレジット：coming soon... 表示
+========================================= */
+.credits-img-wrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInCredits 0.3s ease-in-out;
+}
+
+.credits-coming-soon {
+  padding: 32px 20px;
+  text-align: center;
+}
+
+.coming-soon-text {
+  font-family: 'Yomogi', cursive, sans-serif;
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  letter-spacing: 0.15em;
+  color: #556677;
+  margin: 0;
   opacity: 0.85;
 }
 
-.kamih-text {
-  position: absolute;
-  top: 32%;
-  left: 28%;
-  width: 65%;
-  transform: translateY(-50%);
-  margin: 0;
-  font-family: 'Yomogi', cursive, 'M PLUS Rounded 1c', sans-serif;
-  font-size: clamp(1.7rem, 3.2vw, 2.2rem);
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: #3d2f26;
-  text-align: center;
-  pointer-events: none;
-}
-
-/* カード共通パーツ */
-.campus-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(112, 185, 229, 0.15);
-  border: 1px solid rgba(112, 185, 229, 0.2);
-  position: relative;
-}
-
-.tape-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ffe082;
-  color: #795548;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 4px 16px;
+.credits-img {
+  max-width: 100%;
+  height: auto;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
-.section-credits {
-  background: transparent !important; /* 黒を解除し元の背景に戻す */
-  padding-bottom: 64px !important;
+.credits-placeholder {
+  width: 100%;
+  max-width: 480px;
+  height: 200px;
+  border: 1px dashed rgba(34, 51, 68, 0.3);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #667788;
+  font-size: 0.9rem;
+}
+
+@keyframes fadeInCredits {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =========================================

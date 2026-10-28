@@ -111,3 +111,21 @@ document.getElementById('alarm-stop-btn').addEventListener('click', () => {
     flash.classList.remove('active');
   }, 1000);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('creditsToggleBtn');
+  const creditsContent = document.getElementById('creditsContent');
+
+  if (toggleBtn && creditsContent) {
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = creditsContent.classList.toggle('is-open');
+      toggleBtn.classList.toggle('is-open', isOpen);
+      toggleBtn.setAttribute('aria-expanded', isOpen);
+
+      const btnText = toggleBtn.querySelector('.btn-text');
+      if (btnText) {
+        btnText.textContent = isOpen ? 'CLOSE' : 'OPEN';
+      }
+    });
+  }
+});
