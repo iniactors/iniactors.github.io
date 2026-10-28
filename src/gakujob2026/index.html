@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>みんな学ジョブ～OURWORLD～ | INIActors 2026年学祭公演</title>
+
+  <!-- 基本情報 -->
+  <meta name="theme-color" content="#70b9e5" />
+  <meta name="description" content="INIActors 2026年学祭公演『みんな学ジョブ～OURWORLD～』特設サイト" />
+
+  <!-- アイコン -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Google Fonts（Yomogi含む） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=Yomogi&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&family=Yomogi&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=Sawarabi+Mincho&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+
+  <!-- 朝のアラーム演出レイヤー -->
+  <div id="alarm-overlay">
+    <div class="phone-wrapper">
+      <img src="./assets/img/phone3.png" alt="スマートフォン" class="phone-frame-img" />
+      <div class="phone-screen-ui">
+        <div class="alarm-header">
+          <span class="alarm-icon">⏰</span>
+          <span class="alarm-sub">アラーム</span>
+        </div>
+        <div class="alarm-time">07:00</div>
+        <p class="alarm-label">1限：みんな学ジョブ</p>
+        
+        <button id="alarm-stop-btn" class="alarm-btn" type="button">
+          <span class="btn-ripple"></span>
+          停止
+        </button>
+        <div class="alarm-hint">タップして起きる</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 朝のまぶしい光エフェクト -->
+  <div id="morning-flash"></div>
+
+  <!-- ナビゲーションバー -->
+  <header class="site-header fixed-top">
+    <div class="container d-flex align-items-center justify-content-between py-2">
+        <!-- ブランドロゴ（スマホでは非表示にして5つのリンク領域を確保） -->
+        <a href="#" class="brand-logo text-decoration-none">みんな学ジョブ</a>
+
+        <!-- 5つのナビゲーションリンク -->
+        <nav class="nav-links d-flex align-items-center">
+        <a href="#story">ストーリー</a>
+        <a href="#characters">登場人物</a>
+        <a href="#schedule">公演情報</a>
+        <a href="#comments">コメント</a>
+        <a href="#credits">クレジット</a>
+        </nav>
+    </div>
+  </header>
+
+  <!-- ヒーローセクション -->
+  <section class="hero-section d-flex align-items-center justify-content-center text-center">
+    
+    <!-- 太陽から中央へ広がる朝日のオレンジグラデーション -->
+    <div class="sun-glow-bg"></div>
+
+    <!-- 左上の太陽（丸い部分が左上端に収まる位置） -->
+    <img src="./assets/img/sun_yellow1.png" alt="太陽" class="hero-sun-img" />
+
+    <!-- 右上空：拡大した飛行機 ＆ 2本のジェットエンジンから伸びる白い飛行機雲 -->
+    <div class="sky-plane-wrap">
+      <img src="./assets/img/plane.png" alt="飛行機" class="hero-plane-img" />
+      <!-- 左ジェットエンジンからの雲 -->
+      <img src="./assets/img/tyoku.png" alt="ひこうき雲1" class="hero-contrail-img contrail-left" />
+      <!-- 右ジェットエンジンからの雲 -->
+      <img src="./assets/img/tyoku.png" alt="ひこうき雲2" class="hero-contrail-img contrail-right" />
+    </div>
+
+    <div class="container hero-content py-4">
+      <!-- メインロゴ -->
+      <div class="hero-logo-stage mb-4">
+        <img src="./assets/img/logo2.png" alt="みんな学ジョブ ～OURWORLD～" class="hero-giant-logo" />
+      </div>
+
+      <!-- 蛍光マーカー風ライン付きキャッチコピー -->
+      <p class="hero-lead">
+        <span class="hero-lead-marker">何気ないキャンパスの朝。ぼくらの日常が、ここから動き出す。</span>
+      </p>
+
+      <!-- 公演アンケートボタン（ロゴより一回りスリムな横長長方形） -->
+      <div class="mt-4">
+        <a href="#survey" class="btn btn-survey">公演アンケート</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. ストーリーセクション（黒板＆チョーク区切り：2行スリム版） -->
+  <section id="story" class="section-padding section-story">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="section-title marker-heading">ストーリー</h2>
+      </div>
+
+      <!-- 黒板コンテナ -->
+      <div class="kokuban-wrap">
+        <div class="kokuban-board">
+          <!-- 黒板の土台画像 -->
+          <img src="./assets/img/kokuban.png" alt="黒板" class="kokuban-base-img" />
+
+          <!-- 黒板の板面に載せるテキストとチョーク線 -->
+          <!-- 黒板内のテキストエリア -->
+        <!-- 黒板内のテキストエリア -->
+        <div class="kokuban-content">
+          <!-- 第1段落 -->
+          <p class="kokuban-para">
+            <span class="d-inline-block">鳴り響く朝のアラーム、</span><span class="d-inline-block">課題とバイトに追われる日々。</span><br>
+            <span class="d-inline-block">自由なはずの大学生活、</span><span class="d-inline-block">けれど私たちは時間に追われていた。</span>
+          </p>
+
+          <!-- チョーク仕切り線 -->
+          <div class="chalk-divider">
+            <img src="./assets/img/tyoku.png" alt="" class="chalk-line-img" />
+          </div>
+
+          <!-- 第2段落 -->
+          <p class="kokuban-para">
+            <span class="d-inline-block">そんな日々に灯る演劇サークル、</span><span class="d-inline-block">立ちはだかるメンバー不足のピンチ。</span><br>
+            <span class="d-inline-block">「ありのままの私たちを劇にしたい」</span><span class="d-inline-block">小さな想いが仲間を繋いでいく。</span>
+          </p>
+
+          <!-- チョーク仕切り線 -->
+          <div class="chalk-divider">
+            <img src="./assets/img/tyoku.png" alt="" class="chalk-line-img" />
+          </div>
+
+          <!-- 第3段落 -->
+          <p class="kokuban-para">
+            <span class="d-inline-block">不安や葛藤も全部抱えて、</span><span class="d-inline-block">背中を押してくれる仲間とともに。</span><br>
+            <span class="d-inline-block">どこにでもありそうでここにしかない、</span><span class="d-inline-block">ぼくらの物語が幕を開ける。</span>
+          </p>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. 登場人物セクション（学生証スライダー） -->
+  <section id="characters" class="section-padding section-characters">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="siori-container">
+          <img src="./assets/img/siori.png" alt="栞" class="siori-bg-img" />
+          <h2 class="siori-text">登場人物</h2>
+        </div>
+      </div>
+
+      <!-- 学生証スライダーエリア -->
+      <!-- 登場人物：学生証スライダーエリア -->
+        <!-- 登場人物：学生証スライダーエリア -->
+        <div class="student-id-slider-wrap">
+        <div class="student-cards-stage">
+
+            <!-- 1. 女子学生A -->
+            <div class="student-id-card active">
+            <img src="./assets/img/jd_a.png" alt="女子生徒A 学生証" class="id-card-bg" />
+            <div class="id-desc-area">
+                <p class="id-desc-line">
+                レポートや課題に追われている。<br>
+                真面目な性格ゆえに、人一倍不安を抱え込みやすい。
+                </p>
+            </div>
+            </div>
+
+            <!-- 2. 女子学生B -->
+            <div class="student-id-card">
+            <img src="./assets/img/jd_b.png" alt="女子生徒B 学生証" class="id-card-bg" />
+            <div class="id-desc-area">
+                <p class="id-desc-line">
+                周りをよく見ており、場の空気を和ませるのが得意。人の悩みにもそっと寄り添う。
+                </p>
+            </div>
+            </div>
+
+            <!-- 3. 男子学生A -->
+            <div class="student-id-card">
+            <img src="./assets/img/dd_a.png" alt="男子生徒A 学生証" class="id-card-bg" />
+            <div class="id-desc-area">
+                <p class="id-desc-line">
+                考えるより先に行動するタイプ。フットワークが軽く、持ち前の勢いで前を向く。
+                </p>
+            </div>
+            </div>
+
+            <!-- 4. 男子学生B -->
+            <div class="student-id-card">
+            <img src="./assets/img/dd_b.png" alt="男子生徒B 学生証" class="id-card-bg" />
+            <div class="id-desc-area">
+                <p class="id-desc-line">
+                効率やルールを重んじる。全体を引いた視点から見つめ、現実的な進行を支える。
+                </p>
+            </div>
+            </div>
+
+            <!-- 5. 男子学生C -->
+            <div class="student-id-card">
+            <img src="./assets/img/dd_c.png" alt="男子生徒C 学生証" class="id-card-bg" />
+            <div class="id-desc-area">
+                <p class="id-desc-line">
+                自分に自信が持てず、周囲の熱量に圧倒されがち。しかし、誰よりも深く考えている。
+                </p>
+            </div>
+            </div>
+
+        </div>
+        </div>
+
+        </div>
+
+        <!-- 下部の左右矢印ナビゲーション ＆ ページインジケーター -->
+        <div class="slider-controls">
+          <button type="button" class="slider-arrow-btn prev-btn" id="chara-prev" aria-label="前のキャラクターへ">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          </button>
+
+          <!-- ページ送りドット（1〜5人目） -->
+          <div class="slider-dots" id="chara-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+
+          <button type="button" class="slider-arrow-btn next-btn" id="chara-next" aria-label="次のキャラクターへ">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. 公演情報セクション（見開きノートデザイン） -->
+  <section id="schedule" class="section-padding section-schedule">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <div class="enpitu-heading-wrap">
+          <h2 class="enpitu-title">公演情報</h2>
+          <img src="./assets/img/enpitu.png" alt="えんぴつの線" class="enpitu-bg-img" />
+        </div>
+      </div>
+
+      <!-- 見開きノートコンテナ -->
+      <div class="schedule-notebook-wrap">
+        <div class="schedule-notebook">
+          <!-- ノート下地画像 -->
+          <img src="./assets/img/note.png" alt="スケジュールノート" class="note-base-img" />
+
+          <!-- ノートの上に重ねるテキストコンテンツ -->
+          <div class="notebook-pages">
+            <!-- 左ページ：1日目 -->
+            <div class="notebook-page page-left">
+              <div class="page-inner">
+                <div class="note-date-badge">Day 1</div>
+                <h3 class="note-date-title">10月31日（土）</h3>
+                <div class="note-item">
+                  <span class="note-tag">午前の部</span>
+                  <p class="note-time-text">
+                    開場 10:00<br />
+                    <strong>開演 10:30 ～ 11:30</strong>
+                  </p>
+                </div>
+                <div class="note-memo-box">
+                  <span class="memo-pin">✎</span> 初日公演！お見逃しなく！
+                </div>
+              </div>
+            </div>
+
+            <!-- 右ページ：2日目 ＆ 会場情報 -->
+            <div class="notebook-page page-right">
+              <div class="page-inner">
+                <div class="note-date-badge badge-orange">Day 2</div>
+                <h3 class="note-date-title">11月1日（日）</h3>
+                
+                <div class="note-item mb-2">
+                  <span class="note-tag">第1部</span>
+                  <p class="note-time-text">
+                    開場 11:45 / <strong>開演 12:15 ～ 13:15</strong>
+                  </p>
+                </div>
+                <div class="note-item mb-3">
+                  <span class="note-tag">第2部</span>
+                  <p class="note-time-text">
+                    開場 14:45 / <strong>開演 15:00 ～ 16:00</strong>
+                  </p>
+                </div>
+
+                <!-- 会場・アクセス（ノート内のメモ書き風） -->
+                <div class="note-access-info">
+                  <h4 class="note-access-head">【会場・アクセス】</h4>
+                  <p class="note-access-text">
+                    東洋大学 赤羽台キャンパス<br />
+                    <small>INIADホール / 入場無料</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- コメントセクション -->
+  <section id="comments" class="section-comments">
+    <div class="container">
+      
+      <!-- 「コメント」見出し（左右に斜めマステ） -->
+      <div class="text-center section-header">
+        <div class="comment-heading-wrap">
+          <img src="./assets/img/masking2.png" alt="" class="comment-masking-img" />
+          <h2 class="comment-title">コメント</h2>
+        </div>
+      </div>
+
+      <!-- コメントカード本体（脚本家のコメント） -->
+      <div class="comment-card-wrap">
+        <div class="comment-card">
+          <h3 class="comment-subhead">脚本家より</h3>
+          
+          <div class="comment-body">
+            <p class="comment-lead-quote">「学生時代」</p>
+            <p>皆が誰しも通った道だと思います。</p>
+            <p>けど、今を生きる学生はどんな場所で生きていると思いますか？</p>
+            <p>
+              みんな学生という仕事（job（ジョブ））を私たちの世界（Our World（アワーワールド））で生きている様子をありのままに出しました。それを知って体感していただければと思います。
+            </p>
+            <div class="comment-author">柳沢毬江</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- クレジット見出し（kamih.png を使った元のデザイン） -->
+      <div class="credit-title-wrap">
+        <img src="./assets/img/kamih.png" alt="" class="credit-plane-img" />
+        <h2 class="credit-title">クレジット</h2>
+      </div>
+
+      <!-- クレジット開閉エリア（▶ OPEN / ▼ CLOSE） -->
+      <details class="credits-details">
+        <summary class="credits-summary">
+          <span class="credits-toggle-text"></span>
+        </summary>
+        
+        <!-- 開いたときの中身（coming soon... 表示） -->
+        <div class="credits-img-wrap">
+          <div class="credits-coming-soon">
+            <p class="coming-soon-text">coming soon...</p>
+          </div>
+
+          <!-- ▼ 画像完成後に以下を有効化（上の div は削除または非表示にしてください） ▼ -->
+          <!--
+          <img 
+            src="./assets/img/credits.png" 
+            alt="学祭公演 クレジット一覧" 
+            class="credits-img"
+          />
+          -->
+        </div>
+      </details>
+
+  <!-- 最下部フッター（黒背景エリア） -->
+  <footer class="site-footer">
+    <div class="container text-center">
+      
+      <!-- SNSアイコンリンク（X & Instagram） -->
+      <div class="footer-sns-links">
+        <!-- X (Twitter) -->
+        <a href="https://twitter.com/your_account" target="_blank" rel="noopener noreferrer" class="sns-icon-link" aria-label="X (旧Twitter)">
+          <svg class="sns-icon" viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com/your_account" target="_blank" rel="noopener noreferrer" class="sns-icon-link" aria-label="Instagram">
+          <svg class="sns-icon" viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+      </div>
+
+      <!-- 公式サイトへのリンク -->
+      <div class="footer-site-link-wrap">
+        <a href="https://iniactors.com" class="footer-site-link">INIActors公式サイトへ</a>
+      </div>
+
+      <!-- コピーライト -->
+      <p class="copyright">© 2019-2026 INIActors All Rights Reserved.</p>
+
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="./assets/js/a.js"></script>
+</body>
+</html>
