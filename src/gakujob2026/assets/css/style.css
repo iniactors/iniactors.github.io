@@ -443,6 +443,40 @@ body {
   box-shadow: 0 5px 12px rgba(255, 123, 57, 0.25);
 }
 
+/* 公演アンケートボタン（オレンジ色のボタンデザイン復元） */
+.btn-questionnaire {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff9955 0%, #ff7733 100%); /* オレンジグラデーション */
+  color: #ffffff !important;               /* 文字を白に固定 */
+  text-decoration: none !important;        /* URLの下線を消す */
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 16px 42px;
+  border-radius: 12px;                     /* 角丸 */
+  box-shadow: 0 6px 18px rgba(255, 120, 50, 0.35); /* ボタンの立体感（影） */
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+/* ホバー時の挙動 */
+.btn-questionnaire:hover {
+  background: linear-gradient(135deg, #ffaa66 0%, #ff8844 100%);
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 120, 50, 0.45);
+}
+
+/* クリック時 */
+.btn-questionnaire:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 12px rgba(255, 120, 50, 0.3);
+}
+
 /* =========================================
    セクション共通・余白設計
 ========================================= */
@@ -1096,36 +1130,36 @@ section.py-5 {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 520px;
-  margin: 0 auto 20px;
-  padding: 10px 0;
+  max-width: 360px; /* 全体幅を小さく調整 (旧: 520px) */
+  margin: 0 auto 16px;
+  padding: 8px 0;
 }
 
-/* 背景に配置される紙飛行機と軌跡の画像 */
+/* 背景の紙飛行機・軌跡画像（コンパクトに縮小） */
 .credit-plane-img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 480px;
+  max-width: 320px; /* 画像の最大幅を小さく調整 (旧: 480px) */
   height: auto;
   pointer-events: none;
   z-index: 1;
 }
 
-/* 「クレジット」見出しテキスト */
+/* 「クレジット」テキスト（Yomogiフォント・他見出しと同等の文字サイズ/太さ） */
 .credit-title {
   position: relative;
   z-index: 2;
-  font-family: 'Zen Kurenaido', 'Noto Sans JP', sans-serif;
-  font-size: clamp(2rem, 3.8vw, 2.6rem);
-  letter-spacing: 0.2em;
+  font-family: 'Yomogi', cursive, sans-serif;
+  font-size: clamp(1.5rem, 3vw, 1.9rem); /* 他見出しに合わせたサイズ (旧: 2rem~2.6rem) */
+  font-weight: 700;                       /* しっかりとした太さに設定 */
+  letter-spacing: 0.15em;
   color: #223344;
   margin: 0;
-  /* 飛行機の軌跡線の右側に文字が心地よく収まるよう微調整 */
-  padding-left: 60px;
-  padding-bottom: 8px;
+  padding-left: 42px;                     /* 小さくなった飛行機の位置に合わせて位置微調整 */
+  padding-bottom: 4px;
 }
 
 /* =========================================
@@ -1172,13 +1206,7 @@ section.py-5 {
 /* =========================================
    クレジット：coming soon... 表示
 ========================================= */
-.credits-img-wrap {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeInCredits 0.3s ease-in-out;
-}
+
 
 .credits-coming-soon {
   padding: 32px 20px;
@@ -1194,10 +1222,26 @@ section.py-5 {
   opacity: 0.85;
 }
 
+/* =========================================
+   クレジット：画像表示スタイル
+========================================= */
+.credits-img-wrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+  animation: fadeInCredits 0.3s ease-in-out;
+}
+
 .credits-img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 480px; /* PC・タブレットで大きくなりすぎないよう幅を制限 */
   height: auto;
-  border-radius: 4px;
+  display: block;
+  border-radius: 6px;
+  /* 背景が黒画像のため、背景となじませる微調整（必要に応じて） */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .credits-placeholder {

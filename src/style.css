@@ -313,6 +313,40 @@ summary {
   font-size: 1.15rem;
 }
 
+/* 公演アンケートボタン（オレンジ色のボタンデザイン復元） */
+.btn-questionnaire {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff9955 0%, #ff7733 100%); /* オレンジグラデーション */
+  color: #ffffff !important;               /* 文字を白に固定 */
+  text-decoration: none !important;        /* URLの下線を消す */
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 16px 42px;
+  border-radius: 12px;                     /* 角丸 */
+  box-shadow: 0 6px 18px rgba(255, 120, 50, 0.35); /* ボタンの立体感（影） */
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+/* ホバー時の挙動 */
+.btn-questionnaire:hover {
+  background: linear-gradient(135deg, #ffaa66 0%, #ff8844 100%);
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 120, 50, 0.45);
+}
+
+/* クリック時 */
+.btn-questionnaire:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 12px rgba(255, 120, 50, 0.3);
+}
+
 .btn-join {
   color: #000000;
   background-color: #ffffff;
