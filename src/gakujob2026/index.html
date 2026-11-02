@@ -382,6 +382,48 @@
         </div>
       </details>
 
+      <!-- エンディング見出し（紙飛行機＆軌跡ライン付き） -->
+      <div class="credit-heading-wrap ending-heading-wrap">
+        <div class="credit-title-box">
+          <!-- 紙飛行機アイコン -->
+          <div class="credit-airplane-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+          </div>
+          <!-- 見出し文字（Yomogiフォント適用） -->
+          <h2 class="credit-main-title ending-title">エンディング</h2>
+          <!-- 飛行軌跡の曲線 -->
+          <div class="credit-flight-path">
+            <svg viewBox="0 0 240 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 2 C 30 25, 120 32, 235 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- エンディング見出し（シンプル版） -->
+      <div class="simple-heading-wrap">
+        <h2 class="simple-main-title ending-title">エンディング</h2>
+      </div>
+
+      <!-- エンディング動画セクション -->
+      <div class="ending-video-section">
+        <div class="ending-video-wrap">
+          <!-- MP4動画プレーヤー -->
+          <video 
+            controls 
+            preload="metadata" 
+            playsinline 
+            class="ending-video"
+          >
+            <!-- 動画ファイルのパスを指定してください -->
+            <source src="assets/mp4/ending.MP4" type="video/mp4" />
+            お使いのブラウザは動画再生に対応していません。
+          </video>
+        </div>
+      </div>
+
   <!-- 最下部フッター（黒背景エリア） -->
   <footer class="site-footer">
     <div class="container text-center">
