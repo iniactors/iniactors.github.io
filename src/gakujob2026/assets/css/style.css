@@ -1269,6 +1269,52 @@ section.py-5 {
 }
 
 /* =========================================
+   エンディングセクション（見出し＆余白調整）
+========================================= */
+.simple-heading-wrap {
+  text-align: center;      /* 文字を中央揃えにする */
+  margin-top: 70px;        /* 上のクレジットセクションとの間にしっかり空間を作る */
+  margin-bottom: 20px;     /* 見出しと動画の間の余白 */
+  width: 100%;
+}
+
+.simple-main-title.ending-title {
+  font-family: 'Yomogi', cursive, sans-serif !important;
+  font-size: clamp(1.5rem, 3vw, 1.9rem); /* 他のセクション見出しと統一されたサイズ */
+  font-weight: 700;                        /* しっかりとした太さに */
+  letter-spacing: 0.15em;
+  color: #223344;
+  margin: 0;
+  display: inline-block;
+}
+
+/* 動画埋め込みラッパー（スマホ対応・中央配置） */
+.ending-video-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+  margin-bottom: 70px;     /* フッターとの間に十分な空間を確保 */
+}
+
+.ending-video-wrap {
+  width: 100%;
+  max-width: 720px;
+  background-color: #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+}
+
+.ending-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;    /* スマホでも16:9の比率を維持して崩れないようにする */
+}
+
+/* =========================================
    最下部フッター（黒背景・白アイコン・白文字）
 ========================================= */
 .site-footer,
